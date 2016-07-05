@@ -6,7 +6,7 @@ import zeno.util.tools.iterators.EmptyIterator;
 import zeno.util.tools.iterators.ReverseIterator;
 
 /**
- * The {@code Iterables} class provides a few collection iterables.
+ * The {@code Iterables} class provides a few basic iterables.
  *
  * @author Zeno
  * @since Aug 15, 2015
