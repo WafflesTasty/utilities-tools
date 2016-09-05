@@ -12,7 +12,7 @@ import zeno.util.tools.generic.manipulators.Action;
  * @see Messenger
  * @see Action
  */
-public abstract class LoaderAction extends Messenger implements Action
+public class LoaderAction extends Messenger implements Action
 {
 	private enum State
 	{
@@ -74,6 +74,7 @@ public abstract class LoaderAction extends Messenger implements Action
 		// NOT APPLICABLE
 	}
 		
+	
 	@Override
 	public void execute()
 	{
