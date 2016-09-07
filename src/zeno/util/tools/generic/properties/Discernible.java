@@ -3,8 +3,8 @@ package zeno.util.tools.generic.properties;
 /**
  * The {@code Discernible} interface defines an object with a unique identifier.
  *
- * @author Zeno
  * @since Jul 23, 2015
+ * @author Zeno
  */
 @FunctionalInterface
 public interface Discernible

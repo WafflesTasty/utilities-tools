@@ -7,8 +7,9 @@ import zeno.util.tools.generic.properties.Copyable;
 /**
  * The {@code INode} interface defines objects with a parent-child relationship.
  *
- * @author Zeno
  * @since Mar 5, 2016
+ * @author Zeno
+ * 
  * @see Copyable
  * @see Iterable
  */

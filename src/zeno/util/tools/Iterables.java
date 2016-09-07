@@ -8,8 +8,8 @@ import zeno.util.tools.iterators.ReverseIterator;
 /**
  * The {@code Iterables} class provides a few basic iterables.
  *
- * @author Zeno
  * @since Aug 15, 2015
+ * @author Zeno
  */
 public final class Iterables
 {	

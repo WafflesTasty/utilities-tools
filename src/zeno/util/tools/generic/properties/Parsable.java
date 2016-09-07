@@ -3,8 +3,8 @@ package zeno.util.tools.generic.properties;
 /**
  * The {@code Parsable} interface defines an object that can be parsed to a string.
  *
- * @author Zeno
  * @since Jul 23, 2015
+ * @author Zeno
  */
 @FunctionalInterface
 public interface Parsable

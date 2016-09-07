@@ -6,9 +6,9 @@ import java.util.Random;
 /**
 * The {@code Randomizer} class provides a static random number generator.
 * <br> It contains all basic functionalities for random generation.
-* 
+*
+* @since Nov 14, 2014
 * @author Zeno
-* @since Nov 14, 2104
 */
 public final class Randomizer
 {

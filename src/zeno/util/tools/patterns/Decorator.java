@@ -2,10 +2,11 @@ package zeno.util.tools.patterns;
 
 /**
  * The {@code Decorator} class defines the basic decorator pattern.
- *
- * @author Zeno
+ * 
+ * @param <O> an object type to decorate
+ * 
  * @since Nov 27, 2014
- * @param <O> the object type to decorate
+ * @author Zeno 
  */
 public class Decorator<O>
 {

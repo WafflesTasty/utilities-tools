@@ -5,8 +5,9 @@ import java.util.Iterator;
 /**
  * The {@code LongCounter} class creates a counter for long values.
  *
- * @author Zeno
  * @since May 5, 2016
+ * @author Zeno
+ * 
  * @see Iterator
  * @see Long
  */

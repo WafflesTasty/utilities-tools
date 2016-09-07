@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * The {@code ArraySort} class defines sorting methods for {@code Arrays}.
  *
- * @author Zeno
  * @since May 5, 2016
+ * @author Zeno
  */
 public final class ArrayUtil
 {

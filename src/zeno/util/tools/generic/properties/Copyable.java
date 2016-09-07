@@ -3,9 +3,10 @@ package zeno.util.tools.generic.properties;
 /**
  * The {@code Copyable} interface defines an object which can be copied.
  *
- * @author Zeno
- * @since Dec 12, 2014
  * @param <O>  the type of copy to create
+ *
+ * @since Dec 12, 2014
+ * @author Zeno
  */
 public interface Copyable<O>
 {

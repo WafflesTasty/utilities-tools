@@ -5,8 +5,9 @@ import java.util.Iterator;
 /**
  * The {@code GUIDCounter} class creates a counter for prefixed long values.
  *
- * @author Zeno
  * @since May 5, 2016
+ * @author Zeno
+ * 
  * @see Iterator
  * @see String
  */

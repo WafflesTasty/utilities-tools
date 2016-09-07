@@ -7,8 +7,9 @@ import zeno.util.tools.generic.INode;
 /**
  * The {@code Node} class defines a basic {@code INode} implementation.
  *
- * @author Zeno
  * @since Mar 5, 2016
+ * @author Zeno
+ * 
  * @see INode
  */
 public class Node implements INode

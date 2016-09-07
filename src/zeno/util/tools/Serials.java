@@ -6,8 +6,9 @@ import java.io.Serializable;
  * The {@code Serials} enumeration defines all of the serial numbers 
  * used in the various {@code Jade} libraries.
  * 
- * @author Zeno
  * @since Mar 4, 2016
+ * @author Zeno
+ * 
  * @see Serializable
  */
 @SuppressWarnings("javadoc")

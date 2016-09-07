@@ -5,8 +5,8 @@ package zeno.util.tools.patterns;
  * <br> Flagging the value as dirty forces it to update on the next
  * call to the {@link #checkCache} method.
  * 
- * @author Zeno
  * @since Aug 8, 2015
+ * @author Zeno
  */
 public abstract class DirtyValue
 {	

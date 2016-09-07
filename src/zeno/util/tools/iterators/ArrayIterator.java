@@ -5,9 +5,11 @@ import java.util.Iterator;
 /**
  * The {@code ArrayIterator} class iterates over an {@code Array}.
  *
- * @author Zeno
+ * @param <O>  an iterator object type
+ *
  * @since Apr 30, 2016
- * @param <O>  the object type
+ * @author Zeno
+ * 
  * @see Iterator
  */
 public class ArrayIterator<O> implements Iterator<O>

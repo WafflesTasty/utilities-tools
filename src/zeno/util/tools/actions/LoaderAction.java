@@ -7,8 +7,9 @@ import zeno.util.tools.generic.manipulators.Action;
  * The {@code LoaderAction} class defines an action used as a background loading task.
  * <br> To add additional logic after the action completes, override the {@link #onFinished()} event.
  * 
+ * @since Nov 29, 2014
  * @author Zeno
- * @since Nov 29, 2104
+ * 
  * @see Messenger
  * @see Action
  */

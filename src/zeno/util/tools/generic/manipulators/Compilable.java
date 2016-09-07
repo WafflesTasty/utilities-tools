@@ -3,8 +3,8 @@ package zeno.util.tools.generic.manipulators;
 /**
  * The {@code Compilable} interface defines an object capable of being compiled.
  *
- * @author Zeno
  * @since Apr 10, 2015
+ * @author Zeno
  */
 @FunctionalInterface
 public interface Compilable
