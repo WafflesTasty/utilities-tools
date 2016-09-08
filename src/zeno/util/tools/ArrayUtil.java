@@ -200,12 +200,12 @@ public final class ArrayUtil
 	 */
 	public static int[] reverse(int[] array)
 	{
-		int len = array.length;
+		int length = array.length;
 		
-		int[] copy = Arrays.copyOf(array, len);
-		for(int i = 0; i < len; i++)
+		int[] copy = Arrays.copyOf(array, length);
+		for(int i = 0; i < length; i++)
 		{
-			copy[i] = array[len - i - 1];
+			copy[i] = array[length - i - 1];
 		}
 		
 		return copy;
@@ -219,12 +219,12 @@ public final class ArrayUtil
 	 */
 	public static long[] reverse(long[] array)
 	{
-		int len = array.length;
+		int length = array.length;
 		
-		long[] copy = Arrays.copyOf(array, len);
-		for(int i = 0; i < len; i++)
+		long[] copy = Arrays.copyOf(array, length);
+		for(int i = 0; i < length; i++)
 		{
-			copy[i] = array[len - i - 1];
+			copy[i] = array[length - i - 1];
 		}
 		
 		return copy;
@@ -238,12 +238,12 @@ public final class ArrayUtil
 	 */
 	public static float[] reverse(float[] array)
 	{
-		int len = array.length;
+		int length = array.length;
 		
-		float[] copy = Arrays.copyOf(array, len);
-		for(int i = 0; i < len; i++)
+		float[] copy = Arrays.copyOf(array, length);
+		for(int i = 0; i < length; i++)
 		{
-			copy[i] = array[len - i - 1];
+			copy[i] = array[length - i - 1];
 		}
 		
 		return copy;
@@ -257,12 +257,12 @@ public final class ArrayUtil
 	 */
 	public static double[] reverse(double[] array)
 	{
-		int len = array.length;
+		int length = array.length;
 		
-		double[] copy = Arrays.copyOf(array, len);
-		for(int i = 0; i < len; i++)
+		double[] copy = Arrays.copyOf(array, length);
+		for(int i = 0; i < length; i++)
 		{
-			copy[i] = array[len - i - 1];
+			copy[i] = array[length - i - 1];
 		}
 		
 		return copy;
@@ -276,12 +276,12 @@ public final class ArrayUtil
 	 */
 	public static char[] reverse(char[] array)
 	{
-		int len = array.length;
+		int length = array.length;
 		
-		char[] copy = Arrays.copyOf(array, len);
-		for(int i = 0; i < len; i++)
+		char[] copy = Arrays.copyOf(array, length);
+		for(int i = 0; i < length; i++)
 		{
-			copy[i] = array[len - i - 1];
+			copy[i] = array[length - i - 1];
 		}
 		
 		return copy;
@@ -295,12 +295,12 @@ public final class ArrayUtil
 	 */
 	public static <O> O[] reverse(O[] array)
 	{
-		int len = array.length;
+		int length = array.length;
 		
-		O[] copy = Arrays.copyOf(array, len);
-		for(int i = 0; i < len; i++)
+		O[] copy = Arrays.copyOf(array, length);
+		for(int i = 0; i < length; i++)
 		{
-			copy[i] = array[len - i - 1];
+			copy[i] = array[length - i - 1];
 		}
 		
 		return copy;

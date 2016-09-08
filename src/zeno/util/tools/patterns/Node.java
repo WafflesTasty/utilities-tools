@@ -41,9 +41,9 @@ public class Node implements INode
 			}
 		}
 		
-		int len = children.length + 1;
-		children = Arrays.copyOf(children, len);
-		children[len - 1] = child;
+		int length = children.length + 1;
+		children = Arrays.copyOf(children, length);
+		children[length - 1] = child;
 	}
 	
 	/**
