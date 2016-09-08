@@ -32,6 +32,6 @@ public class LongCounter implements Iterator<Long>
 	@Override
 	public Long next()
 	{
-		return ++next;
+		return next++;
 	}
 }

@@ -37,6 +37,6 @@ public class GUIDCounter implements Iterator<String>
 	@Override
 	public String next()
 	{
-		return prefix + (++next);
+		return prefix + (next++);
 	}
 }

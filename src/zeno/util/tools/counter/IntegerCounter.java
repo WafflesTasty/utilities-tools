@@ -32,6 +32,6 @@ public class IntegerCounter implements Iterator<Integer>
 	@Override
 	public Integer next()
 	{
-		return ++next;
+		return next++;
 	}
 }
