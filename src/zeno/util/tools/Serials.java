@@ -14,7 +14,7 @@ import java.io.Serializable;
 @SuppressWarnings("javadoc")
 public enum Serials
 {
-	/**
+	/*
 	 * Utilities
 	 */
 	
@@ -33,23 +33,34 @@ public enum Serials
 		UTIL_LANG_TIME			(1003001l),
 	
 	
-	/**
-	 * Jade Core
+	/*
+	 * Core
 	 */
 	
-		// <NONE>
+		// JADE
+		
+		CORE_JADE_EXCEPTION		(2001000l),
 	
 	
-	/**
+	/*
+	 * Systems
+	 */
+		
+		// OpenGL
+		
+		SYS_GL_EXCEPTION		(3001000l),
+	
+	
+	/*
 	 * Engines
 	 */
 	
 		// ROGUELUST
 		
-		ENG_RL_DATE				(3001000l),
+		ENG_RL_DATE				(4001000l),
 		
 		
-	/**
+	/*
 	 * Default value
 	 */
 		
