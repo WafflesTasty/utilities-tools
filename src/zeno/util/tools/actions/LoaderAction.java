@@ -1,7 +1,7 @@
 package zeno.util.tools.actions;
 
 import zeno.util.tools.Messenger;
-import zeno.util.tools.generic.manipulators.Action;
+import zeno.util.tools.generic.manipulators.Executable;
 
 /**
  * The {@code LoaderAction} class defines an action used as a background loading task.
@@ -11,9 +11,9 @@ import zeno.util.tools.generic.manipulators.Action;
  * @author Zeno
  * 
  * @see Messenger
- * @see Action
+ * @see Executable
  */
-public class LoaderAction extends Messenger implements Action
+public class LoaderAction extends Messenger implements Executable
 {
 	private enum State
 	{
