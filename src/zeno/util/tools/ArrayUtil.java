@@ -3,7 +3,7 @@ package zeno.util.tools;
 import java.util.Arrays;
 
 /**
- * The {@code ArraySort} class defines sorting methods for {@code Arrays}.
+ * The {@code ArrayUtil} class defines utility methods for {@code Arrays}.
  *
  * @since May 5, 2016
  * @author Zeno
