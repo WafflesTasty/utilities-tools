@@ -3,12 +3,12 @@ package zeno.util.tools;
 import java.util.Arrays;
 
 /**
- * The {@code ArrayUtil} class defines utility methods for {@code Arrays}.
+ * The {@code ArrayTo} class defines utility methods for {@code Arrays}.
  *
  * @since May 5, 2016
  * @author Zeno
  */
-public final class ArrayUtil
+public final class ArrayTo
 {
 	/**
 	 * Returns a primitive of a wrapper {@code Array}.
@@ -307,7 +307,7 @@ public final class ArrayUtil
 	}
 	
 	
-	private ArrayUtil()
+	private ArrayTo()
 	{
 		// NOT APPLICABLE
 	}
