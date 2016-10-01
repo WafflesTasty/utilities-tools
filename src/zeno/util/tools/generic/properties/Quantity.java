@@ -16,46 +16,58 @@ public interface Quantity
 	 * 
 	 * @see Quantity
 	 */
-	public static interface Unit extends Quantity
+	public static interface Unit
 	{
 		/**
-		 * Calculates the residu of a value in this {@code Unit}.
+		 * Returns the residu of a quantity in this {@code Unit}.
 		 * 
-		 * @param value  a value to use
-		 * @return  a value residu
-		 * @see Long
+		 * @param qt  a quantity value
+		 * @return  a unit residu
 		 */
-		public default long residu(long value)
-		{
-			Unit p = parent();
-			if(p != null)
-			{
-				return p.residu(value) % p.value();
-			}
-			
-			return value;
-		}
+		public abstract long residuOf(long qt);
 		
 		/**
-		 * Returns the parent of the {@code Unit}.
+		 * Returns the value of a quantity in this {@code Unit}.
 		 * 
-		 * @return  a parent unit
-		 * @see Unit
+		 * @param qt  a quantity value
+		 * @return  a unit value
 		 */
-		public abstract Unit parent();
+		public abstract long valueOf(long qt);
 	}
 	
 	
 	/**
-	 * Converts the {@code Quantity} to a {@code Unit}.
+	 * Returns the unit values of the {@code Quantity}.
 	 * 
-	 * @param unit  a unit to use
-	 * @return  the quantity expressed through a unit
+	 * @param units  a sequence of units
+	 * @return  a sequence of values
 	 * @see Unit
 	 */
-	public default long convert(Unit unit)
+	public default long[] as(Unit... units)
 	{
-		return unit.residu(value()) / unit.value();
+		int count = units.length;
+		
+		long residu = value();
+		long[] values = new long[count];
+		for(int i = 0; i < count; i++)
+		{
+			values[i] = units[i].valueOf(residu);
+			residu = units[i].residuOf(residu);
+		}
+		
+		return values;
+	}
+	
+	/**
+	 * Returns the unit value of the {@code Quantity}.
+	 * 
+	 * @param unit  a quantity unit
+	 * @return  a unit value
+	 * @see Unit
+	 */
+	public default long as(Unit unit)
+	{
+		return unit.valueOf(value());
 	}
 	
 	/**
