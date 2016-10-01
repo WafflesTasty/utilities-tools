@@ -145,6 +145,12 @@ public class Metric implements Quantity.Unit
 	
 	
 	@Override
+	public BigDecimal valueAs(BigDecimal qt)
+	{
+		return qt.scaleByPowerOfTen(- exp);
+	}
+	
+	@Override
 	public BigDecimal valueOf(BigDecimal qt)
 	{
 		return qt.scaleByPowerOfTen(exp);

@@ -23,6 +23,17 @@ public interface Quantity
 	public static interface Unit
 	{
 		/**
+		 * Returns the value of a quantity as this {@code Unit}.
+		 * <br> This is effectively an inverse operation
+		 * to {@link #valueOf(BigDecimal)}.
+		 * 
+		 * @param qt  a unit value
+		 * @return  a quantity value
+		 * @see BigDecimal
+		 */
+		public abstract BigDecimal valueAs(BigDecimal qt);
+		
+		/**
 		 * Returns the value of a quantity in this {@code Unit}.
 		 * 
 		 * @param qt  a quantity value
@@ -57,6 +68,17 @@ public interface Quantity
 	
 		
 		/**
+		 * Returns the value of a quantity as this {@code Unit}.
+		 * 
+		 * @param qt  a unit value
+		 * @return  a quantity value
+		 */
+		public default double valueAs(double qt)
+		{
+			return valueAs(new BigDecimal(qt)).longValue();
+		}
+		
+		/**
 		 * Returns the value of a quantity in this {@code Unit}.
 		 * 
 		 * @param qt  a quantity value
@@ -89,6 +111,17 @@ public interface Quantity
 			return wholeOf(new BigDecimal(qt)).longValue();
 		}
 		
+		
+		/**
+		 * Returns the value of a quantity as this {@code Unit}.
+		 * 
+		 * @param qt  a unit value
+		 * @return  a quantity value
+		 */
+		public default long valueAs(long qt)
+		{
+			return valueAs(new BigDecimal(qt)).longValue();
+		}
 		
 		/**
 		 * Returns the value of a quantity in this {@code Unit}.
