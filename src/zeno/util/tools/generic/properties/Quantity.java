@@ -9,6 +9,7 @@ import java.math.RoundingMode;
  * @since Oct 1, 2016
  * @author Zeno
  */
+@FunctionalInterface
 public interface Quantity
 {
 	/**
@@ -123,27 +124,20 @@ public interface Quantity
 		}
 	}
 
-	
-	/**
-	 * Returns the value of the {@code Quantity}.
-	 * 
-	 * @return  a total value
-	 * @see Long
-	 */
-	public abstract BigDecimal value();
 
 	/**
-	 * Returns the unit values of the {@code Quantity}.
+	 * Returns the unit values of a quantity.
 	 * 
+	 * @param qt  a quantity to use
 	 * @param units  a sequence of units
 	 * @return  a sequence of values
 	 * @see BigDecimal
 	 */
-	public default BigDecimal[] as(Unit... units)
+	public static BigDecimal[] as(BigDecimal qt, Unit... units)
 	{
 		int count = units.length;
 		
-		BigDecimal residu = value();
+		BigDecimal residu = qt;
 		BigDecimal[] values = new BigDecimal[count + 1];
 		for(int i = 0; i < count; i++)
 		{
@@ -154,4 +148,73 @@ public interface Quantity
 		
 		return values;
 	}
+	
+	/**
+	 * Returns the unit values of a quantity.
+	 * 
+	 * @param qt  a quantity to use
+	 * @param units  a sequence of units
+	 * @return  a sequence of values
+	 * @see BigDecimal
+	 */
+	public static BigDecimal[] as(double qt, Unit... units)
+	{
+		int count = units.length;
+		
+		BigDecimal residu = new BigDecimal(qt);
+		BigDecimal[] values = new BigDecimal[count + 1];
+		for(int i = 0; i < count; i++)
+		{
+			values[i] = units[i].wholeOf(residu);
+			residu = units[i].residuOf(residu);
+		}
+		values[count] = residu;
+		
+		return values;
+	}
+	
+	/**
+	 * Returns the unit values of a quantity.
+	 * 
+	 * @param qt  a quantity to use
+	 * @param units  a sequence of units
+	 * @return  a sequence of values
+	 * @see BigDecimal
+	 */
+	public static BigDecimal[] as(long qt, Unit... units)
+	{
+		int count = units.length;
+		
+		BigDecimal residu = new BigDecimal(qt);
+		BigDecimal[] values = new BigDecimal[count + 1];
+		for(int i = 0; i < count; i++)
+		{
+			values[i] = units[i].wholeOf(residu);
+			residu = units[i].residuOf(residu);
+		}
+		values[count] = residu;
+		
+		return values;
+	}
+	
+	
+	/**
+	 * Returns the unit values of the {@code Quantity}.
+	 * 
+	 * @param units  a sequence of units
+	 * @return  a sequence of values
+	 * @see BigDecimal
+	 */
+	public default BigDecimal[] as(Unit... units)
+	{
+		return Quantity.as(value(), units);
+	}
+
+	/**
+	 * Returns the value of the {@code Quantity}.
+	 * 
+	 * @return  a total value
+	 * @see Long
+	 */
+	public abstract BigDecimal value();
 }
