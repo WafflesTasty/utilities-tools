@@ -1,7 +1,6 @@
 package zeno.util.tools.enums;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 import zeno.util.tools.generic.properties.Quantity;
 
@@ -18,71 +17,71 @@ public class Metric implements Quantity.Unit
 	/**
 	 * The {@code exa-} unit.
 	 */
-	public static Metric EXA   = new Metric(-18, "E");
+	public static final Metric EXA   = new Metric(-18, "E");
 	/**
 	 * The {@code peta-} unit.
 	 */
-	public static Metric PETA  = new Metric(-15, "P");
+	public static final Metric PETA  = new Metric(-15, "P");
 	/**
 	 * The {@code tera-} unit.
 	 */
-	public static Metric TERA  = new Metric(-12, "T");
+	public static final Metric TERA  = new Metric(-12, "T");
 	/**
 	 * The {@code giga-} unit.
 	 */
-	public static Metric GIGA  = new Metric( -9, "G");
+	public static final Metric GIGA  = new Metric( -9, "G");
 	/**
 	 * The {@code mega-} unit.
 	 */
-	public static Metric MEGA  = new Metric( -6, "M");
+	public static final Metric MEGA  = new Metric( -6, "M");
 	/**
 	 * The {@code kilo-} unit.
 	 */
-	public static Metric KILO  = new Metric( -3, "k");
+	public static final Metric KILO  = new Metric( -3, "k");
 	/**
 	 * The {@code hecto-} unit.
 	 */
-	public static Metric HECTO = new Metric( -2, "h");
+	public static final Metric HECTO = new Metric( -2, "h");
 	/**
 	 * The {@code deca-} unit.
 	 */
-	public static Metric DECA  = new Metric( -1, "da");
+	public static final Metric DECA  = new Metric( -1, "da");
 	/**
 	 * The base metric unit.
 	 */
-	public static Metric NONE  = new Metric(  0, "");
+	public static final Metric NONE  = new Metric(  0, "");
 	/**
 	 * The {@code deci-} unit.
 	 */
-	public static Metric DECI  = new Metric(  1, "d");
+	public static final Metric DECI  = new Metric(  1, "d");
 	/**
 	 * The {@code centi-} unit.
 	 */
-	public static Metric CENTI = new Metric(  2, "c");
+	public static final Metric CENTI = new Metric(  2, "c");
 	/**
 	 * The {@code milli-} unit.
 	 */
-	public static Metric MILLI = new Metric(  3, "m");
+	public static final Metric MILLI = new Metric(  3, "m");
 	/**
 	 * The {@code micro-} unit.
 	 */
-	public static Metric MICRO = new Metric(  6, "\u00B5");
+	public static final Metric MICRO = new Metric(  6, "\u00B5");
 	/**
 	 * The {@code nano-} unit.
 	 */
-	public static Metric NANO  = new Metric(  9, "n");
+	public static final Metric NANO  = new Metric(  9, "n");
 	/**
 	 * The {@code pico-} unit.
 	 */
-	public static Metric PICO  = new Metric( 12, "p");
+	public static final Metric PICO  = new Metric( 12, "p");
 	/**
 	 * The {@code femto-} unit.
 	 */
-	public static Metric FEMTO = new Metric( 15, "f");
+	public static final Metric FEMTO = new Metric( 15, "f");
 	/**
 	 * The {@code atto-} unit.
 	 */
-	public static Metric ATTO  = new Metric( 18, "a");
+	public static final Metric ATTO  = new Metric( 18, "a");
 	
 	
 	private int exp;
@@ -98,12 +97,39 @@ public class Metric implements Quantity.Unit
 	/**
 	 * Returns this {@code Metric} relative to another.
 	 * 
+	 * @param src  a source metric
+	 * @return  a relative metric
+	 */
+	public Metric from(Metric src)
+	{
+		if(src != NONE)
+		{
+			return new Metric(exp - src.exp, prefix);
+		}
+		
+		return this;
+	}
+	
+	/**
+	 * Returns this {@code Metric} relative to another.
+	 * 
 	 * @param tgt  a target metric
 	 * @return  a relative metric
 	 */
 	public Metric to(Metric tgt)
 	{
-		return new Metric(tgt.exp - exp, tgt.prefix);
+		return tgt.from(this);
+	}
+	
+	/**
+	 * Returns the inverse of the {@code Metric}.
+	 * 
+	 * @return  an inverse metric
+	 * @see Metric
+	 */
+	public Metric inverse()
+	{
+		return to(Metric.NONE);
 	}
 	
 	/**
@@ -122,18 +148,6 @@ public class Metric implements Quantity.Unit
 	public BigDecimal valueOf(BigDecimal qt)
 	{
 		return qt.scaleByPowerOfTen(exp);
-	}
-	
-	@Override
-	public BigDecimal residuOf(BigDecimal qt)
-	{
-		return valueOf(qt).subtract(wholeOf(qt));
-	}
-	
-	@Override
-	public BigDecimal wholeOf(BigDecimal qt)
-	{
-		return valueOf(qt).setScale(0, RoundingMode.DOWN);
 	}
 	
 	@Override

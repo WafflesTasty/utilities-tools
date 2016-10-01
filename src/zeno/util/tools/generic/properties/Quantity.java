@@ -1,6 +1,7 @@
 package zeno.util.tools.generic.properties;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * The {@code Quantity} interface defines a value that can be expressed in units.
@@ -21,12 +22,38 @@ public interface Quantity
 	public static interface Unit
 	{
 		/**
+		 * Returns the value of a quantity in this {@code Unit}.
+		 * 
+		 * @param qt  a quantity value
+		 * @return  a unit value
+		 * @see BigDecimal
+		 */
+		public abstract BigDecimal valueOf(BigDecimal qt);
+		
+		/**
 		 * Returns the residu of a quantity in this {@code Unit}.
 		 * 
 		 * @param qt  a quantity value
 		 * @return  a unit residu
+		 * @see BigDecimal
 		 */
-		public abstract BigDecimal residuOf(BigDecimal qt);
+		public default BigDecimal residuOf(BigDecimal qt)
+		{
+			return valueOf(qt).subtract(wholeOf(qt));
+		}
+				
+		/**
+		 * Returns the whole of a quantity in this {@code Unit}.
+		 * 
+		 * @param qt  a quantity value
+		 * @return  a unit whole
+		 * @see BigDecimal
+		 */
+		public default BigDecimal wholeOf(BigDecimal qt)
+		{
+			return valueOf(qt).setScale(0, RoundingMode.DOWN);
+		}
+	
 		
 		/**
 		 * Returns the value of a quantity in this {@code Unit}.
@@ -34,7 +61,21 @@ public interface Quantity
 		 * @param qt  a quantity value
 		 * @return  a unit value
 		 */
-		public abstract BigDecimal valueOf(BigDecimal qt);
+		public default double valueOf(double qt)
+		{
+			return valueOf(new BigDecimal(qt)).longValue();
+		}
+		
+		/**
+		 * Returns the residu of a quantity in this {@code Unit}.
+		 * 
+		 * @param qt  a quantity value
+		 * @return  a unit residu
+		 */
+		public default double residuOf(double qt)
+		{
+			return residuOf(new BigDecimal(qt)).longValue();
+		}
 		
 		/**
 		 * Returns the whole of a quantity in this {@code Unit}.
@@ -42,7 +83,44 @@ public interface Quantity
 		 * @param qt  a quantity value
 		 * @return  a unit whole
 		 */
-		public abstract BigDecimal wholeOf(BigDecimal qt);
+		public default double wholeOf(double qt)
+		{
+			return wholeOf(new BigDecimal(qt)).longValue();
+		}
+		
+		
+		/**
+		 * Returns the value of a quantity in this {@code Unit}.
+		 * 
+		 * @param qt  a quantity value
+		 * @return  a unit value
+		 */
+		public default long valueOf(long qt)
+		{
+			return valueOf(new BigDecimal(qt)).longValue();
+		}
+		
+		/**
+		 * Returns the residu of a quantity in this {@code Unit}.
+		 * 
+		 * @param qt  a quantity value
+		 * @return  a unit residu
+		 */
+		public default long residuOf(long qt)
+		{
+			return residuOf(new BigDecimal(qt)).longValue();
+		}
+		
+		/**
+		 * Returns the whole of a quantity in this {@code Unit}.
+		 * 
+		 * @param qt  a quantity value
+		 * @return  a unit whole
+		 */
+		public default long wholeOf(long qt)
+		{
+			return wholeOf(new BigDecimal(qt)).longValue();
+		}
 	}
 
 	
