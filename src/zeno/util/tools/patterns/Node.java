@@ -1,7 +1,6 @@
 package zeno.util.tools.patterns;
 
-import java.util.Arrays;
-
+import zeno.util.tools.Array;
 import zeno.util.tools.generic.INode;
 
 /**
@@ -41,9 +40,7 @@ public class Node implements INode
 			}
 		}
 		
-		int length = children.length + 1;
-		children = Arrays.copyOf(children, length);
-		children[length - 1] = child;
+		Array.add.to(children, child);
 	}
 	
 	/**
@@ -83,7 +80,7 @@ public class Node implements INode
 		
 		if(children.length <= i)
 		{
-			children = Arrays.copyOf(children, i + 1);
+			children = Array.copy.of(children, i + 1);
 		}
 		
 		children[i] = child;
