@@ -40,7 +40,7 @@ public class Node implements INode
 			}
 		}
 		
-		Array.add.to(children, child);
+		children = Array.add.to(children, child);
 	}
 	
 	/**
