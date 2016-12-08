@@ -11,6 +11,39 @@ import java.util.Arrays;
 public final class Array
 {	
 	/**
+	 * The {@code instance} class creates new array isntances.
+	 * 
+	 * @since Dec 8, 2016
+	 * @author Zeno
+	 */
+	public static final class instance
+	{
+		/**
+		 * Returns a new array of the specified type and length.
+		 * 
+		 * @param type  an array type to use
+		 * @param length  an array length
+		 * @return  a new array
+		 */
+		public static <O> O[] of(Class<O> type, int length)
+		{
+			return (O[]) java.lang.reflect.Array.newInstance(type, length);
+		}
+		
+		/**
+		 * Returns a new array of the specified type and length.
+		 * 
+		 * @param array  an array type to use
+		 * @param length  an array length
+		 * @return  a new array
+		 */
+		public static <O> O[] of(O[] array, int length)
+		{
+			return (O[]) of(array.getClass().getComponentType(), length);
+		}
+	}
+	
+	/**
 	 * The {@code reverse} class reverses the contents of arrays.
 	 * 
 	 * @since Dec 5, 2016
@@ -153,6 +186,217 @@ public final class Array
 
 		
 		private reverse()
+		{
+			// NOT APPLICABLE
+		}
+	}
+	
+	/**
+	 * The {@code remove} class removes an object in an array.
+	 * 
+	 * @since Dec 5, 2016
+	 * @author Zeno
+	 */
+	public static final class remove
+	{
+		/**
+		 * Removes an object from an {@code Array}.
+		 * 
+		 * @param array  an array to remove from
+		 * @param index  the index to remove
+		 * @return  the resulting array
+		 */
+		public static int[] from(int[] array, int index)
+		{
+			int length = array.length;
+			if(index < 0 || length <= index)
+			{
+				return array;
+			}
+			
+			
+			int[] copy = new int[length - 1];
+			for(int i = 0; i < length; i++)
+			{
+				if(index <= i)
+					copy[i] = array[i + 1];
+				else
+					copy[i] = array[i];
+			}
+			
+			return copy;
+		}
+			
+		/**
+		 * Removes an object from an {@code Array}.
+		 * 
+		 * @param array  an array to remove from
+		 * @param index  the index to remove
+		 * @return  the resulting array
+		 */
+		public static long[] from(long[] array, int index)
+		{
+			int length = array.length;
+			if(index < 0 || length <= index)
+			{
+				return array;
+			}
+			
+			
+			long[] copy = new long[length - 1];
+			for(int i = 0; i < length; i++)
+			{
+				if(index <= i)
+					copy[i] = array[i + 1];
+				else
+					copy[i] = array[i];
+			}
+			
+			return copy;
+		}
+		
+		/**
+		 * Removes an object from an {@code Array}.
+		 * 
+		 * @param array  an array to remove from
+		 * @param index  the index to remove
+		 * @return  the resulting array
+		 */
+		public static float[] from(float[] array, int index)
+		{
+			int length = array.length;
+			if(index < 0 || length <= index)
+			{
+				return array;
+			}
+			
+			
+			float[] copy = new float[length - 1];
+			for(int i = 0; i < length; i++)
+			{
+				if(index <= i)
+					copy[i] = array[i + 1];
+				else
+					copy[i] = array[i];
+			}
+			
+			return copy;
+		}
+		
+		/**
+		 * Removes an object from an {@code Array}.
+		 * 
+		 * @param array  an array to remove from
+		 * @param index  the index to remove
+		 * @return  the resulting array
+		 */
+		public static double[] from(double[] array, int index)
+		{
+			int length = array.length;
+			if(index < 0 || length <= index)
+			{
+				return array;
+			}
+			
+			
+			double[] copy = new double[length - 1];
+			for(int i = 0; i < length; i++)
+			{
+				if(index <= i)
+					copy[i] = array[i + 1];
+				else
+					copy[i] = array[i];
+			}
+			
+			return copy;
+		}
+		
+		/**
+		 * Removes an object from an {@code Array}.
+		 * 
+		 * @param array  an array to remove from
+		 * @param index  the index to remove
+		 * @return  the resulting array
+		 */
+		public static short[] from(short[] array, int index)
+		{
+			int length = array.length;
+			if(index < 0 || length <= index)
+			{
+				return array;
+			}
+			
+			
+			short[] copy = new short[length - 1];
+			for(int i = 0; i < length; i++)
+			{
+				if(index <= i)
+					copy[i] = array[i + 1];
+				else
+					copy[i] = array[i];
+			}
+			
+			return copy;
+		}
+		
+		/**
+		 * Removes an object from an {@code Array}.
+		 * 
+		 * @param array  an array to remove from
+		 * @param index  the index to remove
+		 * @return  the resulting array
+		 */
+		public static char[] from(char[] array, int index)
+		{
+			int length = array.length;
+			if(index < 0 || length <= index)
+			{
+				return array;
+			}
+			
+			
+			char[] copy = new char[length - 1];
+			for(int i = 0; i < length; i++)
+			{
+				if(index <= i)
+					copy[i] = array[i + 1];
+				else
+					copy[i] = array[i];
+			}
+			
+			return copy;
+		}
+		
+		/**
+		 * Removes an object from an {@code Array}.
+		 * 
+		 * @param array  an array to remove from
+		 * @param index  the index to remove
+		 * @return  the resulting array
+		 */
+		public static <O> O[] from(O[] array, int index)
+		{
+			int length = array.length;
+			if(index < 0 || length <= index)
+			{
+				return array;
+			}
+			
+		
+			O[] copy = instance.of(array, length - 1);
+			for(int i = 0; i < length; i++)
+			{
+				if(index <= i)
+					copy[i] = array[i + 1];
+				else
+					copy[i] = array[i];
+			}
+			
+			return copy;
+		}
+
+		
+		private remove()
 		{
 			// NOT APPLICABLE
 		}
