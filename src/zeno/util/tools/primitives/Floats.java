@@ -126,6 +126,23 @@ public final class Floats
 	}
 
 	/**
+	 * Returns the absolute of a list of values.
+	 * 
+	 * @param vals  a list of values
+	 * @return  a list of absolutes
+	 */
+	public static float[] abs(float... vals)
+	{
+		float[] result = new float[vals.length];
+		for(int i = 0; i < vals.length; i++)
+		{
+			result[i] = Math.abs(vals[i]);
+		}
+		
+		return result;
+	}
+	
+	/**
 	 * Returns the minimum of a list of values.
 	 * 
 	 * @param vals  a list of values
@@ -171,17 +188,17 @@ public final class Floats
 	}
 
 	/**
-	 * Returns the absolute of a value.
+	 * Returns the absolute of the value.
 	 * 
 	 * @param val  a value to use
-	 * @return  the value's absolute
+	 * @return  an absolute value
 	 */
 	public static float abs(float val)
 	{
 		return Math.abs(val);
 	}
 	
-	
+		
 	// Logarithms
 	
 	/**
