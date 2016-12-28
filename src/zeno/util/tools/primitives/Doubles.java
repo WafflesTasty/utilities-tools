@@ -63,9 +63,9 @@ public final class Doubles
 	 */
 	public static final double NaN = Double.NaN;
 	/**
-	 * Defines a double error epsilon.
+	 * Defines the double machine epsilon.
 	 */
-	public static final double EPSILON = 1e-12f;
+	public static final double EPSILON = 2e-53;
 	
 	
 	// Exponential
@@ -336,30 +336,45 @@ public final class Doubles
 	// Rounding
 
 	/**
-	 * Checks if a value is roughly equal to zero.
-	 * </br> {@link #EPSILON} is used as a rounding error.
-	 * 
-	 * @param val  a value to check
-	 * @return  {@code true} if the value is zero
-	 */
-	public static boolean isZero(double val)
-	{
-		return -EPSILON < val && val < EPSILON;
-	}
-	
-	/**
-	 * Checks if one value is roughly equal to the other.
-	 * </br> {@link #EPSILON} is used as a rounding error.
+	 * Checks if two values are equal to some significance.
 	 * 
 	 * @param val1  a first value to check
 	 * @param val2  a second value to check
+	 * @param digits  the correct digit count
 	 * @return  {@code true} if the values are equal
 	 */
-	public static boolean isEqual(double val1, double val2)
+	public static boolean isEqual(double val1, double val2, int digits)
 	{
-		return isZero(val1 - val2);
+		if(sign(val1) != sign(val2))
+		{
+			return false;
+		}
+		
+		if(exponent(val1) != exponent(val2))
+		{
+			return false;
+		}
+		
+		if(mantisse(val1, digits) != mantisse(val2, digits))
+		{
+			return false;
+		}
+		
+		return true;
 	}
-	
+
+	/**
+	 * Checks if a value is equal to zero to some significance.
+	 * 
+	 * @param val  a value to check
+	 * @param digits  the correct digit count
+	 * @return  {@code true} if the value is zero
+	 */
+	public static boolean isZero(double val, int digits)
+	{
+		return isEqual(0, abs(val), digits);
+	}
+		
 	/**
 	 * Rounds a value to a set amount of decimals.
 	 * 
@@ -631,6 +646,33 @@ public final class Doubles
 		return Math.atan(val);
 	}
 
+	
+	private static long mantisse(double val, int d)
+	{
+		if(d < 1)
+		{
+			return 0;
+		}
+		
+		long mask = 0xfffffffffffffL;
+		if(d < 52)
+		{
+			mask >>>= (52 - d);
+			mask  <<= (52 - d);
+		}
+		
+		if(exponent(val) != 0)
+		{
+			return (toBits(val) & mask) | 0x10000000000000L;
+		}
+		
+		return (toBits(val) & mask) << 1;
+	}	
+	
+	private static long exponent(double val)
+	{
+		return (toBits(val) >> 52) & 0x7ffL;
+	}
 	
 	private Doubles()
 	{
