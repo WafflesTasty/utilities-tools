@@ -50,7 +50,6 @@ public final class Floats
 	 */
 	public static final int BIT_SIZE = Float.SIZE;
 	
-	
 	/**
 	 * Defines an undefined number in floating point precision.
 	 */
