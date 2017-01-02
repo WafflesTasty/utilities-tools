@@ -358,39 +358,42 @@ public final class Floats
 	 * 
 	 * @param val1  a first value to check
 	 * @param val2  a second value to check
-	 * @param digits  the correct digit count
+	 * @param ulps  a maximum ulp error value
 	 * @return  {@code true} if the values are equal
+	 * @see <a href="http://www.cygnus-software.com/papers/comparingfloats/Comparing%20floating%20point%20numbers.htm">Cygnus Documentation</a>
 	 */
-	public static boolean isEqual(float val1, float val2, int digits)
+	public static boolean isEqual(float val1, float val2, int ulps)
 	{
-		if(sign(val1) != sign(val2))
+		if(isNaN(val1) || isNaN(val2))
 		{
 			return false;
 		}
 		
-		if(exponent(val1) != exponent(val2))
+		if(val1 == val2)
 		{
-			return false;
+			return true;
 		}
+
 		
-		if(mantisse(val1, digits) != mantisse(val2, digits))
-		{
-			return false;
-		}
+		int bit1 = toBits(val1);
+		int bit2 = toBits(val2);
+
+		if(bit1 < 0) bit1 = Integers.MIN_VALUE - bit1;
+		if(bit2 < 0) bit2 = Integers.MIN_VALUE - bit2;
 		
-		return true;
+		return Integers.abs(bit1 - bit2) <= ulps;
 	}
 
 	/**
 	 * Checks if a value is equal to zero to some significance.
 	 * 
 	 * @param val  a value to check
-	 * @param digits  the correct digit count
+	 * @param ulps  a maximum ulp error value
 	 * @return  {@code true} if the value is zero
 	 */
-	public static boolean isZero(float val, int digits)
+	public static boolean isZero(float val, int ulps)
 	{
-		return isEqual(0, abs(val), digits);
+		return isEqual(0, val, ulps);
 	}
 	
 	/**
@@ -664,34 +667,7 @@ public final class Floats
 		return (float) Math.atan(val);
 	}
 
-	
-	private static int mantisse(float val, int d)
-	{
-		if(d < 1)
-		{
-			return 0;
-		}
 		
-		int mask = 0x7fffff;
-		if(d < 23)
-		{
-			mask >>>= (23 - d);
-			mask  <<= (23 - d);
-		}
-		
-		if(exponent(val) != 0)
-		{
-			return (toBits(val) & mask) | 0x800000;
-		}
-		
-		return (toBits(val) & mask) << 1;
-	}	
-	
-	private static int exponent(float val)
-	{
-		return (toBits(val) >> 23) & 0xff;
-	}
-			
 	private Floats()
 	{
 		// NOT APPLICABLE

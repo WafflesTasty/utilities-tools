@@ -66,6 +66,7 @@ public final class Doubles
 	 * Defines the double machine epsilon.
 	 */
 	public static final double EPSILON = 2e-53;
+
 	
 	
 	// Exponential
@@ -340,39 +341,42 @@ public final class Doubles
 	 * 
 	 * @param val1  a first value to check
 	 * @param val2  a second value to check
-	 * @param digits  the correct digit count
+	 * @param ulps  a maximum ulp error value
 	 * @return  {@code true} if the values are equal
+	 * @see <a href="http://www.cygnus-software.com/papers/comparingfloats/Comparing%20floating%20point%20numbers.htm">Cygnus Documentation</a>
 	 */
-	public static boolean isEqual(double val1, double val2, int digits)
+	public static boolean isEqual(double val1, double val2, int ulps)
 	{
-		if(sign(val1) != sign(val2))
+		if(isNaN(val1) || isNaN(val2))
 		{
 			return false;
 		}
 		
-		if(exponent(val1) != exponent(val2))
+		if(val1 == val2)
 		{
-			return false;
+			return true;
 		}
+
 		
-		if(mantisse(val1, digits) != mantisse(val2, digits))
-		{
-			return false;
-		}
+		long bit1 = toBits(val1);
+		long bit2 = toBits(val2);
+
+		if(bit1 < 0) bit1 = Longs.MIN_VALUE - bit1;
+		if(bit2 < 0) bit2 = Longs.MIN_VALUE - bit2;
 		
-		return true;
+		return Longs.abs(bit1 - bit2) <= ulps;
 	}
 
 	/**
 	 * Checks if a value is equal to zero to some significance.
 	 * 
 	 * @param val  a value to check
-	 * @param digits  the correct digit count
+	 * @param ulps  a maximum ulp error value
 	 * @return  {@code true} if the value is zero
 	 */
-	public static boolean isZero(double val, int digits)
+	public static boolean isZero(double val, int ulps)
 	{
-		return isEqual(0, abs(val), digits);
+		return isEqual(0, val, ulps);
 	}
 		
 	/**
@@ -646,33 +650,6 @@ public final class Doubles
 		return Math.atan(val);
 	}
 
-	
-	private static long mantisse(double val, int d)
-	{
-		if(d < 1)
-		{
-			return 0;
-		}
-		
-		long mask = 0xfffffffffffffL;
-		if(d < 52)
-		{
-			mask >>>= (52 - d);
-			mask  <<= (52 - d);
-		}
-		
-		if(exponent(val) != 0)
-		{
-			return (toBits(val) & mask) | 0x10000000000000L;
-		}
-		
-		return (toBits(val) & mask) << 1;
-	}	
-	
-	private static long exponent(double val)
-	{
-		return (toBits(val) >> 52) & 0x7ffL;
-	}
 	
 	private Doubles()
 	{
