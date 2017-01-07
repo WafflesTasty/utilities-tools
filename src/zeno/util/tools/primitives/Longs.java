@@ -124,18 +124,22 @@ public final class Longs
 	// Extremes
 	
 	/**
-	 * Clamps a value between a minimum and a maximum.
+	 * Returns the absolute of a list of values.
 	 * 
-	 * @param val  a value to clamp
-	 * @param min  the value's minimum
-	 * @param max  the value's maximum
-	 * @return  a clamped value
+	 * @param vals  a list of values
+	 * @return  a list of absolutes
 	 */
-	public static long clamp(long val, long min, long max)
+	public static long[] abs(long... vals)
 	{
-		return Math.max(min, Math.min(val, max));
+		long[] result = new long[vals.length];
+		for(int i = 0; i < vals.length; i++)
+		{
+			result[i] = Math.abs(vals[i]);
+		}
+		
+		return result;
 	}
-
+	
 	/**
 	 * Returns the minimum of a list of values.
 	 * 
@@ -250,6 +254,19 @@ public final class Longs
 	
 	
 	// Rounding
+	
+	/**
+	 * Clamps a value between a minimum and a maximum.
+	 * 
+	 * @param val  a value to clamp
+	 * @param min  the value's minimum
+	 * @param max  the value's maximum
+	 * @return  a clamped value
+	 */
+	public static long clamp(long val, long min, long max)
+	{
+		return Math.max(min, Math.min(val, max));
+	}
 	
 	/**
 	 * Returns the long closest to a value.

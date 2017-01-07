@@ -113,18 +113,22 @@ public final class Doubles
 	// Extremes
 	
 	/**
-	 * Clamps a value between a minimum and a maximum.
+	 * Returns the absolute of a list of values.
 	 * 
-	 * @param val  a value to clamp
-	 * @param min  the value's minimum
-	 * @param max  the value's maximum
-	 * @return  a clamped value
+	 * @param vals  a list of values
+	 * @return  a list of absolutes
 	 */
-	public static double clamp(double val, double min, double max)
+	public static double[] abs(double... vals)
 	{
-		return Math.max(min, Math.min(val, max));
+		double[] result = new double[vals.length];
+		for(int i = 0; i < vals.length; i++)
+		{
+			result[i] = Math.abs(vals[i]);
+		}
+		
+		return result;
 	}
-
+	
 	/**
 	 * Returns the minimum of a list of values.
 	 * 
@@ -367,6 +371,19 @@ public final class Doubles
 		return Longs.abs(bit1 - bit2) <= ulps;
 	}
 
+	/**
+	 * Clamps a value between a minimum and a maximum.
+	 * 
+	 * @param val  a value to clamp
+	 * @param min  the value's minimum
+	 * @param max  the value's maximum
+	 * @return  a clamped value
+	 */
+	public static double clamp(double val, double min, double max)
+	{
+		return max(min, min(val, max));
+	}
+	
 	/**
 	 * Checks if a value is equal to zero to some significance.
 	 * 

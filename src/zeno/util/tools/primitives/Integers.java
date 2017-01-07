@@ -124,18 +124,22 @@ public final class Integers
 	// Extremes
 	
 	/**
-	 * Clamps a value between a minimum and a maximum.
+	 * Returns the absolute of a list of values.
 	 * 
-	 * @param val  a value to clamp
-	 * @param min  the value's minimum
-	 * @param max  the value's maximum
-	 * @return  a clamped value
+	 * @param vals  a list of values
+	 * @return  a list of absolutes
 	 */
-	public static int clamp(int val, int min, int max)
+	public static int[] abs(int... vals)
 	{
-		return Math.max(min, Math.min(val, max));
+		int[] result = new int[vals.length];
+		for(int i = 0; i < vals.length; i++)
+		{
+			result[i] = Math.abs(vals[i]);
+		}
+		
+		return result;
 	}
-
+	
 	/**
 	 * Returns the minimum of a list of values.
 	 * 
@@ -190,7 +194,7 @@ public final class Integers
 	public static int abs(int val)
 	{
 		return Math.abs(val);
-	}	
+	}
 	
 	
 	// Parsing
@@ -252,7 +256,20 @@ public final class Integers
 	// Rounding
 	
 	/**
-	 * Returns the integer closest to a value.
+	 * Clamps a value between a minimum and a maximum.
+	 * 
+	 * @param val  a value to clamp
+	 * @param min  the value's minimum
+	 * @param max  the value's maximum
+	 * @return  a clamped value
+	 */
+	public static int clamp(int val, int min, int max)
+	{
+		return Math.max(min, Math.min(val, max));
+	}
+	
+	/**
+	 * Returns an integer rounded to the closest value.
 	 * 
 	 * @param val  a value to use
 	 * @return  a rounded value

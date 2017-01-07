@@ -112,19 +112,6 @@ public final class Floats
 	// Extremes
 	
 	/**
-	 * Clamps a value between a minimum and a maximum.
-	 * 
-	 * @param val  a value to clamp
-	 * @param min  the value's minimum
-	 * @param max  the value's maximum
-	 * @return  a clamped value
-	 */
-	public static float clamp(float val, float min, float max)
-	{
-		return Math.max(min, Math.min(val, max));
-	}
-
-	/**
 	 * Returns the absolute of a list of values.
 	 * 
 	 * @param vals  a list of values
@@ -383,6 +370,19 @@ public final class Floats
 		return Integers.abs(bit1 - bit2) <= ulps;
 	}
 
+	/**
+	 * Clamps a value between a minimum and a maximum.
+	 * 
+	 * @param val  a value to clamp
+	 * @param min  the value's minimum
+	 * @param max  the value's maximum
+	 * @return  a clamped value
+	 */
+	public static float clamp(float val, float min, float max)
+	{
+		return max(min, min(val, max));
+	}
+	
 	/**
 	 * Checks if a value is equal to zero to some significance.
 	 * 
