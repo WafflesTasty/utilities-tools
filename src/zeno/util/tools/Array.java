@@ -1186,6 +1186,98 @@ public final class Array
 	}
 	
 	/**
+	 * The {@code fill} class fills an array with a value.
+	 * 
+	 * @since Dec 5, 2016
+	 * @author Zeno
+	 */
+	public static final class fill
+	{
+		/**
+		 * Fills the contents of an {@code Array}.
+		 * 
+		 * @param array  an array to fill
+		 * @param val  a value to fill
+		 */
+		public static void in(int[] array, int val)
+		{
+			Arrays.fill(array, val);
+		}
+		
+		/**
+		 * Fills the contents of an {@code Array}.
+		 * 
+		 * @param array  an array to fill
+		 * @param val  a value to fill
+		 */
+		public static void of(char[] array, char val)
+		{
+			Arrays.fill(array, val);
+		}
+		
+		/**
+		 * Fills the contents of an {@code Array}.
+		 * 
+		 * @param array  an array to fill
+		 * @param val  a value to fill
+		 */
+		public static void of(long[] array, long val)
+		{
+			Arrays.fill(array, val);
+		}
+		
+		/**
+		 * Fills the contents of an {@code Array}.
+		 * 
+		 * @param array  an array to fill
+		 * @param val  a value to fill
+		 */
+		public static void of(float[] array, float val)
+		{
+			Arrays.fill(array, val);
+		}
+		
+		/**
+		 * Fills the contents of an {@code Array}.
+		 * 
+		 * @param array  an array to fill
+		 * @param val  a value to fill
+		 */
+		public static void of(double[] array, double val)
+		{
+			Arrays.fill(array, val);
+		}
+		
+		/**
+		 * Fills the contents of an {@code Array}.
+		 * 
+		 * @param array  an array to fill
+		 * @param val  a value to fill
+		 */
+		public static void of(short[] array, short val)
+		{
+			Arrays.fill(array, val);
+		}
+				
+		/**
+		 * Fills the contents of an {@code Array}.
+		 * 
+		 * @param array  an array to fill
+		 * @param val  a value to fill
+		 */
+		public static <O> void of(O[] array, O val)
+		{
+			Arrays.fill(array, val);
+		}
+		
+		
+		private fill()
+		{
+			// NOT APPLICABLE
+		}
+	}
+	
+	/**
 	 * The {@code hash} class creates an array hash code.
 	 * 
 	 * @since Dec 5, 2016
