@@ -20,24 +20,41 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 	 * 
 	 * @return  the node's children
 	 */
-	public abstract INode[] getChildren();
+	public abstract INode[] Children();
 	
 	/**
 	 * Returns the parent of the {@code INode}.
 	 * 
 	 * @return  the node's parent
 	 */
-	public abstract <N extends INode> N getParent();
+	public abstract <N extends INode> N Parent();
 		
+	
+	/**
+	 * Returns the root node of the {@code INode}.
+	 * 
+	 * @return  the root node
+	 */
+	public default <N extends INode> N Root()
+	{
+		INode parent = Parent();
+		if(parent != null)
+		{
+			return parent.Root();
+		}
+		
+		return (N) this;
+	}
+	
 	/**
 	 * Returns a single child of the {@code INode}.
 	 * 
 	 * @param i  the child's node index
 	 * @return  a child node
 	 */
-	public default <N extends INode> N getChild(int i)
+	public default <N extends INode> N Child(int i)
 	{
-		INode[] children = getChildren();
+		INode[] children = Children();
 		if(children != null 
 		&& children.length > i)
 		{
@@ -46,23 +63,7 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 		
 		return null;
 	}
-		
-	/**
-	 * Returns the root node of the {@code INode}.
-	 * 
-	 * @return  the root node
-	 */
-	public default <N extends INode> N getRoot()
-	{
-		INode parent = getParent();
-		if(parent != null)
-		{
-			return parent.getRoot();
-		}
-		
-		return (N) this;
-	}
-	
+			
 	/**
 	 * Checks if this node is a child of another node.
 	 * 
@@ -76,7 +77,7 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 			return true;
 		}
 		
-		INode parent = getParent();
+		INode parent = Parent();
 		if(parent == null)
 		{
 			return false;
@@ -94,7 +95,7 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 	@Override
 	public default Iterator<INode> iterator()
 	{
-		INode[] children = getChildren();
+		INode[] children = Children();
 		return new Iterator<INode>()
 		{
 			private int index;
@@ -114,21 +115,25 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 		};
 	}
 
+				
+	/**
+	 * Checks whether this {@code INode} is a leaf node.
+	 * 
+	 * @return  {@code true} if the node is a leaf
+	 */
+	public default boolean isLeaf()
+	{
+		return ChildCount() == 0;
+	}
 	
 	/**
-	 * Returns the node depth of the {@code INode}.
+	 * Checks whether this {@code INode} is a root node.
 	 * 
-	 * @return  the node's node depth
+	 * @return  {@code true} if the node is a root
 	 */
-	public default int getNodeDepth()
+	public default boolean isRoot()
 	{
-		INode parent = getParent();
-		if(parent != null)
-		{
-			return parent.getNodeDepth() + 1;
-		}
-		
-		return 0;
+		return Parent() == null;
 	}
 	
 	/**
@@ -136,11 +141,11 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 	 * 
 	 * @return  the node's child count
 	 */
-	public default int getNodeCount()
+	public default int ChildCount()
 	{
 		int count = 0;
 		
-		INode[] children = getChildren();
+		INode[] children = Children();
 		if(children != null)
 		{
 			for(INode child : this)
@@ -154,37 +159,33 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 		
 		return count;
 	}
-		
-	/**
-	 * Checks whether this node is a leaf node.
-	 * 
-	 * @return  {@code true} if the node is a leaf
-	 */
-	public default boolean isLeaf()
-	{
-		return getNodeCount() == 0;
-	}
 	
 	/**
-	 * Checks whether this node is a root node.
+	 * Returns the node depth of the {@code INode}.
 	 * 
-	 * @return  {@code true} if the node is a root
+	 * @return  the node's node depth
 	 */
-	public default boolean isRoot()
+	public default int NodeDepth()
 	{
-		return getParent() == null;
-	}
+		INode parent = Parent();
+		if(parent != null)
+		{
+			return parent.NodeDepth() + 1;
+		}
 		
+		return 0;
+	}
+	
 	/**
 	 * Returns the index of the {@code INode}.
 	 * 
 	 * @return  the node's index
 	 */
-	public default int getIndex()
+	public default int Index()
 	{
 		int index = 0;
 		// Assumes the iterator starts at zero.
-		for(INode child : getParent())
+		for(INode child : Parent())
 		{
 			if(child == this)
 				return index;

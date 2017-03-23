@@ -111,13 +111,13 @@ public class Node implements INode
 		
 	
 	@Override
-	public <N extends INode> N getParent()
+	public <N extends INode> N Parent()
 	{
 		return (N) parent;
 	}
 	
 	@Override
-	public Node[] getChildren()
+	public Node[] Children()
 	{
 		return children;
 	}
