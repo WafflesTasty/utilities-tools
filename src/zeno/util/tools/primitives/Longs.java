@@ -32,7 +32,19 @@ public final class Longs
 	// Bitcodes
 	
 	/**
-	 * Reverses the bits of a value.
+	 * Returns a single bit in a value.
+	 * 
+	 * @param val  a value to use
+	 * @param pos  the bit position
+	 * @return  a single bit
+	 */
+	public static long bitAt(long val, int pos)
+	{
+		return ((val >> pos) & 1);
+	}
+	
+	/**
+	 * Returns the reverse bits of a value.
 	 * 
 	 * @param val  a value to use
 	 * @return  the reversed value
