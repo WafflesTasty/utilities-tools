@@ -44,7 +44,7 @@ public class Node implements INode
 	}
 	
 	/**
-	 * Removes a child from the {@code Node}.
+	 * Removes a child in the {@code Node}.
 	 * 
 	 * @param child  a child to remove
 	 */
@@ -66,7 +66,7 @@ public class Node implements INode
 	}
 	
 	/**
-	 * Changes a child of the {@code Node}.
+	 * Changes a child in the {@code Node}.
 	 * 
 	 * @param i  the child's index
 	 * @param child  a new child
@@ -109,13 +109,7 @@ public class Node implements INode
 		children = null;
 	}
 		
-	
-	@Override
-	public <N extends INode> N Parent()
-	{
-		return (N) parent;
-	}
-	
+		
 	@Override
 	public Node[] Children()
 	{
@@ -126,6 +120,12 @@ public class Node implements INode
 	public Node instance()
 	{
 		return new Node();
+	}
+	
+	@Override
+	public Node Parent()
+	{
+		return parent;
 	}
 	
 	@Override

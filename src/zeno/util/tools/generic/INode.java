@@ -16,54 +16,20 @@ import zeno.util.tools.generic.properties.Copyable;
 public interface INode extends Copyable<INode>, Iterable<INode>
 {
 	/**
+	 * Returns the parent of the {@code INode}.
+	 * 
+	 * @return  the node's parent
+	 */
+	public abstract INode Parent();
+	
+	/**
 	 * Returns the children of the {@code INode}.
 	 * 
 	 * @return  the node's children
 	 */
 	public abstract INode[] Children();
-	
-	/**
-	 * Returns the parent of the {@code INode}.
-	 * 
-	 * @return  the node's parent
-	 */
-	public abstract <N extends INode> N Parent();
-		
-	
-	/**
-	 * Returns the root node of the {@code INode}.
-	 * 
-	 * @return  the root node
-	 */
-	public default <N extends INode> N Root()
-	{
-		INode parent = Parent();
-		if(parent != null)
-		{
-			return parent.Root();
-		}
-		
-		return (N) this;
-	}
-	
-	/**
-	 * Returns a single child of the {@code INode}.
-	 * 
-	 * @param i  the child's node index
-	 * @return  a child node
-	 */
-	public default <N extends INode> N Child(int i)
-	{
-		INode[] children = Children();
-		if(children != null 
-		&& children.length > i)
-		{
-			return (N) children[i];
-		}
-		
-		return null;
-	}
 			
+					
 	/**
 	 * Checks if this node is a child of another node.
 	 * 
@@ -95,7 +61,6 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 	@Override
 	public default Iterator<INode> iterator()
 	{
-		INode[] children = Children();
 		return new Iterator<INode>()
 		{
 			private int index;
@@ -103,18 +68,52 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 			@Override
 			public boolean hasNext()
 			{
-				return children != null 
-					&& children.length > index;
+				return Children() != null 
+					&& Children().length > index;
 			}
 			
 			@Override
 			public INode next()
 			{
-				return children[index++];
+				return Children()[index++];
 			}
 		};
 	}
 
+	/**
+	 * Returns a single child of the {@code INode}.
+	 * 
+	 * @param i  the child's node index
+	 * @return  a child node
+	 */
+	public default INode Child(int i)
+	{
+		INode[] children = Children();
+		if(children != null 
+		&& children.length > i)
+		{
+			return children[i];
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * Returns the root node of the {@code INode}.
+	 * 
+	 * @return  the root node
+	 */
+	public default INode Root()
+	{
+		INode parent = Parent();
+		if(parent != null)
+		{
+			return parent.Root();
+		}
+		
+		return this;
+	}
+	
 				
 	/**
 	 * Checks whether this {@code INode} is a leaf node.

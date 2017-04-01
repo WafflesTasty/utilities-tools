@@ -11,7 +11,7 @@ import java.util.Arrays;
 public final class Array
 {	
 	/**
-	 * The {@code instance} class creates new array isntances.
+	 * The {@code instance} class creates new array instances.
 	 * 
 	 * @since Dec 8, 2016
 	 * @author Zeno
