@@ -11,16 +11,16 @@ package zeno.util.tools.generic.properties;
 public interface Copyable<O>
 {
 	/**
-	 * Creates a new instance of this class.
+	 * Creates a new instance of the {@code Copyable}.
 	 * 
-	 * @return  a new instance
+	 * @return  a new object instance
 	 */
 	public abstract O instance();
 	
 	/**
-	 * Copies the object.
+	 * Creates a copy of the {@code Copyable}.
 	 * 
-	 * @return  a copy
+	 * @return  a new object copy
 	 */
 	public default O copy()
 	{
