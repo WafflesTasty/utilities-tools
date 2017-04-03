@@ -1,7 +1,5 @@
 package zeno.util.tools.generic;
 
-import java.util.Iterator;
-
 import zeno.util.tools.generic.properties.Copyable;
 
 /**
@@ -13,22 +11,22 @@ import zeno.util.tools.generic.properties.Copyable;
  * @see Copyable
  * @see Iterable
  */
-public interface INode extends Copyable<INode>, Iterable<INode>
-{
-	/**
-	 * Returns the parent of the {@code INode}.
-	 * 
-	 * @return  the node's parent
-	 */
-	public abstract INode Parent();
-	
+public interface INode extends Copyable<INode>
+{	
 	/**
 	 * Returns the children of the {@code INode}.
 	 * 
 	 * @return  the node's children
 	 */
 	public abstract INode[] Children();
-			
+
+	/**
+	 * Returns the parent of the {@code INode}.
+	 * 
+	 * @return  the node's parent
+	 */
+	public abstract <N extends INode> N Parent();
+	
 					
 	/**
 	 * Checks if this node is a child of another node.
@@ -52,34 +50,6 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 		return parent.isChildOf(node);
 	}
 	
-	/**
-	 * Iterates over the children of the {@code INode}.
-	 * 
-	 * @return  a node iterator
-	 * @see Iterator
-	 */
-	@Override
-	public default Iterator<INode> iterator()
-	{
-		return new Iterator<INode>()
-		{
-			private int index;
-			
-			@Override
-			public boolean hasNext()
-			{
-				return Children() != null 
-					&& Children().length > index;
-			}
-			
-			@Override
-			public INode next()
-			{
-				return Children()[index++];
-			}
-		};
-	}
-
 	/**
 	 * Returns a single child of the {@code INode}.
 	 * 
@@ -147,7 +117,7 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 		INode[] children = Children();
 		if(children != null)
 		{
-			for(INode child : this)
+			for(INode child : Children())
 			{
 				if(child != null)
 				{
@@ -184,7 +154,7 @@ public interface INode extends Copyable<INode>, Iterable<INode>
 	{
 		int index = 0;
 		// Assumes the iterator starts at zero.
-		for(INode child : Parent())
+		for(INode child : Parent().Children())
 		{
 			if(child == this)
 				return index;
