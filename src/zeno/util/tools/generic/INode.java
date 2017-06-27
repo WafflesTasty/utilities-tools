@@ -1,6 +1,7 @@
 package zeno.util.tools.generic;
 
 import zeno.util.tools.generic.properties.Copyable;
+import zeno.util.tools.primitives.Integers;
 
 /**
  * The {@code INode} interface defines objects with a parent-child relationship.
@@ -83,6 +84,7 @@ public interface INode extends Copyable<INode>
 		
 		return this;
 	}
+
 	
 				
 	/**
@@ -103,6 +105,27 @@ public interface INode extends Copyable<INode>
 	public default boolean isRoot()
 	{
 		return Parent() == null;
+	}
+	
+	/**
+	 * Checks whether this {@code INode} is empty.
+	 * 
+	 * @return  {@code true} if empty
+	 */
+	public default boolean isEmpty()
+	{
+		if(Children() != null)
+		{
+			for(INode child : Children())
+			{
+				if(!child.isEmpty())
+				{
+					return false;
+				}
+			}
+		}
+		
+		return true;
 	}
 	
 	/**
@@ -127,6 +150,27 @@ public interface INode extends Copyable<INode>
 		}
 		
 		return count;
+	}
+
+	/**
+	 * Returns the node height of the {@code INode}.
+	 * 
+	 * @return  the node's height
+	 */
+	public default int NodeHeight()
+	{
+		if(!isLeaf())
+		{
+			int max = 0;
+			for(INode child : Children())
+			{
+				max = Integers.max(max, child.NodeHeight());
+			}
+			
+			return 1 + max;
+		}
+		
+		return 0;
 	}
 	
 	/**

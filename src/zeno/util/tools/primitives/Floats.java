@@ -515,7 +515,7 @@ public final class Floats
 	
 	/**
 	 * Returns a normalized value of an angle in radians.
-	 * </br> The result is in the range of [-PI, PI].
+	 * </br> The result is in the range of [-PI, PI).
 	 * 
 	 * @param theta  an angle in radians
 	 * @return  a normalized angle
@@ -524,9 +524,10 @@ public final class Floats
 	{
 		float circle = 2 * PI;
 		float norm = theta % circle;
-		if(norm > PI) norm -= circle;
-		if(norm < PI) norm += circle;
-		
+
+		if(norm >= PI) norm -= circle;
+		if(norm < -PI) norm += circle;
+
 		return norm;
 	}
 		
