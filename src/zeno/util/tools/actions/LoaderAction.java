@@ -1,5 +1,7 @@
 package zeno.util.tools.actions;
 
+import java.util.function.Consumer;
+
 import zeno.util.tools.Messenger;
 import zeno.util.tools.generic.manipulators.Executable;
 
@@ -10,10 +12,10 @@ import zeno.util.tools.generic.manipulators.Executable;
  * @since Nov 29, 2014
  * @author Zeno
  * 
- * @see Messenger
  * @see Executable
+ * @see Messenger
  */
-public class LoaderAction extends Messenger implements Executable
+public class LoaderAction implements Executable, Messenger
 {
 	private enum State
 	{
@@ -26,6 +28,8 @@ public class LoaderAction extends Messenger implements Executable
 	
 	private State state;
 	private Thread loader;
+	
+	private Consumer<String> output;
 	
 	/**
 	 * Creates a new {@code LoaderAction}.
@@ -68,13 +72,31 @@ public class LoaderAction extends Messenger implements Executable
 	}
 	
 	/**
+	 * Changes the output of the {@code LoaderAction}.
+	 * 
+	 * @param output  a new output
+	 * @see Consumer
+	 * @see String
+	 */
+	public void setOutput(Consumer<String> output)
+	{
+		this.output = output;
+	}
+	
+	/**
 	 * An event raised when the task is finished.
 	 */
 	public void onFinished()
 	{
 		// NOT APPLICABLE
 	}
-		
+
+	
+	@Override
+	public Consumer<String> Output()
+	{
+		return output;
+	}
 	
 	@Override
 	public void execute()
@@ -107,4 +129,5 @@ public class LoaderAction extends Messenger implements Executable
 			break;
 		}
 	}
+
 }
