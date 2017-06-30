@@ -108,7 +108,7 @@ public interface INode extends Copyable<INode>
 	}
 	
 	/**
-	 * Checks whether this {@code INode} is empty.
+	 * Checks whether this {@code INode} has data.
 	 * 
 	 * @return  {@code true} if empty
 	 */
@@ -130,6 +130,7 @@ public interface INode extends Copyable<INode>
 	
 	/**
 	 * Returns the child count of the {@code INode}.
+	 * <br> This only counts direct descendants of this node.
 	 * 
 	 * @return  the node's child count
 	 */
@@ -151,9 +152,10 @@ public interface INode extends Copyable<INode>
 		
 		return count;
 	}
-
+	
 	/**
 	 * Returns the node height of the {@code INode}.
+	 * <br> This indicates the relative depth of the deepest child node.
 	 * 
 	 * @return  the node's height
 	 */
@@ -174,9 +176,35 @@ public interface INode extends Copyable<INode>
 	}
 	
 	/**
-	 * Returns the node depth of the {@code INode}.
+	 * Returns the node count of the {@code INode}.
+	 * <br> This indicates the amount of nodes under this node plus one.
 	 * 
-	 * @return  the node's node depth
+	 * @return  the node's count
+	 */
+	public default int NodeCount()
+	{
+		int count = 1;
+		
+		INode[] children = Children();
+		if(children != null)
+		{
+			for(INode child : Children())
+			{
+				if(child != null)
+				{
+					count += child.NodeCount();
+				}
+			}
+		}
+		
+		return count;
+	}
+	
+	/**
+	 * Returns the node depth of the {@code INode}.
+	 * <br> This indicates the height of the highest parent node.
+	 * 
+	 * @return  the node's depth
 	 */
 	public default int NodeDepth()
 	{
