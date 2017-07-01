@@ -15,18 +15,18 @@ import zeno.util.tools.primitives.Integers;
 public interface INode extends Copyable<INode>
 {	
 	/**
+	 * Returns the parent of the {@code INode}.
+	 * 
+	 * @return  the node's parent
+	 */
+	public abstract INode Parent();
+	
+	/**
 	 * Returns the children of the {@code INode}.
 	 * 
 	 * @return  the node's children
 	 */
 	public abstract INode[] Children();
-
-	/**
-	 * Returns the parent of the {@code INode}.
-	 * 
-	 * @return  the node's parent
-	 */
-	public abstract <N extends INode> N Parent();
 	
 					
 	/**
@@ -108,7 +108,7 @@ public interface INode extends Copyable<INode>
 	}
 	
 	/**
-	 * Checks whether this {@code INode} has data.
+	 * Checks whether this {@code INode} contains data.
 	 * 
 	 * @return  {@code true} if empty
 	 */
@@ -127,6 +127,7 @@ public interface INode extends Copyable<INode>
 		
 		return true;
 	}
+	
 	
 	/**
 	 * Returns the child count of the {@code INode}.
