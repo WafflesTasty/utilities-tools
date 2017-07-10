@@ -923,10 +923,10 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} from start to end.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param start  the start of the copy
 		 * @param end  the end of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static double[] of(double[] array, int start, int end)
 		{
@@ -936,9 +936,9 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} with a new size.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param size  the size of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static double[] of(double[] array, int size)
 		{
@@ -948,8 +948,8 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array}.
 		 * 
-		 * @param array  an array to reverse
-		 * @return  the reverse array
+		 * @param array  an array to copy
+		 * @return  the copied array
 		 */
 		public static double[] of(double[] array)
 		{
@@ -960,10 +960,10 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} from start to end.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param start  the start of the copy
 		 * @param end  the end of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static float[] of(float[] array, int start, int end)
 		{
@@ -973,9 +973,9 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} with a new size.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param size  the size of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static float[] of(float[] array, int size)
 		{
@@ -985,8 +985,8 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array}.
 		 * 
-		 * @param array  an array to reverse
-		 * @return  the reverse array
+		 * @param array  an array to copy
+		 * @return  the copied array
 		 */
 		public static float[] of(float[] array)
 		{
@@ -997,10 +997,10 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} from start to end.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param start  the start of the copy
 		 * @param end  the end of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static short[] of(short[] array, int start, int end)
 		{
@@ -1010,9 +1010,9 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} with a new size.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param size  the size of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static short[] of(short[] array, int size)
 		{
@@ -1022,8 +1022,8 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array}.
 		 * 
-		 * @param array  an array to reverse
-		 * @return  the reverse array
+		 * @param array  an array to copy
+		 * @return  the copied array
 		 */
 		public static short[] of(short[] array)
 		{
@@ -1034,10 +1034,10 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} from start to end.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param start  the start of the copy
 		 * @param end  the end of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static char[] of(char[] array, int start, int end)
 		{
@@ -1047,9 +1047,9 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} with a new size.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param size  the size of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static char[] of(char[] array, int size)
 		{
@@ -1059,8 +1059,8 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array}.
 		 * 
-		 * @param array  an array to reverse
-		 * @return  the reverse array
+		 * @param array  an array to copy
+		 * @return  the copied array
 		 */
 		public static char[] of(char[] array)
 		{
@@ -1071,10 +1071,10 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} from start to end.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param start  the start of the copy
 		 * @param end  the end of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static long[] of(long[] array, int start, int end)
 		{
@@ -1084,9 +1084,9 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} with a new size.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param size  the size of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static long[] of(long[] array, int size)
 		{
@@ -1096,8 +1096,8 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array}.
 		 * 
-		 * @param array  an array to reverse
-		 * @return  the reverse array
+		 * @param array  an array to copy
+		 * @return  the copied array
 		 */
 		public static long[] of(long[] array)
 		{
@@ -1108,10 +1108,10 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} from start to end.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param start  the start of the copy
 		 * @param end  the end of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static int[] of(int[] array, int start, int end)
 		{
@@ -1121,9 +1121,9 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} with a new size.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param size  the size of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static int[] of(int[] array, int size)
 		{
@@ -1133,8 +1133,8 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array}.
 		 * 
-		 * @param array  an array to reverse
-		 * @return  the reverse array
+		 * @param array  an array to copy
+		 * @return  the copied array
 		 */
 		public static int[] of(int[] array)
 		{
@@ -1145,10 +1145,10 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} from start to end.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param start  the start of the copy
 		 * @param end  the end of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static <O> O[] of(O[] array, int start, int end)
 		{
@@ -1158,9 +1158,9 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array} with a new size.
 		 * 
-		 * @param array  an array to reverse
+		 * @param array  an array to copy
 		 * @param size  the size of the copy
-		 * @return  the reverse array
+		 * @return  the copied array
 		 */
 		public static <O> O[] of(O[] array, int size)
 		{
@@ -1170,8 +1170,8 @@ public final class Array
 		/**
 		 * Returns a copy of an {@code Array}.
 		 * 
-		 * @param array  an array to reverse
-		 * @return  the reverse array
+		 * @param array  an array to copy
+		 * @return  the copied array
 		 */
 		public static <O> O[] of(O[] array)
 		{
@@ -1680,13 +1680,13 @@ public final class Array
 		 */
 		public static double of(double... array)
 		{
-			double prod = 1;
+			double sum = 0;
 			for(double val : array)
 			{
-				prod += val;
+				sum += val;
 			}
 			
-			return prod;
+			return sum;
 		}
 		
 		/**
@@ -1697,13 +1697,13 @@ public final class Array
 		 */
 		public static float of(float... array)
 		{
-			float prod = 1;
+			float sum = 0;
 			for(float val : array)
 			{
-				prod += val;
+				sum += val;
 			}
 			
-			return prod;
+			return sum;
 		}
 		
 		/**
@@ -1714,13 +1714,13 @@ public final class Array
 		 */
 		public static short of(short... array)
 		{
-			short prod = 1;
+			short sum = 0;
 			for(short val : array)
 			{
-				prod += val;
+				sum += val;
 			}
 			
-			return prod;
+			return sum;
 		}
 		
 		/**
@@ -1731,13 +1731,13 @@ public final class Array
 		 */
 		public static long of(long... array)
 		{
-			long prod = 1;
+			long sum = 0;
 			for(long val : array)
 			{
-				prod += val;
+				sum += val;
 			}
 			
-			return prod;
+			return sum;
 		}
 		
 		/**
@@ -1748,13 +1748,13 @@ public final class Array
 		 */
 		public static int of(int... array)
 		{
-			int prod = 1;
+			int sum = 0;
 			for(int val : array)
 			{
-				prod += val;
+				sum += val;
 			}
 			
-			return prod;
+			return sum;
 		}
 		
 		
