@@ -1556,14 +1556,19 @@ public final class Array
 		 * Returns an {@code Array} appended with an object.
 		 * 
 		 * @param array  an array to append
-		 * @param o  an object to append
+		 * @param o  the objects to append
 		 * @return  an appended array
 		 */
-		public static int[] to(int[] array, int o)
+		public static int[] to(int[] array, int... o)
 		{
-			int length = array.length + 1;
-			int[] copy = Array.copy.of(array, length);
-			copy[length - 1] = o;
+			int oLen = array.length;
+			int nLen = array.length + o.length;
+			int[] copy = Array.copy.of(array, nLen);
+			for(int i = oLen; i < nLen; i++)
+			{
+				copy[i] = o[i - oLen];
+			}
+
 			return copy;
 		}
 		
@@ -1571,14 +1576,19 @@ public final class Array
 		 * Returns an {@code Array} appended with an object.
 		 * 
 		 * @param array  an array to append
-		 * @param o  an object to append
+		 * @param o  the objects to append
 		 * @return  an appended array
 		 */
-		public static char[] to(char[] array, char o)
+		public static char[] to(char[] array, char... o)
 		{
-			int length = array.length + 1;
-			char[] copy = Array.copy.of(array, length);
-			copy[length - 1] = o;
+			int oLen = array.length;
+			int nLen = array.length + o.length;
+			char[] copy = Array.copy.of(array, nLen);
+			for(int i = oLen; i < nLen; i++)
+			{
+				copy[i] = o[i - oLen];
+			}
+
 			return copy;
 		}
 		
@@ -1586,14 +1596,19 @@ public final class Array
 		 * Returns an {@code Array} appended with an object.
 		 * 
 		 * @param array  an array to append
-		 * @param o  an object to append
+		 * @param o  the objects to append
 		 * @return  an appended array
 		 */
-		public static long[] to(long[] array, long o)
+		public static long[] to(long[] array, long... o)
 		{
-			int length = array.length + 1;
-			long[] copy = Array.copy.of(array, length);
-			copy[length - 1] = o;
+			int oLen = array.length;
+			int nLen = array.length + o.length;
+			long[] copy = Array.copy.of(array, nLen);
+			for(int i = oLen; i < nLen; i++)
+			{
+				copy[i] = o[i - oLen];
+			}
+
 			return copy;
 		}
 		
@@ -1601,14 +1616,19 @@ public final class Array
 		 * Returns an {@code Array} appended with an object.
 		 * 
 		 * @param array  an array to append
-		 * @param o  an object to append
+		 * @param o  the objects to append
 		 * @return  an appended array
 		 */
-		public static float[] to(float[] array, float o)
+		public static float[] to(float[] array, float... o)
 		{
-			int length = array.length + 1;
-			float[] copy = Array.copy.of(array, length);
-			copy[length - 1] = o;
+			int oLen = array.length;
+			int nLen = array.length + o.length;
+			float[] copy = Array.copy.of(array, nLen);
+			for(int i = oLen; i < nLen; i++)
+			{
+				copy[i] = o[i - oLen];
+			}
+
 			return copy;
 		}
 		
@@ -1616,14 +1636,19 @@ public final class Array
 		 * Returns an {@code Array} appended with an object.
 		 * 
 		 * @param array  an array to append
-		 * @param o  an object to append
+		 * @param o  the objects to append
 		 * @return  an appended array
 		 */
-		public static double[] to(double[] array, double o)
+		public static double[] to(double[] array, double... o)
 		{
-			int length = array.length + 1;
-			double[] copy = Array.copy.of(array, length);
-			copy[length - 1] = o;
+			int oLen = array.length;
+			int nLen = array.length + o.length;
+			double[] copy = Array.copy.of(array, nLen);
+			for(int i = oLen; i < nLen; i++)
+			{
+				copy[i] = o[i - oLen];
+			}
+
 			return copy;
 		}
 		
@@ -1631,14 +1656,19 @@ public final class Array
 		 * Returns an {@code Array} appended with an object.
 		 * 
 		 * @param array  an array to append
-		 * @param o  an object to append
+		 * @param o  the objects to append
 		 * @return  an appended array
 		 */
-		public static short[] to(short[] array, short o)
+		public static short[] to(short[] array, short... o)
 		{
-			int length = array.length + 1;
-			short[] copy = Array.copy.of(array, length);
-			copy[length - 1] = o;
+			int oLen = array.length;
+			int nLen = array.length + o.length;
+			short[] copy = Array.copy.of(array, nLen);
+			for(int i = oLen; i < nLen; i++)
+			{
+				copy[i] = o[i - oLen];
+			}
+
 			return copy;
 		}
 				
@@ -1646,14 +1676,19 @@ public final class Array
 		 * Returns an {@code Array} appended with an object.
 		 * 
 		 * @param array  an array to append
-		 * @param o  an object to append
+		 * @param o  the objects to append
 		 * @return  an appended array
 		 */
-		public static <O> O[] to(O[] array, O o)
+		public static <O> O[] to(O[] array, O... o)
 		{
-			int length = array.length + 1;
-			O[] copy = Array.copy.of(array, length);
-			copy[length - 1] = o;
+			int oLen = array.length;
+			int nLen = array.length + o.length;
+			O[] copy = Array.copy.of(array, nLen);
+			for(int i = oLen; i < nLen; i++)
+			{
+				copy[i] = o[i - oLen];
+			}
+
 			return copy;
 		}
 
