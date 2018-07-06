@@ -50,23 +50,28 @@ public final class Doubles
 	 */
 	public static final int BIT_SIZE = Double.SIZE;
 	
+	
 	/**
-	 * Defines pi constant in double precision.
+	 * Defines the golden ration in floating point precision.
 	 */
-	public static final double PI = Math.PI;
+	public static final double GOLD_RATIO = (1 + sqrt(5)) / 2;
 	/**
-	 * Defines euler's constant in double precision.
+	 * Defines the machine epsilon in double precision.
 	 */
-	public static final double EULER = Math.E;
+	public static final double EPSILON = Doubles.pow(2, -53);
 	/**
 	 * Defines an undefined number in double precision.
 	 */
 	public static final double NaN = Double.NaN;
 	/**
-	 * Defines the double machine epsilon.
+	 * Defines euler's constant in double precision.
 	 */
-	public static final double EPSILON = 2e-53;
-
+	public static final double EULER = Math.E;
+	/**
+	 * Defines pi constant in double precision.
+	 */
+	public static final double PI = Math.PI;
+	
 	
 	
 	// Exponential

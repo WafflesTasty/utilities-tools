@@ -50,10 +50,15 @@ public final class Floats
 	 */
 	public static final int BIT_SIZE = Float.SIZE;
 	
+	
 	/**
-	 * Defines an undefined number in floating point precision.
+	 * Defines the golden ration in floating point precision.
 	 */
-	public static final float NaN = Float.NaN;
+	public static final float GOLD_RATIO = (1 + sqrt(5)) / 2;
+	/**
+	 * Defines the machine epsilon in floating point precision.
+	 */
+	public static final float EPSILON = Floats.pow(2, -24);
 	/**
 	 * Defines euler's constant in floating point precision.
 	 */
@@ -63,9 +68,9 @@ public final class Floats
 	 */
 	public static final float PI = (float) Math.PI;
 	/**
-	 * Defines the floating point machine epsilon.
+	 * Defines nan in floating point precision.
 	 */
-	public static final float EPSILON = 2e-24f;
+	public static final float NaN = Float.NaN;
 	
 	
 	// Exponential

@@ -1198,10 +1198,12 @@ public final class Array
 		 * 
 		 * @param array  an array to fill
 		 * @param val  a value to fill
+		 * @return  the filled array
 		 */
-		public static void in(int[] array, int val)
+		public static int[] in(int[] array, int val)
 		{
 			Arrays.fill(array, val);
+			return array;
 		}
 		
 		/**
@@ -1209,10 +1211,12 @@ public final class Array
 		 * 
 		 * @param array  an array to fill
 		 * @param val  a value to fill
+		 * @return  the filled array
 		 */
-		public static void of(char[] array, char val)
+		public static char[] in(char[] array, char val)
 		{
 			Arrays.fill(array, val);
+			return array;
 		}
 		
 		/**
@@ -1220,10 +1224,12 @@ public final class Array
 		 * 
 		 * @param array  an array to fill
 		 * @param val  a value to fill
+		 * @return  the filled array
 		 */
-		public static void of(long[] array, long val)
+		public static long[] in(long[] array, long val)
 		{
 			Arrays.fill(array, val);
+			return array;
 		}
 		
 		/**
@@ -1231,10 +1237,12 @@ public final class Array
 		 * 
 		 * @param array  an array to fill
 		 * @param val  a value to fill
+		 * @return  the filled array
 		 */
-		public static void of(float[] array, float val)
+		public static float[] in(float[] array, float val)
 		{
 			Arrays.fill(array, val);
+			return array;
 		}
 		
 		/**
@@ -1242,10 +1250,12 @@ public final class Array
 		 * 
 		 * @param array  an array to fill
 		 * @param val  a value to fill
+		 * @return  the filled array
 		 */
-		public static void of(double[] array, double val)
+		public static double[] in(double[] array, double val)
 		{
 			Arrays.fill(array, val);
+			return array;
 		}
 		
 		/**
@@ -1253,10 +1263,12 @@ public final class Array
 		 * 
 		 * @param array  an array to fill
 		 * @param val  a value to fill
+		 * @return  the filled array
 		 */
-		public static void of(short[] array, short val)
+		public static short[] in(short[] array, short val)
 		{
 			Arrays.fill(array, val);
+			return array;
 		}
 				
 		/**
@@ -1264,10 +1276,12 @@ public final class Array
 		 * 
 		 * @param array  an array to fill
 		 * @param val  a value to fill
+		 * @return  the filled array
 		 */
-		public static <O> void of(O[] array, O val)
+		public static <O> O[] in(O[] array, O val)
 		{
 			Arrays.fill(array, val);
+			return array;
 		}
 		
 		
