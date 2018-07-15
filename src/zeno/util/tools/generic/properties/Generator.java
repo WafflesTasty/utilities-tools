@@ -3,13 +3,15 @@ package zeno.util.tools.generic.properties;
 /**
  * The {@code Generator} interface defines an object capable of generating specific objects.
  * 
- * @param <O> the type of objects to generate
- * 
- * @since Oct 16, 2104
  * @author Zeno
+ * @since Oct 16, 2104
+ * @version 1.0
+ * 
+ * 
+ * @param <O> the type of objects to generate
  */
 @FunctionalInterface
-public interface Generator<O extends Object>
+public interface Generator<O>
 {	
 	/**
 	 * Generates an object from the generator.

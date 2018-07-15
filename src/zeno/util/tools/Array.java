@@ -5,16 +5,18 @@ import java.util.Arrays;
 /**
  * The {@code Array} class defines utility methods for {@code Arrays}.
  *
- * @since May 5, 2016
  * @author Zeno
+ * @since May 5, 2016
+ * @version 1.0
  */
 public final class Array
 {	
 	/**
 	 * The {@code instance} class creates new array instances.
 	 * 
-	 * @since Dec 8, 2016
 	 * @author Zeno
+	 * @since Dec 8, 2016
+	 * @version 1.0
 	 */
 	public static final class instance
 	{
@@ -46,8 +48,9 @@ public final class Array
 	/**
 	 * The {@code reverse} class reverses the contents of arrays.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class reverse
 	{
@@ -194,8 +197,9 @@ public final class Array
 	/**
 	 * The {@code remove} class removes an object in an array.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class remove
 	{
@@ -405,8 +409,9 @@ public final class Array
 	/**
 	 * The {@code product} class calculates an array product.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class product
 	{
@@ -505,8 +510,9 @@ public final class Array
 	/**
 	 * The {@code equals} class compares contents of arrays.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class equals
 	{
@@ -592,8 +598,9 @@ public final class Array
 	/**
 	 * The {@code parse} class creates an array format string.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class parse
 	{
@@ -684,8 +691,9 @@ public final class Array
 	/**
 	 * The {@code cast} class creates primitive array wrappers.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class cast
 	{
@@ -694,6 +702,8 @@ public final class Array
 		 * 
 		 * @param array  a wrapper array
 		 * @return  a primitive array
+		 * 
+		 * 
 		 * @see Long
 		 */
 		public static long[] of(Long... array)
@@ -712,6 +722,8 @@ public final class Array
 		 * 
 		 * @param array  a wrapper array
 		 * @return  a primitive array
+		 * 
+		 * 
 		 * @see Float
 		 */
 		public static float[] of(Float... array)
@@ -730,6 +742,8 @@ public final class Array
 		 * 
 		 * @param array  a wrapper array
 		 * @return  a primitive array
+		 * 
+		 * 
 		 * @see Integer
 		 */
 		public static int[] of(Integer... array)
@@ -748,6 +762,8 @@ public final class Array
 		 * 
 		 * @param array  a wrapper array
 		 * @return  a primitive array
+		 * 
+		 * 
 		 * @see Short
 		 */
 		public static short[] of(Short... array)
@@ -766,6 +782,8 @@ public final class Array
 		 * 
 		 * @param array  a wrapper array
 		 * @return  a primitive array
+		 * 
+		 * 
 		 * @see Double
 		 */
 		public static double[] of(Double... array)
@@ -784,6 +802,8 @@ public final class Array
 		 * 
 		 * @param array  a wrapper array
 		 * @return  a primitive array
+		 * 
+		 * 
 		 * @see Character
 		 */
 		public static char[] of(Character... array)
@@ -802,6 +822,8 @@ public final class Array
 		 * 
 		 * @param array  a primitive array
 		 * @return  a wrapper array
+		 * 
+		 * 
 		 * @see Character
 		 */
 		public static Character[] of(char... array)
@@ -820,6 +842,8 @@ public final class Array
 		 * 
 		 * @param array  a primitive array
 		 * @return  a wrapper array
+		 * 
+		 * 
 		 * @see Double
 		 */
 		public static Double[] of(double... array)
@@ -838,6 +862,8 @@ public final class Array
 		 * 
 		 * @param array  a primitive array
 		 * @return  a wrapper array
+		 * 
+		 * 
 		 * @see Short
 		 */
 		public static Short[] of(short... array)
@@ -856,6 +882,8 @@ public final class Array
 		 * 
 		 * @param array  a primitive array
 		 * @return  a wrapper array
+		 * 
+		 * 
 		 * @see Integer
 		 */
 		public static Integer[] of(int... array)
@@ -874,6 +902,8 @@ public final class Array
 		 * 
 		 * @param array  a primitive array
 		 * @return  a wrapper array
+		 * 
+		 * 
 		 * @see Float
 		 */
 		public static Float[] of(float... array)
@@ -892,6 +922,8 @@ public final class Array
 		 * 
 		 * @param array  a primitive array
 		 * @return  a wrapper array
+		 * 
+		 * 
 		 * @see Long
 		 */
 		public static Long[] of(long... array)
@@ -915,8 +947,9 @@ public final class Array
 	/**
 	 * The {@code copy} class copies the contents of arrays.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class copy
 	{
@@ -1188,8 +1221,9 @@ public final class Array
 	/**
 	 * The {@code fill} class fills an array with a value.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class fill
 	{
@@ -1294,8 +1328,9 @@ public final class Array
 	/**
 	 * The {@code hash} class creates an array hash code.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class hash
 	{
@@ -1386,8 +1421,9 @@ public final class Array
 	/**
 	 * The {@code sort} class creates a sorted array.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class sort
 	{
@@ -1561,8 +1597,9 @@ public final class Array
 	/**
 	 * The {@code add} class appends an array object.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class add
 	{
@@ -1716,8 +1753,9 @@ public final class Array
 	/**
 	 * The {@code sum} class calculates an array sum.
 	 * 
-	 * @since Dec 5, 2016
 	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
 	 */
 	public static final class sum
 	{

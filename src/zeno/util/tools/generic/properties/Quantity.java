@@ -6,8 +6,9 @@ import java.math.RoundingMode;
 /**
  * The {@code Quantity} interface defines a value that can be expressed in units.
  * 
- * @since Oct 1, 2016
  * @author Zeno
+ * @since Oct 1, 2016
+ * @version 1.0
  */
 @FunctionalInterface
 public interface Quantity
@@ -15,8 +16,10 @@ public interface Quantity
 	/**
 	 * The {@code Unit} interface defines a unit of measurement.
 	 * 
-	 * @since Oct 1, 2016
 	 * @author Zeno
+	 * @since Oct 1, 2016
+	 * @version 1.0
+	 * 
 	 * 
 	 * @see Quantity
 	 */
@@ -164,7 +167,10 @@ public interface Quantity
 	 * @param qt  a quantity to use
 	 * @param units  a sequence of units
 	 * @return  a sequence of values
+	 * 
+	 * 
 	 * @see BigDecimal
+	 * @see Unit
 	 */
 	public static BigDecimal[] as(BigDecimal qt, Unit... units)
 	{
@@ -188,7 +194,10 @@ public interface Quantity
 	 * @param qt  a quantity to use
 	 * @param units  a sequence of units
 	 * @return  a sequence of values
+	 * 
+	 * 
 	 * @see BigDecimal
+	 * @see Unit
 	 */
 	public static BigDecimal[] as(double qt, Unit... units)
 	{
@@ -212,7 +221,10 @@ public interface Quantity
 	 * @param qt  a quantity to use
 	 * @param units  a sequence of units
 	 * @return  a sequence of values
+	 * 
+	 * 
 	 * @see BigDecimal
+	 * @see Unit
 	 */
 	public static BigDecimal[] as(long qt, Unit... units)
 	{
@@ -236,7 +248,10 @@ public interface Quantity
 	 * 
 	 * @param units  a sequence of units
 	 * @return  a sequence of values
+	 * 
+	 * 
 	 * @see BigDecimal
+	 * @see Unit
 	 */
 	public default BigDecimal[] as(Unit... units)
 	{
@@ -247,7 +262,9 @@ public interface Quantity
 	 * Returns the value of the {@code Quantity}.
 	 * 
 	 * @return  a total value
-	 * @see Long
+	 * 
+	 * 
+	 * @see BigDecimal
 	 */
 	public abstract BigDecimal value();
 }

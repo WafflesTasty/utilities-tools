@@ -3,8 +3,9 @@ package zeno.util.tools.primitives;
 /**
  * The {@code Integers} class defines basic operations for {@link Integer} values.
  * 
- * @since Jun 3, 2016
  * @author Zeno
+ * @since Jun 3, 2016
+ * @version 1.0
  */
 public final class Integers
 {
@@ -219,6 +220,8 @@ public final class Integers
 	 * @param val  a value to convert
 	 * @param rad  a base radix
 	 * @return  an integer string
+	 * 
+	 * 
 	 * @see String
 	 */
 	public static String toString(int val, int rad)
@@ -234,6 +237,8 @@ public final class Integers
 	 * @param text  a string to parse
 	 * @param rad  a base radix
 	 * @return  a parsed integer
+	 * 
+	 * 
 	 * @see String
 	 */
 	public static int parse(String text, int rad)
@@ -246,6 +251,8 @@ public final class Integers
 	 * 
 	 * @param text  a string to parse
 	 * @return  a parsed integer
+	 * 
+	 * 
 	 * @see String
 	 */
 	public static int parse(String text)

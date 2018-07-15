@@ -3,8 +3,9 @@ package zeno.util.tools.generic.manipulators;
 /**
  * The {@code Disposable} interface defines an object capable of being disposed.
  *
- * @since Apr 10, 2015
  * @author Zeno
+ * @since Apr 10, 2015
+ * @version 1.0
  */
 @FunctionalInterface
 public interface Disposable

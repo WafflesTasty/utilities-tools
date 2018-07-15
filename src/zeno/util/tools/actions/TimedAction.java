@@ -6,8 +6,10 @@ import zeno.util.tools.generic.manipulators.Executable;
  * The {@code TimedAction} class defines an action that executes on set intervals.
  * <br> To change the logic executed on every tick, override the {@link #onTick()} event.
  *
- * @since Dec 3, 2014
  * @author Zeno
+ * @since Dec 3, 2014
+ * @version 1.0
+ * 
  * 
  * @see Executable
  */

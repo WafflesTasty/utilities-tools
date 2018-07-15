@@ -3,8 +3,9 @@ package zeno.util.tools.primitives;
 /**
  * The {@code Shorts} class defines basic operations for {@link Short} values.
  * 
- * @since Jun 3, 2016
  * @author Zeno
+ * @since Jun 3, 2016
+ * @version 1.0
  */
 public final class Shorts
 {
@@ -41,6 +42,8 @@ public final class Shorts
 	 * @param text  a string to parse
 	 * @param rad  a base radix
 	 * @return  a parsed short
+	 * 
+	 * 
 	 * @see String
 	 */
 	public static short parse(String text, int rad)
@@ -53,6 +56,8 @@ public final class Shorts
 	 * 
 	 * @param text  a string to parse
 	 * @return  a parsed short
+	 * 
+	 * 
 	 * @see String
 	 */
 	public static short parse(String text)

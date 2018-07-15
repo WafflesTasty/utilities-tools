@@ -3,8 +3,9 @@ package zeno.util.tools.generic.manipulators;
 /**
  * The {@code Loadable} interface defines an object capable of loading its state.
  * 
- * @since Oct 16, 2014
  * @author Zeno
+ * @since Oct 16, 2014
+ * @version 1.0
  */
 @FunctionalInterface
 public interface Loadable

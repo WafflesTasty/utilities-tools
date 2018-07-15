@@ -9,6 +9,7 @@ package zeno.util.tools.patterns;
  * @since Jul 15, 2018
  * @version 1.0
  *
+ *
  * @param <O>  the type of the operable
  * @see Operation
  * @see Operator
@@ -23,6 +24,8 @@ public interface Operable<O extends Operable<O>>
 	 * @param type  an operator type
 	 * @param ulps  an approximate error margin
 	 * @return  {@code true} if the operator matches
+	 * 
+	 * 
 	 * @see Operator
 	 */
 	public default boolean is(Operator<O> type, int ulps)
@@ -42,6 +45,8 @@ public interface Operable<O extends Operable<O>>
 	 * 
 	 * @param type  an operator type
 	 * @return  {@code true} if the operator matches
+	 * 
+	 * 
 	 * @see Operator
 	 */
 	public default boolean is(Operator<O> type)
@@ -53,6 +58,8 @@ public interface Operable<O extends Operable<O>>
 	 * Returns the operator of the {@code Operable}.
 	 * 
 	 * @return  a target operator
+	 * 
+	 * 
 	 * @see Operator
 	 */
 	public abstract Operator<O> Operator();

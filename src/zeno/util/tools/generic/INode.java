@@ -6,11 +6,12 @@ import zeno.util.tools.primitives.Integers;
 /**
  * The {@code INode} interface defines objects with a parent-child relationship.
  *
- * @since Mar 5, 2016
  * @author Zeno
+ * @since Mar 5, 2016
+ * @version 1.0
+ * 
  * 
  * @see Copyable
- * @see Iterable
  */
 public interface INode extends Copyable<INode>
 {	

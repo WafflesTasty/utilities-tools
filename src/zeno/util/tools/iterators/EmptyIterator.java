@@ -5,11 +5,12 @@ import java.util.Iterator;
 /**
  * The {@code EmptyIterator} class terminates immediately.
  * 
- * @param <O>  an iterator object type
- * 
- * @since Nov 20, 2014
  * @author Zeno
+ * @since Nov 20, 2014
+ * @version 1.0
  * 
+ * 
+ * @param <O>  an iterator object type
  * @see Iterator
  */
 public class EmptyIterator<O> implements Iterator<O>

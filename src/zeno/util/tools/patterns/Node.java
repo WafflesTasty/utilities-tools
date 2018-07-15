@@ -5,9 +5,11 @@ import zeno.util.tools.generic.INode;
 
 /**
  * The {@code Node} class defines a basic {@code INode} implementation.
- *
- * @since Mar 5, 2016
+ * 
  * @author Zeno
+ * @since Mar 5, 2016
+ * @version 1.0
+ * 
  * 
  * @see INode
  */

@@ -2,9 +2,10 @@ package zeno.util.tools.primitives;
 
 /**
  * The {@code Floats} class defines basic operations for {@link Float} values.
- *
- * @since Dec 9, 2014
+ * 
  * @author Zeno
+ * @since Dec 9, 2014
+ * @version 1.0
  */
 public final class Floats
 {
@@ -254,6 +255,8 @@ public final class Floats
 	 * 
 	 * @param text  a string to parse
 	 * @return  a parsed float
+	 * 
+	 * 
 	 * @see String
 	 */
 	public static float parse(String text)
@@ -370,6 +373,8 @@ public final class Floats
 	 * @param val2  a second value to check
 	 * @param ulps  a maximum ulp error value
 	 * @return  {@code true} if the values are equal
+	 * 
+	 * 
 	 * @see <a href="http://www.cygnus-software.com/papers/comparingfloats/Comparing%20floating%20point%20numbers.htm">Cygnus Documentation</a>
 	 */
 	public static boolean isEqual(float val1, float val2, int ulps)

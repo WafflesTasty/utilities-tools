@@ -6,11 +6,12 @@ import java.util.Iterator;
 /**
  * The {@code ReverseIterator} class iterates over a {@code Collection} in reverse order.
  * 
- * @param <O>  an iterator object type
- * 
- * @since Nov 20, 2014
  * @author Zeno
+ * @since Nov 20, 2014
+ * @version 1.0
  * 
+ * 
+ * @param <O>  an iterator object type
  * @see Iterator
  */
 public class ReverseIterator<O> implements Iterator<O>
@@ -23,6 +24,8 @@ public class ReverseIterator<O> implements Iterator<O>
 	 * 
 	 * @param objects  a collection to iterate
 	 * @param index  an index to start from
+	 * 
+	 * 
 	 * @see Collection
 	 */
 	public ReverseIterator(Collection<O> objects, int index)
@@ -35,6 +38,8 @@ public class ReverseIterator<O> implements Iterator<O>
 	 * 
 	 * @param objects  an array to iterate
 	 * @param index  an index to start from
+	 * 
+	 * 
 	 * @see Object
 	 */
 	public ReverseIterator(Object[] objects, int index)
@@ -48,6 +53,8 @@ public class ReverseIterator<O> implements Iterator<O>
 	 * Creates a new {@code ReverseIterator}.
 	 * 
 	 * @param objects  a collection to iterate
+	 * 
+	 * 
 	 * @see Collection
 	 */
 	public ReverseIterator(Collection<O> objects)
@@ -59,6 +66,8 @@ public class ReverseIterator<O> implements Iterator<O>
 	 * Creates a new {@code ReverseIterator}.
 	 * 
 	 * @param objects  an array to iterate
+	 * 
+	 * 
 	 * @see Object
 	 */
 	public ReverseIterator(O[] objects)

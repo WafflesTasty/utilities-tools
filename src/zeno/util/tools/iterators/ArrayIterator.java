@@ -5,11 +5,12 @@ import java.util.Iterator;
 /**
  * The {@code ArrayIterator} class iterates over an {@code Array}.
  *
- * @param <O>  an iterator object type
- *
- * @since Apr 30, 2016
  * @author Zeno
+ * @since Apr 30, 2016
+ * @version 1.0
  * 
+ * 
+ * @param <O>  an iterator object type
  * @see Iterator
  */
 public class ArrayIterator<O> implements Iterator<O>

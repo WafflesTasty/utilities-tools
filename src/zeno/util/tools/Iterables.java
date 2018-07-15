@@ -7,9 +7,10 @@ import zeno.util.tools.iterators.ReverseIterator;
 
 /**
  * The {@code Iterables} class provides a few basic iterables.
- *
- * @since Aug 15, 2015
+ * 
  * @author Zeno
+ * @since Aug 15, 2015
+ * @version 1.0
  */
 public final class Iterables
 {	
@@ -18,6 +19,8 @@ public final class Iterables
 	 * 
 	 * @param objects  a collection of objects to iterate
 	 * @return a reverse iterable
+	 * 
+	 * 
 	 * @see Collection
 	 * @see Iterable
 	 */
@@ -31,6 +34,8 @@ public final class Iterables
 	 * 
 	 * @param array  an array of objects to iterate
 	 * @return a reverse iterable
+	 * 
+	 * 
 	 * @see Iterable
 	 */
 	public static <O> Iterable<O> reverseOf(O[] array)
@@ -42,6 +47,8 @@ public final class Iterables
 	 * Creates an iterable without any objects.
 	 * 
 	 * @return  an empty iterable
+	 * 
+	 * 
 	 * @see Iterable
 	 */
 	public static <O> Iterable<O> empty()

@@ -3,8 +3,9 @@ package zeno.util.tools.primitives;
 /**
  * The {@code Booleans} class defines basic operations for boolean values.
  *
- * @since May 4, 2016
  * @author Zeno
+ * @since May 4, 2016
+ * @version 1.0
  */
 public final class Booleans
 {
@@ -15,6 +16,8 @@ public final class Booleans
 	 * 
 	 * @param text  a string to parse
 	 * @return  a parsed boolean
+	 * 
+	 * 
 	 * @see String
 	 */
 	public static boolean parse(String text)

@@ -9,8 +9,10 @@ import zeno.util.tools.generic.manipulators.Executable;
  * The {@code LoaderAction} class defines an action used as a background loading task.
  * <br> To add additional logic after the action completes, override the {@link #onFinished()} event.
  * 
- * @since Nov 29, 2014
  * @author Zeno
+ * @since Nov 29, 2014
+ * @version 1.0
+ * 
  * 
  * @see Executable
  * @see Messenger
@@ -35,6 +37,8 @@ public class LoaderAction implements Executable, Messenger
 	 * Creates a new {@code LoaderAction}.
 	 * 
 	 * @param task  a task to use
+	 * 
+	 * 
 	 * @see Runnable
 	 */
 	public LoaderAction(Runnable task)
@@ -63,6 +67,8 @@ public class LoaderAction implements Executable, Messenger
 	 * Changes the task of the {@code LoaderAction}.
 	 * 
 	 * @param task  a task to run
+	 * 
+	 * 
 	 * @see Runnable
 	 */
 	public void setTask(Runnable task)
@@ -75,6 +81,8 @@ public class LoaderAction implements Executable, Messenger
 	 * Changes the output of the {@code LoaderAction}.
 	 * 
 	 * @param output  a new output
+	 * 
+	 * 
 	 * @see Consumer
 	 * @see String
 	 */

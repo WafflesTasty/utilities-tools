@@ -7,8 +7,10 @@ import zeno.util.tools.generic.properties.Quantity;
 /**
  * The {@code Metric} class defines quantity units according to the metric system.
  * 
- * @since Oct 1, 2016
  * @author Zeno
+ * @since Oct 1, 2016
+ * @version 1.0
+ * 
  * 
  * @see Quantity
  */
@@ -136,6 +138,8 @@ public class Metric implements Quantity.Unit
 	 * Returns the prefix of the {@code Metric}.
 	 * 
 	 * @return  a metric prefix
+	 * 
+	 * 
 	 * @see String
 	 */
 	public String prefix()

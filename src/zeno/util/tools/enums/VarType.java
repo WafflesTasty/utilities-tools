@@ -3,8 +3,9 @@ package zeno.util.tools.enums;
 /**
  * The {@code VarType} enum defines base object types.
  * 
- * @since Mar 26, 2017
  * @author Zeno
+ * @since Mar 26, 2017
+ * @version 1.0
  */
 public enum VarType
 {

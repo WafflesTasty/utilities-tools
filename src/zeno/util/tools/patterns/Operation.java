@@ -9,6 +9,7 @@ package zeno.util.tools.patterns;
  * @since Jul 13, 2018
  * @version 1.0
  * 
+ * 
  * @param <O>  the type of the result
  * @see Operable
  * @see Operator

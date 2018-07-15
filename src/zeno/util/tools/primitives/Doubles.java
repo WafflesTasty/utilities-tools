@@ -2,9 +2,10 @@ package zeno.util.tools.primitives;
 
 /**
  * The {@code Doubles} class defines basic operations for {@link Double} values.
- *
- * @since Dec 9, 2014
+ * 
  * @author Zeno
+ * @since Dec 9, 2014
+ * @version 1.0
  */
 public final class Doubles
 {
@@ -255,6 +256,8 @@ public final class Doubles
 	 * 
 	 * @param text  a string to parse
 	 * @return  a parsed double
+	 * 
+	 * 
 	 * @see String
 	 */
 	public static double parse(String text)
@@ -370,6 +373,8 @@ public final class Doubles
 	 * @param val2  a second value to check
 	 * @param ulps  a maximum ulp error value
 	 * @return  {@code true} if the values are equal
+	 * 
+	 * 
 	 * @see <a href="http://www.cygnus-software.com/papers/comparingfloats/Comparing%20floating%20point%20numbers.htm">Cygnus Documentation</a>
 	 */
 	public static boolean isEqual(double val1, double val2, int ulps)

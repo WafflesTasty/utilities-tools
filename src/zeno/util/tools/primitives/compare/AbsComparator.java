@@ -20,6 +20,8 @@ public class AbsComparator
 	 * Returns an absolute double {@code Comparator}.
 	 * 
 	 * @return  an absolute comparator
+	 * 
+	 * 
 	 * @see Comparator
 	 * @see Double
 	 */
@@ -39,6 +41,8 @@ public class AbsComparator
 	 * Returns an absolute float {@code Comparator}.
 	 * 
 	 * @return  an absolute comparator
+	 * 
+	 * 
 	 * @see Comparator
 	 * @see Float
 	 */
@@ -58,6 +62,8 @@ public class AbsComparator
 	 * Returns an absolute integer {@code Comparator}.
 	 * 
 	 * @return  an absolute comparator
+	 * 
+	 * 
 	 * @see Comparator
 	 * @see Integer
 	 */
@@ -77,6 +83,8 @@ public class AbsComparator
 	 * Returns an absolute long {@code Comparator}.
 	 * 
 	 * @return  an absolute comparator
+	 * 
+	 * 
 	 * @see Comparator
 	 * @see Long
 	 */

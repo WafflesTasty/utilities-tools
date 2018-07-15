@@ -9,6 +9,7 @@ import java.util.Iterator;
  * @since Nov 20, 2014
  * @version 1.0
  * 
+ * 
  * @param <O>  an iterator object type
  * @see Iterator
  */

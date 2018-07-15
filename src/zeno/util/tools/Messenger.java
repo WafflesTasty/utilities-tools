@@ -7,13 +7,15 @@ import java.util.function.Consumer;
  * <br> Each message string is sent to the messenger's output, if any. A standard output 
  * is provided which sends messages to Java's console.
  * 
- * @since Oct 16, 2014
  * @author Zeno
+ * @since Oct 16, 2014
+ * @version 1.0
  */
 public interface Messenger
 {		
 	/**
 	 * The {@code STDOut} object defines standard console output.
+	 * 
 	 * 
 	 * @see Consumer
 	 * @see String
@@ -45,6 +47,8 @@ public interface Messenger
 	 * Returns the output method of the {@code Messenger}.
 	 * 
 	 * @return  the messenger's output
+	 * 
+	 * 
 	 * @see Consumer
 	 * @see String
 	 */

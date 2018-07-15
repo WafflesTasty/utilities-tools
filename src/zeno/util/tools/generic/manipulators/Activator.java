@@ -3,8 +3,9 @@ package zeno.util.tools.generic.manipulators;
 /**
  * The {@code Activator} interface represents an object that can be activated. 
  *
- * @since Jul 3, 2015
  * @author Zeno
+ * @since Jul 3, 2015
+ * @version 1.0
  */
 public interface Activator
 {

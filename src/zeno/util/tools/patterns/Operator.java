@@ -20,6 +20,8 @@ public interface Operator<O extends Operable<O>>
 	 * Returns the abstract type of the {@code Operator}.
 	 * 
 	 * @return  a type operator
+	 * 
+	 * 
 	 * @see Operable
 	 */
 	public static <O extends Operable<O>> Operator<O> Type()
