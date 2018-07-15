@@ -1,11 +1,10 @@
-package zeno.util.tools.patterns.ops;
+package zeno.util.tools.patterns.functions;
 
-import zeno.util.tools.generic.properties.Copyable;
 import zeno.util.tools.patterns.Operation;
 
 /**
- * The {@code Repetition} class defines a duplication {@code Operation}.
- * The object stored in the operation is copied and returned.
+ * The {@code Repetition} class defines a repeat {@code Operation}.
+ * The object stored in the operation is simply returned.
  *
  * @author Zeno
  * @since Jul 15, 2018
@@ -14,9 +13,8 @@ import zeno.util.tools.patterns.Operation;
  *
  * @param <O>  the type of the result
  * @see Operation
- * @see Copyable
  */
-public class Duplication<O extends Copyable<O>> implements Operation<O>
+public class Repetition<O> implements Operation<O>
 {
 	private O object;
 	
@@ -25,7 +23,7 @@ public class Duplication<O extends Copyable<O>> implements Operation<O>
 	 * 
 	 * @param o  an object to return
 	 */
-	public Duplication(O o)
+	public Repetition(O o)
 	{
 		object = o;
 	}
@@ -34,7 +32,7 @@ public class Duplication<O extends Copyable<O>> implements Operation<O>
 	@Override
 	public O result()
 	{
-		return object.copy();
+		return object;
 	}
 
 	@Override

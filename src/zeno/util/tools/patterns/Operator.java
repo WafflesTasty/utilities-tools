@@ -74,7 +74,7 @@ public interface Operator<O extends Operable<O>>
 	
 	
 	/**
-	 * Returns the target of the {@code Operator}.
+	 * Returns the {@code Operator} target.
 	 * 
 	 * @return  the target operable
 	 * @see Operable
