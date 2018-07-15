@@ -58,7 +58,7 @@ public final class Doubles
 	/**
 	 * Defines the machine epsilon in double precision.
 	 */
-	public static final double EPSILON = Doubles.pow(2, -53);
+	public static final double EPSILON = Math.nextUp(1d) - 1d;
 	/**
 	 * Defines an undefined number in double precision.
 	 */
@@ -346,6 +346,24 @@ public final class Doubles
 	// Rounding
 
 	/**
+	 * Returns the ulp difference between two values.
+	 * 
+	 * @param val1  a first value to use
+	 * @param val2  a second value to use
+	 * @return  an ulp difference
+	 */
+	public static long ulps(double val1, double val2)
+	{
+		long bit1 = toBits(val1);
+		long bit2 = toBits(val2);
+
+		if(bit1 < 0) bit1 = Longs.MIN_VALUE - bit1;
+		if(bit2 < 0) bit2 = Longs.MIN_VALUE - bit2;
+		
+		return Longs.abs(bit1 - bit2);
+	}
+	
+	/**
 	 * Checks if two values are equal to some significance.
 	 * 
 	 * @param val1  a first value to check
@@ -356,24 +374,7 @@ public final class Doubles
 	 */
 	public static boolean isEqual(double val1, double val2, int ulps)
 	{
-		if(isNaN(val1) || isNaN(val2))
-		{
-			return false;
-		}
-		
-		if(val1 == val2)
-		{
-			return true;
-		}
-
-		
-		long bit1 = toBits(val1);
-		long bit2 = toBits(val2);
-
-		if(bit1 < 0) bit1 = Longs.MIN_VALUE - bit1;
-		if(bit2 < 0) bit2 = Longs.MIN_VALUE - bit2;
-		
-		return Longs.abs(bit1 - bit2) <= ulps;
+		return isZero(val1 - val2, ulps);
 	}
 
 	/**
@@ -398,7 +399,12 @@ public final class Doubles
 	 */
 	public static boolean isZero(double val, int ulps)
 	{
-		return isEqual(0, val, ulps);
+		if(isNaN(val))
+		{
+			return false;
+		}
+		
+		return abs(val) <= ulps * EPSILON;
 	}
 		
 	/**
