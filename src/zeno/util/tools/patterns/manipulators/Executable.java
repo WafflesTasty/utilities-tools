@@ -1,4 +1,4 @@
-package zeno.util.tools.generic.manipulators;
+package zeno.util.tools.patterns.manipulators;
 
 /**
  * The {@code Executable} interface represents an object that can be executed.

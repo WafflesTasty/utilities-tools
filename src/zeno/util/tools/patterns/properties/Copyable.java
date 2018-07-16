@@ -1,4 +1,4 @@
-package zeno.util.tools.generic.properties;
+package zeno.util.tools.patterns.properties;
 
 /**
  * The {@code Copyable} interface defines an object which can be copied.

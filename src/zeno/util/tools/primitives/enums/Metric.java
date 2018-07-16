@@ -1,8 +1,8 @@
-package zeno.util.tools.enums;
+package zeno.util.tools.primitives.enums;
 
 import java.math.BigDecimal;
 
-import zeno.util.tools.generic.properties.Quantity;
+import zeno.util.tools.patterns.properties.Quantity;
 
 /**
  * The {@code Metric} class defines quantity units according to the metric system.

@@ -1,4 +1,4 @@
-package zeno.util.tools.generic;
+package zeno.util.tools.patterns;
 
 /**
  * The {@code Workaround} interface is a marker interface for temporary issues.

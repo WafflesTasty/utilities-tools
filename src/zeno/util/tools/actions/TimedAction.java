@@ -1,6 +1,6 @@
 package zeno.util.tools.actions;
 
-import zeno.util.tools.generic.manipulators.Executable;
+import zeno.util.tools.patterns.manipulators.Executable;
 
 /**
  * The {@code TimedAction} class defines an action that executes on set intervals.

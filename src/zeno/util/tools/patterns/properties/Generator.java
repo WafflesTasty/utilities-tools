@@ -1,4 +1,4 @@
-package zeno.util.tools.generic.properties;
+package zeno.util.tools.patterns.properties;
 
 /**
  * The {@code Generator} interface defines an object capable of generating specific objects.

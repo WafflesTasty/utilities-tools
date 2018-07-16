@@ -1,4 +1,4 @@
-package zeno.util.tools.generic.manipulators;
+package zeno.util.tools.patterns.manipulators;
 
 /**
  * The {@code Disposable} interface defines an object capable of being disposed.

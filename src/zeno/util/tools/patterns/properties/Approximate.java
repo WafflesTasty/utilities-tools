@@ -1,4 +1,4 @@
-package zeno.util.tools.generic.properties;
+package zeno.util.tools.patterns.properties;
 
 /**
  * The {@code Approximate} interface defines an object that can be approximated.

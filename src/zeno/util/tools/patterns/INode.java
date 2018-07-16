@@ -1,6 +1,6 @@
-package zeno.util.tools.generic;
+package zeno.util.tools.patterns;
 
-import zeno.util.tools.generic.properties.Copyable;
+import zeno.util.tools.patterns.properties.Copyable;
 import zeno.util.tools.primitives.Integers;
 
 /**

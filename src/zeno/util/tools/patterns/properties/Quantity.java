@@ -1,4 +1,4 @@
-package zeno.util.tools.generic.properties;
+package zeno.util.tools.patterns.properties;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

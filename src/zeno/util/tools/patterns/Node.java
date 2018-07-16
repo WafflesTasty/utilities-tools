@@ -1,7 +1,6 @@
 package zeno.util.tools.patterns;
 
 import zeno.util.tools.Array;
-import zeno.util.tools.generic.INode;
 
 /**
  * The {@code Node} class defines a basic {@code INode} implementation.
