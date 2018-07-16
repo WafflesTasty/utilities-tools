@@ -1,4 +1,6 @@
-package zeno.util.tools.patterns;
+package zeno.util.tools.patterns.properties.operable;
+
+import zeno.util.tools.patterns.properties.Operable;
 
 /**
  * The {@code Operator} interface implements {@code Operations} for objects.

@@ -1,7 +1,7 @@
 package zeno.util.tools.patterns;
 
 /**
- * The {@code Workaround} interface is a marker interface for temporary issues.
+ * The {@code BugFix} interface is a marker interface for temporary issues.
  * <br> Classes tagged with this interface contain some form of workaround due
  * to bugs in external libraries and/or drivers.
  * 
@@ -13,7 +13,7 @@ package zeno.util.tools.patterns;
  * @see Deprecated
  */
 @Deprecated
-public interface Workaround
+public interface BugFix
 {
 	// NOT APPLICABLE
 }
