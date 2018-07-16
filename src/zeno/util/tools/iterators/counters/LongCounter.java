@@ -1,4 +1,4 @@
-package zeno.util.tools.counters;
+package zeno.util.tools.iterators.counters;
 
 import java.util.Iterator;
 
