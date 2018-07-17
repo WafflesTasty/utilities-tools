@@ -1,7 +1,7 @@
-package zeno.util.tools.patterns.operator.functions;
+package zeno.util.tools.patterns.properties.operator.functions;
 
 import zeno.util.tools.patterns.manipulators.Copyable;
-import zeno.util.tools.patterns.operator.Operation;
+import zeno.util.tools.patterns.properties.operator.Operation;
 
 /**
  * The {@code Repetition} class defines a duplication {@code Operation}.

@@ -1,4 +1,4 @@
-package zeno.util.tools.patterns.operator;
+package zeno.util.tools.patterns.properties.operator;
 
 /**
  * The {@code Operable} interface defines an object that can be operated.

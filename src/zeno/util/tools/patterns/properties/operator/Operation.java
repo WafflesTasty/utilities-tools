@@ -1,4 +1,4 @@
-package zeno.util.tools.patterns.operator;
+package zeno.util.tools.patterns.properties.operator;
 
 /**
  * The {@code Operation} interface defines an abstract operation.

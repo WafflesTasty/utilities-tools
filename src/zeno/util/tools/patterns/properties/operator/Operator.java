@@ -1,4 +1,4 @@
-package zeno.util.tools.patterns.operator;
+package zeno.util.tools.patterns.properties.operator;
 
 /**
  * The {@code Operator} interface implements {@code Operations} for objects.

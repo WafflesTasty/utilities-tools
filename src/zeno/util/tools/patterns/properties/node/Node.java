@@ -1,4 +1,4 @@
-package zeno.util.tools.patterns.node;
+package zeno.util.tools.patterns.properties.node;
 
 import zeno.util.tools.helper.Array;
 
