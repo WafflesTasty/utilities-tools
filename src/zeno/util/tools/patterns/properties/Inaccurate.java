@@ -1,7 +1,7 @@
 package zeno.util.tools.patterns.properties;
 
 /**
- * The {@code Approximate} interface defines an object that can be approximated.
+ * The {@code Inaccurate} interface defines an object that can be approximated.
  *
  * @author Zeno
  * @since Jul 15, 2018
@@ -10,7 +10,7 @@ package zeno.util.tools.patterns.properties;
  *
  * @param <O>  the type of the object
  */
-public interface Approximate<O>
+public interface Inaccurate<O>
 {
 	/**
 	 * Checks if two objects are approximately equal.
