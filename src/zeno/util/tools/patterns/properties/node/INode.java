@@ -1,7 +1,7 @@
 package zeno.util.tools.patterns.properties.node;
 
 import zeno.util.tools.Integers;
-import zeno.util.tools.patterns.manipulators.Copyable;
+import zeno.util.tools.patterns.properties.Copyable;
 
 /**
  * The {@code INode} interface defines objects with a parent-child relationship.

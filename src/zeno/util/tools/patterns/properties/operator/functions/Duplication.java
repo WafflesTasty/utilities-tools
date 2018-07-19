@@ -1,6 +1,6 @@
 package zeno.util.tools.patterns.properties.operator.functions;
 
-import zeno.util.tools.patterns.manipulators.Copyable;
+import zeno.util.tools.patterns.properties.Copyable;
 import zeno.util.tools.patterns.properties.operator.Operation;
 
 /**
