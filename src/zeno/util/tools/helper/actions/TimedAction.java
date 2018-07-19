@@ -27,6 +27,7 @@ public class TimedAction implements Executable
 	private State state;
 	private long current, last;
 	private long delta, interval;
+	private Executable task;
 	
 	/**
 	 * Creates a new {@code TimedAction}.
@@ -70,7 +71,18 @@ public class TimedAction implements Executable
 	}
 		
 	/**
-	 * Changes the action's update period.
+	 * Changes the task of the {@code TimedAction}.
+	 * 
+	 * @param task  a new task
+	 * @see Executable
+	 */
+	public void setTask(Executable task)
+	{
+		this.task = task;
+	}
+	
+	/**
+	 * Changes the update period of the {@code TimedAction}.
 	 * </ br> This value is measured in milliseconds.
 	 * 
 	 * @param ival  an update interval
@@ -81,10 +93,13 @@ public class TimedAction implements Executable
 	}
 	
 	/**
-	 * An event raised when the timer ticks.
+	 * An event raised when the {@code TimedAction} ticks.
 	 */
 	public void onTick()
 	{
-		// NOT APPLICABLE
+		if(task != null)
+		{
+			task.execute();
+		}
 	}
 }
