@@ -1,4 +1,4 @@
-package zeno.util.tools.patterns;
+package zeno.util.tools.patterns.properties;
 
 import java.util.function.Consumer;
 

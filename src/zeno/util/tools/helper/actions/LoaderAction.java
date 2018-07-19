@@ -2,8 +2,8 @@ package zeno.util.tools.helper.actions;
 
 import java.util.function.Consumer;
 
-import zeno.util.tools.patterns.Messenger;
 import zeno.util.tools.patterns.manipulators.Executable;
+import zeno.util.tools.patterns.properties.Messenger;
 
 /**
  * The {@code LoaderAction} class defines an action used as a background loading task.
