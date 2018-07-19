@@ -1,4 +1,4 @@
-package zeno.util.tools.helper.enums;
+package zeno.util.tools.primitives;
 
 /**
  * The {@code VarType} enum defines base object types.

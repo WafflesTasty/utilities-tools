@@ -1,4 +1,4 @@
-package zeno.util.tools.helper.enums;
+package zeno.util.tools.patterns.properties.quantity;
 
 import java.math.BigDecimal;
 

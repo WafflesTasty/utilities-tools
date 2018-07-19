@@ -1,4 +1,4 @@
-package zeno.util.tools.helper;
+package zeno.util.tools.patterns.properties;
 
 /**
  * The {@code BugFix} interface is a marker interface for temporary issues.
