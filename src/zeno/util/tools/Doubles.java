@@ -53,7 +53,7 @@ public final class Doubles
 	
 	
 	/**
-	 * Defines the golden ration in floating point precision.
+	 * Defines the golden ratio in double precision.
 	 */
 	public static final double GOLD_RATIO = (1 + sqrt(5)) / 2;
 	/**
