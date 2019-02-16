@@ -333,10 +333,10 @@ public final class Integers
 	 */
 	public static int[] list(int from, int to, int step)
 	{
-		int k = (to - from) / step;
+		int k = (to - from) / step + 1;
 		
 		int[] list = new int[k];
-		for(int i = 0; i <= k; i++)
+		for(int i = 0; i < k; i++)
 		{
 			list[i] = from + i * step;
 		}

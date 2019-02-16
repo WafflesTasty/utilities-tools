@@ -333,10 +333,10 @@ public final class Longs
 	 */
 	public static long[] list(long from, long to, long step)
 	{
-		int k = (int) ((to - from) / step);
+		int k = (int) ((to - from) / step + 1);
 		
 		long[] list = new long[k];
-		for(int i = 0; i <= k; i++)
+		for(int i = 0; i < k; i++)
 		{
 			list[i] = from + i * step;
 		}
