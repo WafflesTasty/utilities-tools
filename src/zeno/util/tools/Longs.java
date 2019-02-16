@@ -321,6 +321,55 @@ public final class Longs
 	}	
 	
 	
+	// Arrays
+	
+	/**
+	 * Returns an array of longs in increasing order.
+	 * 
+	 * @param from  an initial array element
+	 * @param to  an approximate final array element
+	 * @param step  an element step increase
+	 * @return  an array of integers
+	 */
+	public static long[] list(long from, long to, long step)
+	{
+		int k = (int) ((to - from) / step);
+		
+		long[] list = new long[k];
+		for(int i = 0; i <= k; i++)
+		{
+			list[i] = from + i * step;
+		}
+		
+		return list;
+	}
+	
+	/**
+	 * Returns an array of integers in increasing order.
+	 * This array has a step size of 1.
+	 * 
+	 * @param from  an initial array element
+	 * @param to  an approximate final array element
+	 * @return  an array of integers
+	 */
+	public static long[] list(long from, long to)
+	{
+		return list(from, to, 1);
+	}
+	
+	/**
+	 * Returns an array of integers in increasing order.
+	 * This array starts at 0 and has a step size of 1.
+	 * 
+	 * @param to  an approximate final array element
+	 * @return  an array of integers
+	 */
+	public static long[] list(long to)
+	{
+		return list(0, to);
+	}
+	
+	
 	private Longs()
 	{
 		// NOT APPLICABLE
