@@ -348,6 +348,28 @@ public final class Floats
 	// Rounding
 	
 	/**
+	 * Returns the next floating point value.
+	 * 
+	 * @param val  a value to check
+	 * @return  the next value
+	 */
+	public static float next(float val)
+	{
+		return fromBits(toBits(val) + 1);
+	}
+	
+	/**
+	 * Returns the difference with the next value.
+	 * 
+	 * @param val  a value to check
+	 * @return  the next value difference
+	 */
+	public static float nextEps(float val)
+	{
+		return next(val) - val;
+	}
+	
+	/**
 	 * Returns the ulp difference between two values.
 	 * 
 	 * @param val1  a first value to use
@@ -361,8 +383,7 @@ public final class Floats
 
 		if(bit1 < 0) bit1 = Integers.MIN_VALUE - bit1;
 		if(bit2 < 0) bit2 = Integers.MIN_VALUE - bit2;
-		System.out.println(bit1);
-		System.out.println(bit2);
+
 		return Integers.abs(bit1 - bit2);
 	}
 	

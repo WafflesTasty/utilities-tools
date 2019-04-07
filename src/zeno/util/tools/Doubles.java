@@ -349,6 +349,28 @@ public final class Doubles
 	// Rounding
 
 	/**
+	 * Returns the next double value.
+	 * 
+	 * @param val  a value to check
+	 * @return  the next value
+	 */
+	public static double next(double val)
+	{
+		return fromBits(toBits(val) + 1);
+	}
+	
+	/**
+	 * Returns the difference with the next value.
+	 * 
+	 * @param val  a value to check
+	 * @return  the next value difference
+	 */
+	public static double nextEps(double val)
+	{
+		return next(val) - val;
+	}
+	
+	/**
 	 * Returns the ulp difference between two values.
 	 * 
 	 * @param val1  a first value to use
