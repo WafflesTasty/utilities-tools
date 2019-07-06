@@ -2,6 +2,12 @@ package zeno.util.tools.helper;
 
 import java.util.Arrays;
 
+import zeno.util.tools.Doubles;
+import zeno.util.tools.Floats;
+import zeno.util.tools.Integers;
+import zeno.util.tools.Longs;
+import zeno.util.tools.Shorts;
+
 /**
  * The {@code Array} class defines utility methods for {@code Arrays}.
  *
@@ -11,6 +17,238 @@ import java.util.Arrays;
  */
 public final class Array
 {	
+	/**
+	 * The {@code maximum} class calculates an array maximum.
+	 * 
+	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
+	 */
+	public static final class maximum
+	{
+		/**
+		 * Returns the maximum of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @return  the array maximum
+		 */
+		public static double of(double... array)
+		{
+			double max = Doubles.MIN_VALUE;
+			for(double val : array)
+			{
+				if(max < val)
+				{
+					max = val;
+				}
+			}
+			
+			return max;
+		}
+		
+		/**
+		 * Returns the maximum of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @return  the array maximum
+		 */
+		public static float of(float... array)
+		{
+			float max = Floats.MIN_VALUE;
+			for(float val : array)
+			{
+				if(max < val)
+				{
+					max = val;
+				}
+			}
+			
+			return max;
+		}
+		
+		/**
+		 * Returns the maximum of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @return  the array maximum
+		 */
+		public static short of(short... array)
+		{
+			short max = Shorts.MIN_VALUE;
+			for(short val : array)
+			{
+				if(max < val)
+				{
+					max = val;
+				}
+			}
+			
+			return max;
+		}
+		
+		/**
+		 * Returns the maximum of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @return  the array maximum
+		 */
+		public static long of(long... array)
+		{
+			long max = Longs.MIN_VALUE;
+			for(long val : array)
+			{
+				if(max < val)
+				{
+					max = val;
+				}
+			}
+			
+			return max;
+		}
+		
+		/**
+		 * Returns the maximum of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @return  the array maximum
+		 */
+		public static int of(int... array)
+		{
+			int max = Integers.MIN_VALUE;
+			for(int val : array)
+			{
+				if(max < val)
+				{
+					max = val;
+				}
+			}
+			
+			return max;
+		}
+
+		
+		private maximum()
+		{
+			// NOT APPLICABLE
+		}
+	}
+	
+	/**
+	 * The {@code minimum} class calculates an array minimum.
+	 * 
+	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
+	 */
+	public static final class minimum
+	{
+		/**
+		 * Returns the minimum of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @return  the array minimum
+		 */
+		public static double of(double... array)
+		{
+			double min = Doubles.MAX_VALUE;
+			for(double val : array)
+			{
+				if(min > val)
+				{
+					min = val;
+				}
+			}
+			
+			return min;
+		}
+		
+		/**
+		 * Returns the minimum of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @return  the array minimum
+		 */
+		public static float of(float... array)
+		{
+			float min = Floats.MAX_VALUE;
+			for(float val : array)
+			{
+				if(min > val)
+				{
+					min = val;
+				}
+			}
+			
+			return min;
+		}
+		
+		/**
+		 * Returns the minimum of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @return  the array minimum
+		 */
+		public static short of(short... array)
+		{
+			short min = Shorts.MAX_VALUE;
+			for(short val : array)
+			{
+				if(min > val)
+				{
+					min = val;
+				}
+			}
+			
+			return min;
+		}
+		
+		/**
+		 * Returns the minimum of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @return  the array minimum
+		 */
+		public static long of(long... array)
+		{
+			long min = Longs.MAX_VALUE;
+			for(long val : array)
+			{
+				if(min > val)
+				{
+					min = val;
+				}
+			}
+			
+			return min;
+		}
+		
+		/**
+		 * Returns the minimum of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @return  the array minimum
+		 */
+		public static int of(int... array)
+		{
+			int min = Integers.MAX_VALUE;
+			for(int val : array)
+			{
+				if(min > val)
+				{
+					min = val;
+				}
+			}
+			
+			return min;
+		}
+
+		
+		private minimum()
+		{
+			// NOT APPLICABLE
+		}
+	}
+	
 	/**
 	 * The {@code instance} class creates new array instances.
 	 * 
