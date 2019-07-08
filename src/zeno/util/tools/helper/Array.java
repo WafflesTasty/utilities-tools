@@ -2089,6 +2089,257 @@ public final class Array
 		}
 	}
 	
+	/**
+	 * The {@code set} class adds array elements.
+	 * Unsuitable arrays are automatically resized.
+	 * 
+	 * @author Zeno
+	 * @since Jul 8, 2019
+	 * @version 1.0
+	 */
+	public static final class set
+	{
+		/**
+		 * Sets an element at a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param val  an element to set
+		 * @param index  an array index
+		 * @return  the updated array
+		 */
+		public static double[] at(double[] array, double val, int index)
+		{
+			double[] result = array;
+			if(index < 0 || array.length <= index)
+			{
+				result = copy.of(array, index + 1);
+				
+			}
+			
+			result[index] = val;
+			return result;
+		}
+		
+		/**
+		 * Sets an element at a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param val  an element to set
+		 * @param index  an array index
+		 * @return  the updated array
+		 */
+		public static float[] at(float[] array, float val, int index)
+		{
+			float[] result = array;
+			if(index < 0 || array.length <= index)
+			{
+				result = copy.of(array, index + 1);
+				
+			}
+			
+			result[index] = val;
+			return result;
+		}
+		
+		/**
+		 * Sets an element at a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param val  an element to set
+		 * @param index  an array index
+		 * @return  the updated array
+		 */
+		public static short[] at(short[] array, short val, int index)
+		{
+			short[] result = array;
+			if(index < 0 || array.length <= index)
+			{
+				result = copy.of(array, index + 1);
+				
+			}
+			
+			result[index] = val;
+			return result;
+		}
+		
+		/**
+		 * Sets an element at a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param val  an element to set
+		 * @param index  an array index
+		 * @return  the updated array
+		 */
+		public static long[] at(long[] array, long val, int index)
+		{
+			long[] result = array;
+			if(index < 0 || array.length <= index)
+			{
+				result = copy.of(array, index + 1);
+				
+			}
+			
+			result[index] = val;
+			return result;
+		}
+		
+		/**
+		 * Sets an element at a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param val  an element to set
+		 * @param index  an array index
+		 * @return  the updated array
+		 */
+		public static int[] at(int[] array, int val, int index)
+		{
+			int[] result = array;
+			if(index < 0 || array.length <= index)
+			{
+				result = copy.of(array, index + 1);
+				
+			}
+			
+			result[index] = val;
+			return result;
+		}
+		
+		/**
+		 * Sets an element at a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param val  an element to set
+		 * @param index  an array index
+		 * @return  the updated array
+		 */
+		public static <O> O[] at(O[] array, O val, int index)
+		{
+			O[] result = array;
+			if(index < 0 || array.length <= index)
+			{
+				result = copy.of(array, index + 1);
+				
+			}
+			
+			result[index] = val;
+			return result;
+		}
+	}
+	
+	/**
+	 * The {@code set} class gets array elements.
+	 * Unsuitable arrays return zero or null.
+	 * 
+	 * @author Zeno
+	 * @since Jul 8, 2019
+	 * @version 1.0
+	 */
+	public static final class get
+	{
+		/**
+		 * Returns an element from a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param index  an index to get
+		 * @return  an array element
+		 */
+		public static double from(double[] array, int index)
+		{
+			if(0 <= index && index < array.length)
+			{
+				return array[index];
+			}
+			
+			return 0d;
+		}
+		
+		/**
+		 * Returns an element from a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param index  an index to get
+		 * @return  an array element
+		 */
+		public static float from(float[] array, int index)
+		{
+			if(0 <= index && index < array.length)
+			{
+				return array[index];
+			}
+			
+			return 0f;
+		}
+		
+		/**
+		 * Returns an element from a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param index  an index to get
+		 * @return  an array element
+		 */
+		public static short from(short[] array, int index)
+		{
+			if(0 <= index && index < array.length)
+			{
+				return array[index];
+			}
+			
+			return 0;
+		}
+		
+		/**
+		 * Returns an element from a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param index  an index to get
+		 * @return  an array element
+		 */
+		public static long from(long[] array, int index)
+		{
+			if(0 <= index && index < array.length)
+			{
+				return array[index];
+			}
+			
+			return 0l;
+		}
+		
+		/**
+		 * Returns an element from a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param index  an index to get
+		 * @return  an array element
+		 */
+		public static int from(int[] array, int index)
+		{
+			if(0 <= index && index < array.length)
+			{
+				return array[index];
+			}
+			
+			return 0;
+		}
+		
+		/**
+		 * Returns an element from a position in an {@code Array}.
+		 * 
+		 * @param array  an array to use
+		 * @param index  an index to get
+		 * @return  an array element
+		 */
+		public static <O> O from(O[] array, int index)
+		{
+			if(0 <= index && index < array.length)
+			{
+				return array[index];
+			}
+			
+			return null;
+		}
+	}
+	
+	
 	
 	private Array()
 	{
