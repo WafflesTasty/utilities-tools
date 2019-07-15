@@ -2,6 +2,7 @@ package zeno.util.tools.helper;
 
 import java.util.Collection;
 
+import zeno.util.tools.helper.iterators.ArrayIterator;
 import zeno.util.tools.helper.iterators.EmptyIterator;
 import zeno.util.tools.helper.iterators.ReverseIterator;
 import zeno.util.tools.helper.iterators.SingleIterator;
@@ -14,7 +15,7 @@ import zeno.util.tools.helper.iterators.SingleIterator;
  * @version 1.0
  */
 public final class Iterables
-{	
+{		
 	/**
 	 * Returns a reverse iterable over a {@code Collection}.
 	 * 
@@ -45,7 +46,7 @@ public final class Iterables
 	}
 		
 	/**
-	 * Returns a singleton iterabl over an {@code Object}.
+	 * Returns a singleton iterable over an {@code Object}.
 	 * 
 	 * @param obj  an object to iterate
 	 * @return  a singleton iterator
@@ -54,6 +55,20 @@ public final class Iterables
 	public static <O> Iterable<O> singleton(O obj)
 	{
 		return () -> new SingleIterator<>(obj);
+	}
+	
+	/**
+	 * Returns an iterable over a generic {@code Array}.
+	 * 
+	 * @param array  an array of objects to iterate
+	 * @return  an array iterable
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static <O> Iterable<O> of(O[] array)
+	{
+		return () -> new ArrayIterator<>(array);
 	}
 	
 	/**
