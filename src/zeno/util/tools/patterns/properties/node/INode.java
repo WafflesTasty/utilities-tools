@@ -108,27 +108,6 @@ public interface INode extends Copyable<INode>
 		return Parent() == null;
 	}
 	
-	/**
-	 * Checks whether this {@code INode} contains data.
-	 * 
-	 * @return  {@code true} if empty
-	 */
-	public default boolean isEmpty()
-	{
-		if(Children() != null)
-		{
-			for(INode child : Children())
-			{
-				if(!child.isEmpty())
-				{
-					return false;
-				}
-			}
-		}
-		
-		return true;
-	}
-	
 	
 	/**
 	 * Returns the child count of the {@code INode}.
