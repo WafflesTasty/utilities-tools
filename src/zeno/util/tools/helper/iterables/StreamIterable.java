@@ -47,4 +47,25 @@ public class StreamIterable<O> implements Closeable, Iterable<O>
 	{
 		return stream.iterator();
 	}
+
+	
+	/**
+	 * Checks if the {@code StreamIterable} is empty.
+	 * 
+	 * @return  {@code true} if the stream is empty
+	 */
+	public boolean isEmpty()
+	{
+		return Count() == 0;
+	}
+	
+	/**
+	 * Returns the count of the {@code StreamIterable}.
+	 * 
+	 * @return  an object count
+	 */
+	public long Count()
+	{
+		return stream.count();
+	}
 }
