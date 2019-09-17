@@ -27,7 +27,7 @@ public class AbsComparator
 	 */
 	public static Comparator<Double> Doubles()
 	{
-		return new Comparator<Double>()
+		return new Comparator<>()
 		{
 			@Override
 			public int compare(Double v1, Double v2)
@@ -48,7 +48,7 @@ public class AbsComparator
 	 */
 	public static Comparator<Float> Floats()
 	{
-		return new Comparator<Float>()
+		return new Comparator<>()
 		{
 			@Override
 			public int compare(Float v1, Float v2)
@@ -69,7 +69,7 @@ public class AbsComparator
 	 */
 	public static Comparator<Integer> Integers()
 	{
-		return new Comparator<Integer>()
+		return new Comparator<>()
 		{
 			@Override
 			public int compare(Integer v1, Integer v2)
@@ -90,7 +90,7 @@ public class AbsComparator
 	 */
 	public static Comparator<Long> Longs()
 	{
-		return new Comparator<Long>()
+		return new Comparator<>()
 		{
 			@Override
 			public int compare(Long v1, Long v2)

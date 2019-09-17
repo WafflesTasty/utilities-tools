@@ -20,7 +20,7 @@ public interface Messenger
 	 * @see Consumer
 	 * @see String
 	 */
-	public static Consumer<String> STD_OUT = new Consumer<String>()
+	public static Consumer<String> STD_OUT = new Consumer<>()
 	{
 		@Override
 		public void accept(String message)
