@@ -15,7 +15,21 @@ import zeno.util.tools.helper.iterators.SingleIterator;
  * @version 1.0
  */
 public final class Iterables
-{		
+{	
+	/**
+	 * Returns an iterable over a generic {@code Array}.
+	 * 
+	 * @param array  an array of objects to iterate
+	 * @return  an array iterable
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static <O> Iterable<O> of(Object[] array)
+	{
+		return () -> new ArrayIterator<>(array);
+	}
+	
 	/**
 	 * Returns a reverse iterable over a {@code Collection}.
 	 * 
@@ -56,21 +70,7 @@ public final class Iterables
 	{
 		return () -> new SingleIterator<>(obj);
 	}
-	
-	/**
-	 * Returns an iterable over a generic {@code Array}.
-	 * 
-	 * @param array  an array of objects to iterate
-	 * @return  an array iterable
-	 * 
-	 * 
-	 * @see Iterable
-	 */
-	public static <O> Iterable<O> of(O[] array)
-	{
-		return () -> new ArrayIterator<>(array);
-	}
-	
+		
 	/**
 	 * Creates an iterable without any objects.
 	 * 

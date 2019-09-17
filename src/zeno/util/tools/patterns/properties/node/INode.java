@@ -14,7 +14,7 @@ import zeno.util.tools.patterns.properties.Copyable;
  * @see Copyable
  */
 public interface INode extends Copyable<INode>
-{	
+{		
 	/**
 	 * Returns the parent of the {@code INode}.
 	 * 
@@ -26,49 +26,11 @@ public interface INode extends Copyable<INode>
 	 * Returns the children of the {@code INode}.
 	 * 
 	 * @return  the node's children
-	 */
-	public abstract INode[] Children();
-	
-					
-	/**
-	 * Checks if this node is a child of another node.
 	 * 
-	 * @param node  a node to check for
-	 * @return  {@code true} if this node is a child node
-	 */
-	public default boolean isChildOf(INode node)
-	{
-		if(equals(node))
-		{
-			return true;
-		}
-		
-		INode parent = Parent();
-		if(parent == null)
-		{
-			return false;
-		}
-		
-		return parent.isChildOf(node);
-	}
-	
-	/**
-	 * Returns a single child of the {@code INode}.
 	 * 
-	 * @param i  the child's node index
-	 * @return  a child node
+	 * @see Iterable
 	 */
-	public default INode Child(int i)
-	{
-		INode[] children = Children();
-		if(children != null 
-		&& children.length > i)
-		{
-			return children[i];
-		}
-		
-		return null;
-	}
+	public abstract <N extends INode> Iterable<N> Children();
 	
 	/**
 	 * Returns the root node of the {@code INode}.
@@ -95,7 +57,37 @@ public interface INode extends Copyable<INode>
 	 */
 	public default boolean isLeaf()
 	{
-		return ChildCount() == 0;
+		for(INode child : Children())
+		{
+			if(child != null)
+			{
+				return false;
+			}
+		}
+		
+		return true;
+	}
+
+	/**
+	 * Checks if this node is a descendant of another node.
+	 * 
+	 * @param node  a node to check for
+	 * @return  {@code true} if this node is a descendant
+	 */
+	public default boolean isInside(INode node)
+	{
+		if(equals(node))
+		{
+			return true;
+		}
+		
+		INode parent = Parent();
+		if(parent == null)
+		{
+			return false;
+		}
+		
+		return parent.isInside(node);
 	}
 	
 	/**
@@ -108,32 +100,7 @@ public interface INode extends Copyable<INode>
 		return Parent() == null;
 	}
 	
-	
-	/**
-	 * Returns the child count of the {@code INode}.
-	 * <br> This only counts direct descendants of this node.
-	 * 
-	 * @return  the node's child count
-	 */
-	public default int ChildCount()
-	{
-		int count = 0;
 		
-		INode[] children = Children();
-		if(children != null)
-		{
-			for(INode child : Children())
-			{
-				if(child != null)
-				{
-					count++;
-				}
-			}
-		}
-		
-		return count;
-	}
-	
 	/**
 	 * Returns the node height of the {@code INode}.
 	 * <br> This indicates the relative depth of the deepest child node.
@@ -165,16 +132,11 @@ public interface INode extends Copyable<INode>
 	public default int NodeCount()
 	{
 		int count = 1;
-		
-		INode[] children = Children();
-		if(children != null)
+		for(INode child : Children())
 		{
-			for(INode child : Children())
+			if(child != null)
 			{
-				if(child != null)
-				{
-					count += child.NodeCount();
-				}
+				count += child.NodeCount();
 			}
 		}
 		
@@ -196,24 +158,5 @@ public interface INode extends Copyable<INode>
 		}
 		
 		return 0;
-	}
-	
-	/**
-	 * Returns the index of the {@code INode}.
-	 * 
-	 * @return  the node's index
-	 */
-	public default int Index()
-	{
-		int index = 0;
-		// Assumes the iterator starts at zero.
-		for(INode child : Parent().Children())
-		{
-			if(child == this)
-				return index;
-			index++;
-		}
-		
-		return -1;
 	}
 }

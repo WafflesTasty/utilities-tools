@@ -1,6 +1,7 @@
 package zeno.util.tools.patterns.properties.node;
 
 import zeno.util.tools.helper.Array;
+import zeno.util.tools.helper.Iterables;
 
 /**
  * The {@code Node} class defines a basic {@code INode} implementation.
@@ -16,7 +17,7 @@ public class Node implements INode
 {
 	private Node parent;
 	private Node[] children;
-
+	
 	/**
 	 * Adds a child to the {@code Node}.
 	 * 
@@ -109,13 +110,75 @@ public class Node implements INode
 	{
 		children = null;
 	}
+	
+	
+	/**
+	 * Returns a child of the {@code Node}.
+	 * 
+	 * @param i  the child's node index
+	 * @return  a child node
+	 */
+	public Node Child(int i)
+	{
+		if(children != null 
+		&& children.length > i)
+		{
+			return children[i];
+		}
 		
+		return null;
+	}
+	
+	/**
+	 * Returns the child count of the {@code Node}.
+	 * <br> This only counts direct descendants of this node.
+	 * 
+	 * @return  the node's child count
+	 */
+	public int ChildCount()
+	{
+		int count = 0;
+		
+		if(children != null)
+		{
+			for(INode child : children)
+			{
+				if(child != null)
+				{
+					count++;
+				}
+			}
+		}
+		
+		return count;
+	}
+	
+	/**
+	 * Returns the index of the {@code Node}.
+	 * 
+	 * @return  the node's index
+	 */
+	public int Index()
+	{
+		int index = 0;
+		// Assumes the iterator starts at zero.
+		for(INode child : Parent().Children())
+		{
+			if(child == this)
+				return index;
+			index++;
+		}
+		
+		return -1;
+	}
+	
 		
 	@Override
-	public Node[] Children()
+	public <N extends INode> Iterable<N> Children()
 	{
-		return children;
+		return Iterables.of(children);
 	}
+	
 	
 	@Override
 	public Node instance()

@@ -23,7 +23,7 @@ public class ArrayIterator<O> implements Iterator<O>
 	 * 
 	 * @param objects  an array to use
 	 */
-	public ArrayIterator(O[] objects)
+	public ArrayIterator(Object[] objects)
 	{
 		this.objects = objects;
 	}
@@ -31,7 +31,12 @@ public class ArrayIterator<O> implements Iterator<O>
 	@Override
 	public boolean hasNext()
 	{
-		return index < objects.length;
+		if(objects != null)
+		{
+			return index < objects.length;
+		}
+		
+		return false;
 	}
 
 	@Override
