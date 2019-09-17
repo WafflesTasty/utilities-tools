@@ -1,7 +1,6 @@
 package zeno.util.tools.patterns.properties.node;
 
 import zeno.util.tools.Integers;
-import zeno.util.tools.patterns.properties.Copyable;
 
 /**
  * The {@code INode} interface defines objects with a parent-child relationship.
@@ -9,11 +8,8 @@ import zeno.util.tools.patterns.properties.Copyable;
  * @author Zeno
  * @since Mar 5, 2016
  * @version 1.0
- * 
- * 
- * @see Copyable
  */
-public interface INode extends Copyable<INode>
+public interface INode
 {		
 	/**
 	 * Returns the parent of the {@code INode}.

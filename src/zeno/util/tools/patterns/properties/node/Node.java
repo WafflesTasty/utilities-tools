@@ -179,38 +179,9 @@ public class Node implements INode
 		return Iterables.of(children);
 	}
 	
-	
-	@Override
-	public Node instance()
-	{
-		return new Node();
-	}
-	
 	@Override
 	public Node Parent()
 	{
 		return parent;
-	}
-	
-	@Override
-	public Node copy()
-	{
-		Node copy = (Node) INode.super.copy();
-		
-		if(children != null)
-		{
-			int index = children.length - 1;
-			for(int i = index; i >= 0; i--)
-			{
-				Node child = children[i];
-				if(child != null)
-				{
-					Node ccopy = child.copy();
-					copy.setChild(i, ccopy);
-				}
-			}
-		}
-		
-		return copy;
 	}
 }
