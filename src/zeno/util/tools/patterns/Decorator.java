@@ -1,7 +1,7 @@
 package zeno.util.tools.patterns;
 
 /**
- * The {@code Decorator} class defines the basic decorator pattern.
+ * The {@code Decorator} interface defines the basic decorator pattern.
  * 
  * @author Zeno 
  * @since Nov 27, 2014
@@ -10,17 +10,12 @@ package zeno.util.tools.patterns;
  * 
  * @param <O> an object type to decorate
  */
-public class Decorator<O>
+public interface Decorator<O>
 {
-	private O delegate;
-	
-	protected Decorator(O delegate)
-	{
-	    this.delegate = delegate;
-	}
-	
-	protected O delegate()
-	{
-		return delegate;
-	}
+	/**
+	 * Returns the delegate object of the {@code Decorator}.
+	 * 
+	 * @return  a delegate object
+	 */
+	public abstract O Delegate();
 }
