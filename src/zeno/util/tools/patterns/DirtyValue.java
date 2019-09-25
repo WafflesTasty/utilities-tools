@@ -14,6 +14,7 @@ package zeno.util.tools.patterns;
  */
 public abstract class DirtyValue<P>
 {	
+	private P par;
 	private boolean hasChanged;
 	
 	/**
@@ -33,35 +34,28 @@ public abstract class DirtyValue<P>
 	}
 	
 	/**
-	 * Updates the {@code DirtyValue}'s cache.
+	 * Updates the current state of the {@code DirtyValue}.
 	 * </br> NOTE: This method should not be called directly.
 	 * 
-	 * @param par  an update parameter
+	 * @param p  an update parameter
 	 */
-	protected abstract void update(P par);
+	protected abstract void update(P p);
 		
-	
-	/**
-	 * Indicates the {@code DirtyValue} is dirty.
-	 * </br> NOTE: This method should not be called directly.
-	 * 
-	 * @param par  an update parameter
-	 * @return  {@code true} if dirty
-	 */
-	protected boolean isDirty(P par)
-	{
-		return hasChanged;
-	}
-
 	/**
 	 * Checks the cache of the {@code DirtyValue}.
 	 * </br> The contents is updated whenever necessary.
 	 * 
-	 * @param par  an update parameter
+	 * @param p  an update parameter
 	 */
-	public void checkCache(P par)
+	protected void checkCache(P p)
 	{
-		if(isDirty(par))
+		if(!p.equals(par))
+		{
+			setChanged();
+			par = p;
+		}
+		
+		if(hasChanged)
 		{
 			hasChanged = false;
 			update(par);
