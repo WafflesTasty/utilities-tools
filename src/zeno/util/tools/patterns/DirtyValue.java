@@ -19,10 +19,23 @@ public abstract class DirtyValue<P>
 	
 	/**
 	 * Creates a new {@code DirtyValue}.
+	 * 
+	 * @param p  an initial parameter 
 	 */
-	public DirtyValue()
+	public DirtyValue(P p)
 	{
 		hasChanged = true;
+		par = p;
+	}
+	
+	/**
+	 * Returns the parameter of the {@code DirtyValue}.
+	 * 
+	 * @return  a value parameter
+	 */
+	protected P Parameter()
+	{
+		return par;
 	}
 	
 	/**
