@@ -110,7 +110,7 @@ public class SteppedAction implements Executable
 	 */
 	public void start()
 	{
-		if(state != State.RUNNING)
+		if(state == State.PAUSED)
 		{
 			state = State.STARTING;
 		}
@@ -122,6 +122,9 @@ public class SteppedAction implements Executable
 	 */
 	public void step()
 	{
-		state = State.STEPPING;
+		if(state == State.PAUSED)
+		{
+			state = State.STEPPING;
+		}
 	}
 }
