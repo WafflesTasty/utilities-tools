@@ -24,24 +24,13 @@ public abstract class DirtyValue<P>
 	 */
 	public DirtyValue(P p)
 	{
-		hasChanged = true;
 		par = p;
 	}
-	
-	/**
-	 * Returns the parameter of the {@code DirtyValue}.
-	 * 
-	 * @return  a value parameter
-	 */
-	protected P Parameter()
-	{
-		return par;
-	}
-	
+
 	/**
 	 * Flags the {@code DirtyValue} to be updated.
 	 */
-	protected void setChanged()
+	public void setChanged()
 	{
 		hasChanged = true;
 	}
@@ -52,7 +41,7 @@ public abstract class DirtyValue<P>
 	 * 
 	 * @param p  an update parameter
 	 */
-	protected abstract void update(P p);
+	public abstract void update(P p);
 		
 	/**
 	 * Checks the cache of the {@code DirtyValue}.
@@ -60,7 +49,7 @@ public abstract class DirtyValue<P>
 	 * 
 	 * @param p  an update parameter
 	 */
-	protected void checkCache(P p)
+	public void checkCache(P p)
 	{
 		if(!p.equals(par))
 		{
