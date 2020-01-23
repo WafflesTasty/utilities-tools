@@ -1,4 +1,4 @@
-package zeno.util.tools.patterns.properties;
+package zeno.util.tools.patterns;
 
 /**
  * The {@code IRelatable} interface defines an object which can be related to other objects.

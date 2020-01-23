@@ -1,6 +1,6 @@
-package zeno.util.tools.patterns.properties.relations;
+package zeno.util.tools.patterns.relations;
 
-import zeno.util.tools.patterns.properties.IRelatable;
+import zeno.util.tools.patterns.IRelatable;
 
 /**
  * The {@code INode} interface defines a relatable object with parent-child behavior.
