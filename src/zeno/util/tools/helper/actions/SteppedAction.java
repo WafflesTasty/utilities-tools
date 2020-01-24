@@ -34,6 +34,16 @@ public class SteppedAction implements Executable
 		state = State.STARTING;
 	}
 
+	/**
+	 * Checks if the {@code SteppedAction} is paused.
+	 * 
+	 * @return  {@code true} if the action is paused
+	 */
+	public boolean isPaused()
+	{
+		return state == State.PAUSED;
+	}
+	
 	@Override
 	public void execute()
 	{       
