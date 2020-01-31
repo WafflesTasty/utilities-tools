@@ -51,7 +51,7 @@ public abstract class DirtyValue<P>
 	 */
 	public void checkCache(P p)
 	{
-		if(!p.equals(par))
+		if(par != p)
 		{
 			setChanged();
 			par = p;
