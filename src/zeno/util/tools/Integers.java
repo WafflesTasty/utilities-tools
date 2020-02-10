@@ -288,6 +288,18 @@ public final class Integers
 	}
 	
 	/**
+	 * Performs the standard modulo operation on a value.
+	 * 
+	 * @param val  a value to mod
+	 * @param mod  a modulo operator
+	 * @return  a modulo value
+	 */
+	public static int mod(int val, int mod)
+	{
+		return ((val % mod) + mod) % mod;
+	}
+	
+	/**
 	 * Returns an integer rounded to the closest value.
 	 * 
 	 * @param val  a value to use
@@ -374,4 +386,5 @@ public final class Integers
 	{
 		// NOT APPLICABLE
 	}
+
 }

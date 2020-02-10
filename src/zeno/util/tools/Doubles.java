@@ -389,6 +389,18 @@ public final class Doubles
 	}
 	
 	/**
+	 * Performs the standard modulo operation on a value.
+	 * 
+	 * @param val  a value to mod
+	 * @param mod  a modulo operator
+	 * @return  a modulo value
+	 */
+	public static double mod(double val, double mod)
+	{
+		return ((val % mod) + mod) % mod;
+	}
+	
+	/**
 	 * Checks if two values are equal to some significance.
 	 * 
 	 * @param val1  a first value to check
@@ -489,7 +501,7 @@ public final class Doubles
 	// Trigonometry
 	
 	/**
-	 * Returns the polar angle of cartesian coördinates.
+	 * Returns the polar angle of cartesian coï¿½rdinates.
 	 * </br> The phase theta is computed as an arc tangent of y/x in the range of [-PI, PI].
 	 * 
 	 * </br> Special cases:
@@ -521,9 +533,9 @@ public final class Doubles
 	 * 		<li>If both arguments are negative infinity, then the result is the double value closest to -3*PI/4.</li>
 	 * </ul>
 	 * 
-	 * @param x  the cartesian x-coördinate
-	 * @param y  the cartesian y-coördinate
-	 * @return  the coördinate's angle
+	 * @param x  the cartesian x-coï¿½rdinate
+	 * @param y  the cartesian y-coï¿½rdinate
+	 * @return  the coï¿½rdinate's angle
 	 */
 	public static double atan2(double x, double y)
 	{

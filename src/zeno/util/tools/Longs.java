@@ -288,6 +288,18 @@ public final class Longs
 	}
 	
 	/**
+	 * Performs the standard modulo operation on a value.
+	 * 
+	 * @param val  a value to mod
+	 * @param mod  a modulo operator
+	 * @return  a modulo value
+	 */
+	public static long mod(long val, long mod)
+	{
+		return ((val % mod) + mod) % mod;
+	}
+	
+	/**
 	 * Returns the long closest to a value.
 	 * 
 	 * @param val  a value to use
