@@ -1,18 +1,18 @@
-package zeno.util.tools.helper.actions;
+package zeno.util.tools.helper.tasks;
 
-import zeno.util.tools.patterns.manipulators.Executable;
+import zeno.util.tools.helper.Action;
 
 /**
- * The {@code SteppedAction} class defines an action that can be stepped through.
+ * The {@code SteppedAction} class defines a task that can be paused and stepped through.
  * 
  * @author Zeno
  * @since Sep 28, 2019
- * @version 1.0
+ * @version 1.1
  * 
  * 
- * @see Executable
+ * @see Action
  */
-public class SteppedAction implements Executable
+public class SteppedAction implements Action
 {
 	private static enum State
 	{
@@ -44,15 +44,16 @@ public class SteppedAction implements Executable
 		return state == State.PAUSED;
 	}
 	
+	
 	@Override
-	public void execute()
+	public void onUpdate()
 	{       
 		switch(state)
 		{
 		case STARTING:
 		{
 			state = State.RUNNING;
-			onStart(); return;
+			onResume(); return;
 		}
 		case STOPPING:
 		{
@@ -72,19 +73,19 @@ public class SteppedAction implements Executable
 		}
 	}
 	
-	
+		
 	/**
-	 * An event raised when the {@code SteppedAction} has been started.
+	 * An event raised when the {@code SteppedAction} has been stepped.
 	 */
-	public void onStart()
+	public void onStep()
 	{
 		// NOT APPLICABLE
 	}
 	
 	/**
-	 * An event raised when the {@code SteppedAction} has been stepped.
+	 * An event raised when the {@code SteppedAction} has been resumed.
 	 */
-	public void onStep()
+	public void onResume()
 	{
 		// NOT APPLICABLE
 	}

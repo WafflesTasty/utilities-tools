@@ -1,19 +1,19 @@
-package zeno.util.tools.helper.actions.timed;
+package zeno.util.tools.helper.tasks;
 
-import zeno.util.tools.patterns.manipulators.Executable;
+import zeno.util.tools.helper.Action;
 
 /**
- * The {@code TimedAction} class defines an action that executes based on time passed.
+ * The {@code DeltaAction} class defines a task that executes based on time passed.
  * </br> To change the logic executed on every delta, override the {@link #onUpdate(long)} event.
  *
  * @author Zeno
  * @since Dec 3, 2014
- * @version 1.0
+ * @version 1.1
  * 
  * 
- * @see Executable
+ * @see Action
  */
-public class DeltaAction implements Executable
+public class DeltaAction implements Action
 {	
 	private enum State
 	{
@@ -26,8 +26,7 @@ public class DeltaAction implements Executable
 	private long current, last;
 
 	/**
-	 * Creates a new {@code TimedAction}.
-	 * <br> The default interval is 16ms.
+	 * Creates a new {@code DeltaAction}.
 	 */
 	public DeltaAction()
 	{
@@ -46,7 +45,7 @@ public class DeltaAction implements Executable
 	
 	
 	@Override
-	public void execute()
+	public void onUpdate()
 	{
 		last = current;
 		

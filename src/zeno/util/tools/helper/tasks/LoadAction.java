@@ -1,23 +1,23 @@
-package zeno.util.tools.helper.actions;
+package zeno.util.tools.helper.tasks;
 
 import java.util.function.Consumer;
 
-import zeno.util.tools.patterns.manipulators.Executable;
+import zeno.util.tools.helper.Action;
 import zeno.util.tools.patterns.properties.Messenger;
 
 /**
- * The {@code LoaderAction} class defines an action used as a background loading task.
- * <br> To add additional logic after the action completes, override the {@link #onFinished()} event.
+ * The {@code LoadAction} class defines a task used to perform actions in a separate thread.
+ * </br> To add additional logic after the task completes, override the {@link #onFinished()} event.
  * 
  * @author Zeno
  * @since Nov 29, 2014
- * @version 1.0
+ * @version 1.1
  * 
  * 
- * @see Executable
  * @see Messenger
+ * @see Action
  */
-public class LoaderAction implements Executable, Messenger
+public class LoadAction implements Action, Messenger
 {
 	private enum State
 	{
@@ -34,37 +34,37 @@ public class LoaderAction implements Executable, Messenger
 	private Consumer<String> output;
 	
 	/**
-	 * Creates a new {@code LoaderAction}.
+	 * Creates a new {@code LoadAction}.
 	 * 
 	 * @param task  a task to use
 	 * 
 	 * 
 	 * @see Runnable
 	 */
-	public LoaderAction(Runnable task)
+	public LoadAction(Runnable task)
 	{
 		setTask(task);
 	}
 	
 	/**
-	 * Creates a new {@code LoaderAction}.
+	 * Creates a new {@code LoadAction}.
 	 */
-	public LoaderAction()
+	public LoadAction()
 	{
 		this(null);
 	}
 		
 	
 	/**
-	 * Starts the {@code LoaderAction}.
+	 * Starts the {@code LoadAction}.
 	 */
-	public void startTask()
+	public void start()
 	{
 		state = State.BOOTING;
 	}
 	
 	/**
-	 * Changes the task of the {@code LoaderAction}.
+	 * Changes the task of the {@code LoadAction}.
 	 * 
 	 * @param task  a task to run
 	 * 
@@ -107,7 +107,7 @@ public class LoaderAction implements Executable, Messenger
 	}
 	
 	@Override
-	public void execute()
+	public void onUpdate()
 	{
 		switch(state)
 		{

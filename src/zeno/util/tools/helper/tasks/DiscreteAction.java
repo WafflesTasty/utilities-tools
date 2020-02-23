@@ -1,14 +1,14 @@
-package zeno.util.tools.helper.actions.timed;
+package zeno.util.tools.helper.tasks;
 
-import zeno.util.tools.patterns.manipulators.Executable;
+import zeno.util.tools.helper.Action;
 
 /**
  * The {@code DiscreteAction} class defines an action that executes on set intervals.
- * <br> To change the logic executed on every tick, override the {@link #onTick()} event.
+ * </br> To change the logic executed on every tick, override the {@link #onTick()} event.
  *
  * @author Zeno
  * @since Dec 3, 2014
- * @version 1.0
+ * @version 1.1
  * 
  * 
  * @see DeltaAction
@@ -18,7 +18,7 @@ public class DiscreteAction extends DeltaAction
 	private static final long DEF_UPDATE = 16;
 	
 	
-	private Executable task;
+	private Action task;
 	private long accum, interval;
 	
 	/**
@@ -56,27 +56,16 @@ public class DiscreteAction extends DeltaAction
 	/**
 	 * Changes the task of the {@code DiscreteAction}.
 	 * 
-	 * @param task  a new task
+	 * @param task  a target task
 	 * 
 	 * 
-	 * @see Executable
+	 * @see Action
 	 */
-	public void setTask(Executable task)
+	public void setTask(Action task)
 	{
 		this.task = task;
 	}
-	
-	/**
-	 * Changes the update period of the {@code DiscreteAction}.
-	 * </ br> This value is measured in milliseconds.
-	 * 
-	 * @param ival  an update interval
-	 */
-	public void setPeriod(long ival)
-	{
-		interval = ival;
-	}
-	
+
 	/**
 	 * An event raised when the {@code DiscreteAction} ticks.
 	 */
@@ -84,7 +73,7 @@ public class DiscreteAction extends DeltaAction
 	{
 		if(task != null)
 		{
-			task.execute();
+			task.onUpdate();
 		}
 	}
 }
