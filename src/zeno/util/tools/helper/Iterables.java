@@ -5,6 +5,7 @@ import java.util.stream.Stream;
 
 import zeno.util.tools.helper.iterables.StreamIterable;
 import zeno.util.tools.helper.iterators.ArrayIterator;
+import zeno.util.tools.helper.iterators.CombineIterator;
 import zeno.util.tools.helper.iterators.EmptyIterator;
 import zeno.util.tools.helper.iterators.ReverseIterator;
 import zeno.util.tools.helper.iterators.SingleIterator;
@@ -49,6 +50,21 @@ public final class Iterables
 	public static <O> StreamIterable<O> of(Stream<O> stream)
 	{
 		return new StreamIterable<>(stream);
+	}
+	
+	/**
+	 * Returns an iterable over a set of {@code Iterables}.
+	 * 
+	 * @param <O>  a type of objects being iterated
+	 * @param iterables  a set of iterables to iterate
+	 * @return  a composite iterable
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static <O> Iterable<O> compose(Iterable<O>... iterables)
+	{
+		return () -> new CombineIterator<>(iterables);
 	}
 	
 	/**
@@ -116,4 +132,6 @@ public final class Iterables
 	{
 		// NOT APPLICABLE
 	}
+
+
 }
