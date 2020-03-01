@@ -2,7 +2,7 @@ package zeno.util.tools.patterns;
 
 /**
  * The {@code DirtyValue} class defines a value that caches its result.
- * <br> Flagging the value as dirty forces it to update on the next
+ * </br> Flagging the value as dirty forces it to update on the next
  * call to the {@link #checkCache} method.
  * 
  * @author Zeno
