@@ -414,6 +414,24 @@ public final class Floats
 	{
 		return isZero(val1 - val2, ulps);
 	}
+	
+	/**
+	 * Checks if value is lower to some significance.
+	 * 
+	 * @param val1  a first value to check
+	 * @param val2  a second value to check
+	 * @param ulps  a maximum ulp error value
+	 * @return  {@code true} if the first is lower
+	 */
+	public static boolean isLower(float val1, float val2, int ulps)
+	{
+		if(isNaN(val1) || isNaN(val2))
+		{
+			return false;
+		}
+		
+		return abs(val1) <= ulps * abs(val2) * EPSILON;
+	}
 
 	/**
 	 * Clamps a value between a minimum and a maximum.
