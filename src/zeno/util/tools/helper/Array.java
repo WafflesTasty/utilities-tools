@@ -2100,128 +2100,164 @@ public final class Array
 	public static final class set
 	{
 		/**
-		 * Sets an element at a position in an {@code Array}.
+		 * Sets elements at a position in an {@code Array}.
 		 * 
 		 * @param array  an array to use
-		 * @param val  an element to set
-		 * @param index  an array index
+		 * @param iMin  an array start index
+		 * @param vals  the elements to set
 		 * @return  the updated array
 		 */
-		public static double[] at(double[] array, double val, int index)
+		public static double[] at(double[] array, int iMin, double... vals)
 		{
+			int iMax = iMin + vals.length;
+			
 			double[] result = array;
-			if(index < 0 || array.length <= index)
+			if(array.length < iMax)
 			{
-				result = copy.of(array, index + 1);
+				result = copy.of(array, iMax);
 				
 			}
 			
-			result[index] = val;
+			for(int i = iMin; i < iMax; i++)
+			{
+				result[i] = vals[i - iMin];
+			}
+
 			return result;
 		}
 		
 		/**
-		 * Sets an element at a position in an {@code Array}.
+		 * Sets elements at a position in an {@code Array}.
 		 * 
 		 * @param array  an array to use
-		 * @param val  an element to set
-		 * @param index  an array index
+		 * @param iMin  an array start index
+		 * @param vals  the elements to set
 		 * @return  the updated array
 		 */
-		public static float[] at(float[] array, float val, int index)
+		public static float[] at(float[] array, int iMin, float... vals)
 		{
+			int iMax = iMin + vals.length;
+			
 			float[] result = array;
-			if(index < 0 || array.length <= index)
+			if(array.length < iMax)
 			{
-				result = copy.of(array, index + 1);
+				result = copy.of(array, iMax);
 				
 			}
 			
-			result[index] = val;
+			for(int i = iMin; i < iMax; i++)
+			{
+				result[i] = vals[i - iMin];
+			}
+
 			return result;
 		}
 		
 		/**
-		 * Sets an element at a position in an {@code Array}.
+		 * Sets elements at a position in an {@code Array}.
 		 * 
 		 * @param array  an array to use
-		 * @param val  an element to set
-		 * @param index  an array index
+		 * @param iMin  an array start index
+		 * @param vals  the elements to set
 		 * @return  the updated array
 		 */
-		public static short[] at(short[] array, short val, int index)
+		public static short[] at(short[] array, int iMin, short... vals)
 		{
+			int iMax = iMin + vals.length;
+			
 			short[] result = array;
-			if(index < 0 || array.length <= index)
+			if(array.length < iMax)
 			{
-				result = copy.of(array, index + 1);
+				result = copy.of(array, iMax);
 				
 			}
 			
-			result[index] = val;
+			for(int i = iMin; i < iMax; i++)
+			{
+				result[i] = vals[i - iMin];
+			}
+
 			return result;
 		}
 		
 		/**
-		 * Sets an element at a position in an {@code Array}.
+		 * Sets elements at a position in an {@code Array}.
 		 * 
 		 * @param array  an array to use
-		 * @param val  an element to set
-		 * @param index  an array index
+		 * @param iMin  an array start index
+		 * @param vals  the elements to set
 		 * @return  the updated array
 		 */
-		public static long[] at(long[] array, long val, int index)
+		public static long[] at(long[] array, int iMin, long... vals)
 		{
+			int iMax = iMin + vals.length;
+			
 			long[] result = array;
-			if(index < 0 || array.length <= index)
+			if(array.length < iMax)
 			{
-				result = copy.of(array, index + 1);
+				result = copy.of(array, iMax);
 				
 			}
 			
-			result[index] = val;
+			for(int i = iMin; i < iMax; i++)
+			{
+				result[i] = vals[i - iMin];
+			}
+
 			return result;
 		}
 		
 		/**
-		 * Sets an element at a position in an {@code Array}.
+		 * Sets elements at a position in an {@code Array}.
 		 * 
 		 * @param array  an array to use
-		 * @param val  an element to set
-		 * @param index  an array index
+		 * @param iMin  an array start index
+		 * @param vals  the elements to set
 		 * @return  the updated array
 		 */
-		public static int[] at(int[] array, int val, int index)
+		public static int[] at(int[] array, int iMin, int... vals)
 		{
+			int iMax = iMin + vals.length;
+			
 			int[] result = array;
-			if(index < 0 || array.length <= index)
+			if(array.length < iMax)
 			{
-				result = copy.of(array, index + 1);
+				result = copy.of(array, iMax);
 				
 			}
 			
-			result[index] = val;
+			for(int i = iMin; i < iMax; i++)
+			{
+				result[i] = vals[i - iMin];
+			}
+
 			return result;
 		}
 		
 		/**
-		 * Sets an element at a position in an {@code Array}.
+		 * Sets elements at a position in an {@code Array}.
 		 * 
 		 * @param array  an array to use
-		 * @param val  an element to set
-		 * @param index  an array index
+		 * @param iMin  an array start index
+		 * @param vals  the elements to set
 		 * @return  the updated array
 		 */
-		public static <O> O[] at(O[] array, O val, int index)
+		public static <O> O[] at(O[] array, int iMin, O... vals)
 		{
+			int iMax = iMin + vals.length;
+			
 			O[] result = array;
-			if(index < 0 || array.length <= index)
+			if(array.length < iMax)
 			{
-				result = copy.of(array, index + 1);
+				result = copy.of(array, iMax);
 				
 			}
 			
-			result[index] = val;
+			for(int i = iMin; i < iMax; i++)
+			{
+				result[i] = vals[i - iMin];
+			}
+
 			return result;
 		}
 	}
