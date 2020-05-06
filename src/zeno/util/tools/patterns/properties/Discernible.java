@@ -11,9 +11,9 @@ package zeno.util.tools.patterns.properties;
 public interface Discernible
 {
 	/**
-	 * Returns the identity of the {@code Object}.
+	 * Returns the identity of the {@code Discernible}.
 	 * 
-	 * @return  the object's identity
+	 * @return  a unique identifier
 	 */
-	public abstract int getID();
+	public abstract int ID();
 }
