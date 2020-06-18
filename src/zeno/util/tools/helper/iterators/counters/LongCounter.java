@@ -2,13 +2,12 @@ package zeno.util.tools.helper.iterators.counters;
 
 import java.util.Iterator;
 
-import zeno.util.tools.Longs;
-
 /**
  * The {@code LongCounter} class creates a counter for long values.
  *
- * @since May 5, 2016
  * @author Zeno
+ * @since May 5, 2016
+ * @version 1.0
  * 
  * 
  * @see Iterator
@@ -16,7 +15,17 @@ import zeno.util.tools.Longs;
  */
 public class LongCounter implements Iterator<Long>
 {
-	private long next;
+	private long next, maximum;
+	
+	/**
+	 * Creates a new {@code LongCounter}.
+	 * 
+	 * @param max  a maximum count
+	 */
+	public LongCounter(long max)
+	{
+		maximum = max; next = 0;
+	}
 	
 	/**
 	 * Creates a new {@code LongCounter}.
@@ -26,10 +35,11 @@ public class LongCounter implements Iterator<Long>
 		next = 0;
 	}
 	
+	
 	@Override
 	public boolean hasNext()
 	{
-		return next != Longs.MAX_VALUE;
+		return next != maximum;
 	}
 
 	@Override
