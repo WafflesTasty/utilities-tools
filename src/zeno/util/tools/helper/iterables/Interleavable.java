@@ -64,6 +64,11 @@ public class Interleavable<O> implements Iterable<O>
 					iters.remove(curr);
 				else
 					curr++;
+				
+				if(curr == iters.size())
+				{
+					curr = 0;
+				}	
 
 				return next;
 			}
