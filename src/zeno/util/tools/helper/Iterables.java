@@ -1,6 +1,10 @@
 package zeno.util.tools.helper;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Stream;
 
 import zeno.util.tools.helper.iterables.StreamIterable;
@@ -19,6 +23,43 @@ import zeno.util.tools.helper.iterators.SingleIterator;
  */
 public final class Iterables
 {		
+	/**
+	 * Returns a random iterable over a generic {@code Array}.
+	 * 
+	 * @param <O>  an object type
+	 * @param objects  an object list
+	 * @return  a random iterable
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static <O> Iterable<O> random(O[] objects)
+	{
+		return random(Arrays.asList(objects));
+	}
+	
+	/**
+	 * Returns a random iterable over a generic {@code List}.
+	 * 
+	 * @param <O>  an object type
+	 * @param objects  an object list
+	 * @return  a random iterable
+	 * 
+	 * 
+	 * @see Iterable
+	 * @see List
+	 */
+	public static <O> Iterable<O> random(List<O> objects)
+	{
+		List<O> list = new ArrayList<>(objects);
+		
+		return () ->
+		{
+			Collections.shuffle(list);
+			return list.iterator();
+		};
+	}
+	
 	/**
 	 * Returns an iterable over a generic {@code Array}.
 	 * 
@@ -132,6 +173,4 @@ public final class Iterables
 	{
 		// NOT APPLICABLE
 	}
-
-
 }
