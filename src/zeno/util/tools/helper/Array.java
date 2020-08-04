@@ -458,7 +458,7 @@ public final class Array
 			
 			
 			int[] copy = new int[length - 1];
-			for(int i = 0; i < length; i++)
+			for(int i = 0; i < length - 1; i++)
 			{
 				if(index <= i)
 					copy[i] = array[i + 1];
@@ -486,7 +486,7 @@ public final class Array
 			
 			
 			long[] copy = new long[length - 1];
-			for(int i = 0; i < length; i++)
+			for(int i = 0; i < length - 1; i++)
 			{
 				if(index <= i)
 					copy[i] = array[i + 1];
@@ -514,7 +514,7 @@ public final class Array
 			
 			
 			float[] copy = new float[length - 1];
-			for(int i = 0; i < length; i++)
+			for(int i = 0; i < length - 1; i++)
 			{
 				if(index <= i)
 					copy[i] = array[i + 1];
@@ -542,7 +542,7 @@ public final class Array
 			
 			
 			double[] copy = new double[length - 1];
-			for(int i = 0; i < length; i++)
+			for(int i = 0; i < length - 1; i++)
 			{
 				if(index <= i)
 					copy[i] = array[i + 1];
@@ -570,7 +570,7 @@ public final class Array
 			
 			
 			short[] copy = new short[length - 1];
-			for(int i = 0; i < length; i++)
+			for(int i = 0; i < length - 1; i++)
 			{
 				if(index <= i)
 					copy[i] = array[i + 1];
@@ -598,7 +598,7 @@ public final class Array
 			
 			
 			char[] copy = new char[length - 1];
-			for(int i = 0; i < length; i++)
+			for(int i = 0; i < length - 1; i++)
 			{
 				if(index <= i)
 					copy[i] = array[i + 1];
@@ -626,7 +626,7 @@ public final class Array
 			
 		
 			O[] copy = instance.of(array, length - 1);
-			for(int i = 0; i < length; i++)
+			for(int i = 0; i < length - 1; i++)
 			{
 				if(index <= i)
 					copy[i] = array[i + 1];
