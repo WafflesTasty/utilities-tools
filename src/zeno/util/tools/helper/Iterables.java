@@ -60,6 +60,7 @@ public final class Iterables
 		};
 	}
 	
+	
 	/**
 	 * Returns an iterable over a generic {@code Array}.
 	 * 
@@ -139,6 +140,21 @@ public final class Iterables
 		return () -> new ReverseIterator<>(array);
 	}
 		
+	/**
+	 * Returns a null-check iterable over a generic {@code Array}.
+	 * 
+	 * @param <O>  an object type
+	 * @param array  an array to iterate
+	 * @return  a null-check iterable
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static <O> Iterable<O> sansNulls(O[] array)
+	{
+		return () -> new ArrayIterator<>(array, true);
+	}
+	
 	/**
 	 * Returns a singleton iterable over an {@code Object}.
 	 * 

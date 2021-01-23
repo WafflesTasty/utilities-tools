@@ -43,6 +43,14 @@ public class DeltaAction implements Action
 		// NOT APPLICABLE
 	}
 	
+	/**
+	 * Resets the {@code DeltaAction}.
+	 */
+	public void reset()
+	{
+		state = State.STARTING;
+	}
+	
 	
 	@Override
 	public void onUpdate()

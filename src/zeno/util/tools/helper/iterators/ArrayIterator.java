@@ -15,8 +15,23 @@ import java.util.Iterator;
  */
 public class ArrayIterator<O> implements Iterator<O>
 {
-	private int index;
+	private int next;
 	private Object[] objects;
+	private boolean skipNulls;
+	
+	/**
+	 * Creates a new {@code ArrayIterator}.
+	 * 
+	 * @param objects  an array to use
+	 * @param skipNulls  a null state handler
+	 */
+	public ArrayIterator(Object[] objects, boolean skipNulls)
+	{
+		this.skipNulls = skipNulls;
+		this.objects = objects;
+		this.next = -1;
+		findNext();
+	}
 	
 	/**
 	 * Creates a new {@code ArrayIterator}.
@@ -25,23 +40,40 @@ public class ArrayIterator<O> implements Iterator<O>
 	 */
 	public ArrayIterator(Object[] objects)
 	{
-		this.objects = objects;
+		this(objects, false);
+	}
+	
+	
+	private void findNext()
+	{
+		if(objects == null)
+		{
+			return;
+		}
+		
+		next++;
+		if(next == objects.length)
+		{
+			next = -1;
+			return;
+		}
+		
+		if(skipNulls && objects[next] == null)
+		{
+			findNext();
+		}
 	}
 	
 	@Override
 	public boolean hasNext()
 	{
-		if(objects != null)
-		{
-			return index < objects.length;
-		}
-		
-		return false;
+		return next != -1;
 	}
 
 	@Override
 	public O next()
 	{
-		return (O) objects[index++];
+		O oNext = (O) objects[next];
+		findNext(); return oNext;
 	}
 }

@@ -18,6 +18,122 @@ import zeno.util.tools.Shorts;
 public final class Array
 {	
 	/**
+	 * The {@code contents} class checks array contents.
+	 * 
+	 * @author Zeno
+	 * @since Dec 5, 2016
+	 * @version 1.0
+	 */
+	public static final class contents
+	{
+		/**
+		 * Returns a contents check of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @param val  a value to find
+		 * @return  {@code true} if the array contains the value
+		 */
+		public static boolean has(double[] array, double val)
+		{
+			for(double v : array)
+			{
+				if(val == v)
+				{
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		/**
+		 * Returns a contents check of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @param val  a value to find
+		 * @return  {@code true} if the array contains the value
+		 */
+		public static boolean has(float[] array, float val)
+		{
+			for(float v : array)
+			{
+				if(val == v)
+				{
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		/**
+		 * Returns a contents check of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @param val  a value to find
+		 * @return  {@code true} if the array contains the value
+		 */
+		public static boolean has(short[] array, short val)
+		{
+			for(short v : array)
+			{
+				if(val == v)
+				{
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		/**
+		 * Returns a contents check of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @param val  a value to find
+		 * @return  {@code true} if the array contains the value
+		 */
+		public static boolean has(long[] array, long val)
+		{
+			for(long v : array)
+			{
+				if(val == v)
+				{
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		/**
+		 * Returns a contents check of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @param val  a value to find
+		 * @return  {@code true} if the array contains the value
+		 */
+		public static boolean has(int[] array, int val)
+		{
+			for(int v : array)
+			{
+				if(val == v)
+				{
+					return true;
+				}
+			}
+			
+			return false;
+		}
+
+		
+		private contents()
+		{
+			// NOT APPLICABLE
+		}
+	}
+	
+	/**
 	 * The {@code maximum} class calculates an array maximum.
 	 * 
 	 * @author Zeno
