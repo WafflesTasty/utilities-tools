@@ -275,6 +275,19 @@ public final class Integers
 	// Rounding
 	
 	/**
+	 * Returns the gcd of two values.
+	 * 
+	 * @param a  a first value
+	 * @param b  a second value
+	 * @return  a greatest divisor
+	 */
+	public static int gcd(int a, int b)
+	{
+		if(b == 0) return a;
+		return gcd(b, Integers.mod(a, b));
+	}
+	
+	/**
 	 * Clamps a value between a minimum and a maximum.
 	 * 
 	 * @param val  a value to clamp
@@ -331,7 +344,7 @@ public final class Integers
 	{
 		return (int) Math.ceil(val);
 	}
-	
+		
 	
 	// Arrays
 	
