@@ -4,6 +4,8 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.Queue;
 
+import zeno.util.tools.helper.Iterables;
+
 /**
  * The {@code CombineIterator} combines multiple iterables into one {@code Iterator}.
  *
@@ -31,7 +33,7 @@ public class CombineIterator<O> implements Iterator<O>
 	public CombineIterator(Iterable<O>... set)
 	{
 		queue = new ArrayDeque<>();
-		for(Iterable<O> iter : set)
+		for(Iterable<O> iter : Iterables.sansNulls(set))
 		{
 			queue.add(iter);
 		}
