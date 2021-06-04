@@ -532,27 +532,27 @@ public final class Floats
 	 *     		then the result is negative zero.</li>
 	 * 		<li>If the first argument is positive zero and the second argument is negative,
 	 * 	   		or the first argument is positive and finite and the second argument is negative infinity,
-	 * 	   		then the result is the double value closest to PI.</li>
+	 * 	   		then the result is the float value closest to PI.</li>
 	 * 		<li>If the first argument is negative zero and the second argument is negative,
 	 *     		or the first argument is negative and finite and the second argument is negative infinity,
-	 *     		then the result is the double value closest to -PI.</li>
+	 *     		then the result is the float value closest to -PI.</li>
 	 * 		<li>If the first argument is positive and the second argument is positive zero or negative zero,
 	 *     		or the first argument is positive infinity and the second argument is finite,
-	 *     		then the result is the double value closest to PI/2.</li>
+	 *     		then the result is the float value closest to PI/2.</li>
 	 * 		<li>If the first argument is negative and the second argument is positive zero or negative zero,
 	 *     		or the first argument is negative infinity and the second argument is finite,
-	 *     		then the result is the double value closest to -PI/2.</li>
-	 * 		<li>If both arguments are positive infinity, then the result is the double value closest to PI/4.</li>
+	 *     		then the result is the float value closest to -PI/2.</li>
+	 * 		<li>If both arguments are positive infinity, then the result is the float value closest to PI/4.</li>
 	 * 		<li>If the first argument is positive infinity and the second argument is negative infinity,
-	 *     		then the result is the double value closest to 3*PI/4.</li>
+	 *     		then the result is the float value closest to 3*PI/4.</li>
 	 * 		<li>If the first argument is negative infinity and the second argument is positive infinity,
-	 * 	   		then the result is the double value closest to -PI/4.</li>
-	 * 		<li>If both arguments are negative infinity, then the result is the double value closest to -3*PI/4.</li>
+	 * 	   		then the result is the float value closest to -PI/4.</li>
+	 * 		<li>If both arguments are negative infinity, then the result is the float value closest to -3*PI/4.</li>
 	 * </ul>
 	 * 
-	 * @param x  the cartesian x-co�rdinate
-	 * @param y  the cartesian y-co�rdinate
-	 * @return  the co�rdinate's angle
+	 * @param x  a cartesian x-coordinate
+	 * @param y  a cartesian y-coordinate
+	 * @return  a coordinate angle
 	 */
 	public static float atan2(float x, float y)
 	{
