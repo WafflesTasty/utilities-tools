@@ -53,6 +53,11 @@ public final class Floats
 	
 	
 	/**
+	 * Defines sqrt(2) in floating point precision.
+	 */
+	public static final float SQRT2 = (float) Math.sqrt(2);
+	
+	/**
 	 * Defines the golden ratio in floating point precision.
 	 */
 	public static final float GOLD_RATIO = (1 + sqrt(5)) / 2;
