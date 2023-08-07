@@ -3,7 +3,7 @@ package waffles.utils.tools.collections.iterators;
 import java.util.Iterator;
 
 /**
- * The {@code ArrayIterator} class iterates over an {@code Array}.
+ * An {@code ArrayIterator} iterates over an {@code Array}, optionally skipping null values.
  *
  * @author Waffles
  * @since Apr 30, 2016
