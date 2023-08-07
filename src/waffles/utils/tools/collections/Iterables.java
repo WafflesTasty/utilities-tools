@@ -104,7 +104,32 @@ public final class Iterables
 	{
 		return () -> new ArrayIterator<>(array);
 	}
+	
+	/**
+	 * Returns the object count in a set of {@code Iterables}.
+	 * 
+	 * @param <O>  an iterated object type
+	 * @param iterables  a set of iterables
+	 * @return  a total object count
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static <O> int count(Iterable<O>... iterables)
+	{
+		int count = 0;
+		for(Iterable<O> iter : iterables)
+		{
+			for(O obj : iter)
+			{
+				if(obj != null)
+					count++;
+			}
+		}
 		
+		return count;
+	}
+	
 	/**
 	 * Returns an iterable composed of a set of {@code Iterables}.
 	 * 
