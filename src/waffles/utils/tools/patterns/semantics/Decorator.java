@@ -7,16 +7,13 @@ package waffles.utils.tools.patterns.semantics;
  * @author Waffles
  * @since Nov 27, 2014
  * @version 1.0
- * 
- * 
- * @param <O> a delegate type
  */
-public interface Decorator<O>
+public interface Decorator
 {
 	/**
 	 * Returns the delegate of the {@code Decorator}.
 	 * 
 	 * @return  a delegate object
 	 */
-	public abstract O Delegate();
+	public abstract <O> O Delegate();
 }
