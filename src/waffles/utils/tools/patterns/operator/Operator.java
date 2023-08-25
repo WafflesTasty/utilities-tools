@@ -9,7 +9,7 @@ package waffles.utils.tools.patterns.operator;
  *
  * @author Waffles
  * @since Jul 15, 2018
- * @version 1.0
+ * @version 1.1
  * 
  *
  * @param <O>  an operable subtype
@@ -41,10 +41,10 @@ public interface Operator<O extends Operable<O>>
 	 * This method returns {@code true} if the provided
 	 * operator is a subtype of this operator.
 	 * 
-	 * @param operator  an operator to compare
-	 * @return  {@code true} if the operators match
+	 * @param obj  an operable to compare
+	 * @return  {@code true} if the operable matches
 	 */
-	public default boolean matches(Operator<O> operator)
+	public default boolean matches(O obj)
 	{
 		return true;
 	}

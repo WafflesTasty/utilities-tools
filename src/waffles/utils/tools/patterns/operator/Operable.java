@@ -10,7 +10,7 @@ package waffles.utils.tools.patterns.operator;
  *
  * @author Waffles
  * @since Jul 15, 2018
- * @version 1.0
+ * @version 1.1
  *
  *
  * @param <O>  an operable subtype
@@ -28,7 +28,7 @@ public interface Operable<O extends Operable<O>>
 	 */
 	public default boolean is(Operator<O> type)
 	{
-		return type.matches(Operator());
+		return type.matches((O) this);
 	}
 	
 	/**
