@@ -6,7 +6,7 @@ package waffles.utils.tools.patterns.operator;
  * their corresponding operations directly. Instead, each {@code Operable} comes with an
  * {@code Operator} object, which defines the operations and also serves as a dynamic
  * object type. The type of an {@code Operable} object can be checked through
- * the {@link #is(Operator, int)} and {@link #is(Operator)} methods.
+ * the {@link #is(Operator)} method.
  *
  * @author Waffles
  * @since Jul 15, 2018
@@ -30,22 +30,7 @@ public interface Operable<O extends Operable<O>>
 	{
 		return type.matches((O) this);
 	}
-	
-	/**
-	 * Checks if the {@code Operable} matches an {@code Operator} type.
-	 * 
-	 * @param type  an operator type
-	 * @param ulps  an error margin in ulps
-	 * @return  {@code true} if the type matches
-	 * 
-	 * 
-	 * @see Operator
-	 */
-	public default boolean is(Operator<O> type, int ulps)
-	{
-		return type.matches((O) this, ulps);
-	}
-	
+
 	/**
 	 * Returns the operator of the {@code Operable}.
 	 * 

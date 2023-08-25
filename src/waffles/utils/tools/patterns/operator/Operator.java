@@ -50,21 +50,6 @@ public interface Operator<O extends Operable<O>>
 	}
 
 	/**
-	 * Checks if an {@code Operable} matches this {@code Operator}.
-	 * This method returns {@code true} if the provided
-	 * object is a subtype of this operator within
-	 * the given margin of error.
-	 * 
-	 * @param obj  an operable to compare
-	 * @param ulps  an error margin in ulps
-	 * @return  {@code true} if the operable matches
-	 */
-	public default boolean matches(O obj, int ulps)
-	{
-		return true;
-	}
-	
-	/**
 	 * Returns a new instance of this {@code Operator}.
 	 * 
 	 * @param obj  an operable to instance
@@ -77,7 +62,6 @@ public interface Operator<O extends Operable<O>>
 			return obj;
 		};
 	}
-	
 	
 	/**
 	 * Returns the {@code Operator} target.
