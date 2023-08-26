@@ -25,6 +25,11 @@ public final class Randomizer
 	 */
 	public static Randomizer Global()
 	{
+		if(global == null)
+		{
+			initialize();
+		}
+		
 		return global;
 	}
 		
