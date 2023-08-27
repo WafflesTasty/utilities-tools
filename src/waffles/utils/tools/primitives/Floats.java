@@ -123,6 +123,46 @@ public final class Floats
 	// Extremes
 	
 	/**
+	 * Returns the minimum of a list of values.
+	 * 
+	 * @param vals  a list of values
+	 * @return  a list minimum
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static float min(Iterable<Float> vals)
+	{
+		float res = MAX_VALUE;
+		for(float val : vals)
+		{
+			res = Math.min(res, val);
+		}
+		
+		return res;
+	}
+		
+	/**
+	 * Returns the maximum of a list of values.
+	 * 
+	 * @param vals  a list of values
+	 * @return  a list maximum
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static float max(Iterable<Float> vals)
+	{
+		float res = -MAX_VALUE;
+		for(float val : vals)
+		{
+			res = Math.max(res, val);
+		}
+		
+		return res;
+	}
+	
+	/**
 	 * Returns the absolute of a list of values.
 	 * 
 	 * @param vals  a list of values

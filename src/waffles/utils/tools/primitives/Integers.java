@@ -137,6 +137,46 @@ public final class Integers
 	// Extremes
 	
 	/**
+	 * Returns the minimum of a list of values.
+	 * 
+	 * @param vals  a list of values
+	 * @return  a list minimum
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static int min(Iterable<Integer> vals)
+	{
+		int res = MAX_VALUE;
+		for(int val : vals)
+		{
+			res = Math.min(res, val);
+		}
+		
+		return res;
+	}
+		
+	/**
+	 * Returns the maximum of a list of values.
+	 * 
+	 * @param vals  a list of values
+	 * @return  a list maximum
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static int max(Iterable<Integer> vals)
+	{
+		int res = -MAX_VALUE;
+		for(int val : vals)
+		{
+			res = Math.max(res, val);
+		}
+		
+		return res;
+	}
+	
+	/**
 	 * Returns the absolute of a list of values.
 	 * 
 	 * @param vals  a list of values
@@ -157,7 +197,7 @@ public final class Integers
 	 * Returns the minimum of a list of values.
 	 * 
 	 * @param vals  a list of values
-	 * @return  the list's minimum
+	 * @return  a list minimum
 	 */
 	public static int min(int... vals)
 	{
@@ -174,7 +214,7 @@ public final class Integers
 	 * Returns the maximum of a list of values.
 	 * 
 	 * @param vals  a list of values
-	 * @return  the list's maximum
+	 * @return  a list maximum
 	 */
 	public static int max(int... vals)
 	{

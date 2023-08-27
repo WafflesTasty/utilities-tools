@@ -137,6 +137,46 @@ public final class Longs
 	// Extremes
 	
 	/**
+	 * Returns the minimum of a list of values.
+	 * 
+	 * @param vals  a list of values
+	 * @return  a list minimum
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static long min(Iterable<Long> vals)
+	{
+		long res = MAX_VALUE;
+		for(long val : vals)
+		{
+			res = Math.min(res, val);
+		}
+		
+		return res;
+	}
+		
+	/**
+	 * Returns the maximum of a list of values.
+	 * 
+	 * @param vals  a list of values
+	 * @return  a list maximum
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static long max(Iterable<Long> vals)
+	{
+		long res = -MAX_VALUE;
+		for(long val : vals)
+		{
+			res = Math.max(res, val);
+		}
+		
+		return res;
+	}
+	
+	/**
 	 * Returns the absolute of a list of values.
 	 * 
 	 * @param vals  a list of values
@@ -157,7 +197,7 @@ public final class Longs
 	 * Returns the minimum of a list of values.
 	 * 
 	 * @param vals  a list of values
-	 * @return  the list's minimum
+	 * @return  a list minimum
 	 */
 	public static long min(long... vals)
 	{
@@ -174,7 +214,7 @@ public final class Longs
 	 * Returns the maximum of a list of values.
 	 * 
 	 * @param vals  a list of values
-	 * @return  the list's maximum
+	 * @return  a list maximum
 	 */
 	public static long max(long... vals)
 	{

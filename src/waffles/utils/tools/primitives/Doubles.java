@@ -119,6 +119,45 @@ public final class Doubles
 	// Extremes
 	
 	/**
+	 * Returns the minimum of a list of values.
+	 * 
+	 * @param vals  a list of values
+	 * @return  a list minimum
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static double min(Iterable<Double> vals)
+	{
+		double res = MAX_VALUE;
+		for(double val : vals)
+		{
+			res = Math.min(res, val);
+		}
+		
+		return res;
+	}
+		
+	/**
+	 * Returns the maximum of a list of values.
+	 * 
+	 * @param vals  a list of values
+	 * @return  a list maximum
+	 * 
+	 * @see Iterable
+	 */
+	public static double max(Iterable<Double> vals)
+	{
+		double res = -MAX_VALUE;
+		for(double val : vals)
+		{
+			res = Math.max(res, val);
+		}
+		
+		return res;
+	}
+	
+	/**
 	 * Returns the absolute of a list of values.
 	 * 
 	 * @param vals  a list of values
@@ -139,7 +178,7 @@ public final class Doubles
 	 * Returns the minimum of a list of values.
 	 * 
 	 * @param vals  a list of values
-	 * @return  the list's minimum
+	 * @return  a list minimum
 	 */
 	public static double min(double... vals)
 	{
@@ -156,7 +195,7 @@ public final class Doubles
 	 * Returns the maximum of a list of values.
 	 * 
 	 * @param vals  a list of values
-	 * @return  the list's maximum
+	 * @return  a list maximum
 	 */
 	public static double max(double... vals)
 	{
