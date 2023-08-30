@@ -16,9 +16,9 @@ public interface Inaccurate<O>
 	/**
 	 * Checks if two objects are approximately equal.
 	 * 
-	 * @param object  an object to compare
-	 * @param ulps    an error margin
+	 * @param obj   an object to compare
+	 * @param ulps  an error margin
 	 * @return  {@code true} if the objects are equal within the margin of error
 	 */
-	public abstract boolean equals(O object, int ulps);
+	public abstract boolean equals(O obj, int ulps);
 }
