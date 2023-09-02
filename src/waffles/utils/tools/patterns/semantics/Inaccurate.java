@@ -20,5 +20,5 @@ public interface Inaccurate<O>
 	 * @param ulps  an error margin
 	 * @return  {@code true} if the objects are equal within the margin of error
 	 */
-	public abstract boolean equals(O obj, int ulps);
+	public abstract Boolean equals(O obj, int ulps);
 }
