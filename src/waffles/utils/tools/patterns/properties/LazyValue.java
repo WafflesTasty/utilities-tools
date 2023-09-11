@@ -1,5 +1,7 @@
 package waffles.utils.tools.patterns.properties;
 
+import waffles.utils.tools.patterns.semantics.Computable;
+
 /**
  * A {@code LazyValue} keeps track of a value, which can change according to some input.
  * The output value is only recomputed if the {@code LazyValue} has been flagged as
@@ -13,30 +15,51 @@ package waffles.utils.tools.patterns.properties;
  *
  * @param <I>  an input type
  * @param <O>  an output type
+ * 
+ * 
+ * @see Computable
  */
-public abstract class LazyValue<I,O>
+public class LazyValue<I,O> implements Computable<I,O>
 {
 	private I input;
 	private O output;
 	
 	private boolean hasChanged;
+	private Computable<I,O> cmp;
+	
+	/**
+	 * Creates a new {@code LazyValue}.
+	 * 
+	 * @param c  a computable
+	 * 
+	 * 
+	 * @see Computable
+	 */
+	public LazyValue(Computable<I,O> c)
+	{
+		hasChanged = true;
+		cmp = c;
+	}
 	
 	/**
 	 * Creates a new {@code LazyValue}.
 	 */
 	public LazyValue()
 	{
-		hasChanged = true;
+		this(null);
 	}
 	
 	
-	/**
-	 * Computes a new output according to an input.
-	 * 
-	 * @param input  an input parameter
-	 * @return  an output value
-	 */
-	public abstract O compute(I input);
+	@Override
+	public O compute(I input)
+	{
+		if(cmp != null)
+		{
+			return cmp.compute(input);
+		}
+		
+		return null;
+	}
 	
 	/**
 	 * Outputs a value according to a give input.
