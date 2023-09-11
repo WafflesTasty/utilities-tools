@@ -16,6 +16,7 @@ import waffles.utils.tools.patterns.Properties;
  * @param <V>  a value type
  * @see Properties
  */
+@Deprecated
 public interface Dirty<V> extends Properties
 {	
 	/**
