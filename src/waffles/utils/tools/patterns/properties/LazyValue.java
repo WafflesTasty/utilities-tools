@@ -3,7 +3,8 @@ package waffles.utils.tools.patterns.properties;
 /**
  * A {@code LazyValue} keeps track of a value, which can change according to some input.
  * The output value is only recomputed if the {@code LazyValue} has been flagged as
- * changed, making it a useful tool for rare and resource-intensive operations.
+ * changed, or the given input is different from the previous one, making it
+ * a useful tool for rare and resource-intensive operations.
  *
  * @author Waffles
  * @since 11 Sep 2023
