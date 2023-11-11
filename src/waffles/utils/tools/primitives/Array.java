@@ -7,7 +7,7 @@ import java.util.Arrays;
  *
  * @author Waffles
  * @since May 5, 2016
- * @version 1.0
+ * @version 1.1
  */
 public final class Array
 {	
@@ -1297,10 +1297,83 @@ public final class Array
 	 * 
 	 * @author Waffles
 	 * @since Dec 5, 2016
-	 * @version 1.0
+	 * @version 1.1
 	 */
 	public static final class copy
 	{
+		/**
+		 * Returns a copy of an {@code Array} from start to end.
+		 * 
+		 * @param array  an array to copy
+		 * @param start  the start of the copy
+		 * @param end  the end of the copy
+		 * @return  the copied array
+		 */
+		public static boolean[] of(boolean[] array, int start, int end)
+		{
+			return Arrays.copyOfRange(array, start, end);
+		}
+		
+		/**
+		 * Returns a copy of an {@code Array} with a new size.
+		 * 
+		 * @param array  an array to copy
+		 * @param size  the size of the copy
+		 * @return  the copied array
+		 */
+		public static boolean[] of(boolean[] array, int size)
+		{
+			return Arrays.copyOf(array, size);
+		}
+		
+		/**
+		 * Returns a copy of an {@code Array}.
+		 * 
+		 * @param array  an array to copy
+		 * @return  the copied array
+		 */
+		public static boolean[] of(boolean[] array)
+		{
+			return Arrays.copyOf(array, array.length);
+		}
+		
+		/**
+		 * Returns a copy of an {@code Array} from start to end.
+		 * 
+		 * @param array  an array to copy
+		 * @param start  the start of the copy
+		 * @param end  the end of the copy
+		 * @return  the copied array
+		 */
+		public static byte[] of(byte[] array, int start, int end)
+		{
+			return Arrays.copyOfRange(array, start, end);
+		}
+		
+		/**
+		 * Returns a copy of an {@code Array} with a new size.
+		 * 
+		 * @param array  an array to copy
+		 * @param size  the size of the copy
+		 * @return  the copied array
+		 */
+		public static byte[] of(byte[] array, int size)
+		{
+			return Arrays.copyOf(array, size);
+		}
+		
+		/**
+		 * Returns a copy of an {@code Array}.
+		 * 
+		 * @param array  an array to copy
+		 * @return  the copied array
+		 */
+		public static byte[] of(byte[] array)
+		{
+			return Arrays.copyOf(array, array.length);
+		}
+		
+		
 		/**
 		 * Returns a copy of an {@code Array} from start to end.
 		 * 
