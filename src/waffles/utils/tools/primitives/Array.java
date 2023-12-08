@@ -107,6 +107,26 @@ public final class Array
 		 * @param val  a value to find
 		 * @return  {@code true} if the array contains the value
 		 */
+		public static boolean has(char[] array, char val)
+		{
+			for(char v : array)
+			{
+				if(val == v)
+				{
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		/**
+		 * Returns a contents check of a primitive {@code Array}.
+		 * 
+		 * @param array  a primitive array
+		 * @param val  a value to find
+		 * @return  {@code true} if the array contains the value
+		 */
 		public static boolean has(int[] array, int val)
 		{
 			for(int v : array)
