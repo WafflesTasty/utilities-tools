@@ -14,6 +14,30 @@ package waffles.utils.tools.patterns.semantics;
 public interface Gateway<O>
 {
 	/**
+	 * Creates a new {@code Gateway} as a sequence of gates.
+	 * 
+	 * @param <O>  an object type
+	 * @param set  a gateway set
+	 * @return  a sequence gateway
+	 */
+	public static <O> Gateway<O> sequence(Gateway<O>... set)
+	{
+		return obj ->
+		{
+			for(Gateway<O> g : set)
+			{
+				if(!g.allows(obj))
+				{
+					return false;
+				}
+			}
+			
+			return true;
+		};
+	}
+	
+	
+	/**
 	 * Checks if an object is allowed in the {@code Gateway}.
 	 * 
 	 * @param obj  a target object
