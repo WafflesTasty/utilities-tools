@@ -7,6 +7,7 @@ package waffles.utils.tools.patterns.semantics;
  * @since 20 Sep 2023
  * @version 1.1
  */
+@FunctionalInterface
 public interface Ordered
 {
 	/**

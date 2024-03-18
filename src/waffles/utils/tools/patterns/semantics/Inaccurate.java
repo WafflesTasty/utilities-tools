@@ -11,6 +11,7 @@ package waffles.utils.tools.patterns.semantics;
  *
  * @param <O>  an object type
  */
+@FunctionalInterface
 public interface Inaccurate<O>
 {
 	/**

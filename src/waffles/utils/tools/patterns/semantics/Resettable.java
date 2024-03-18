@@ -7,6 +7,7 @@ package waffles.utils.tools.patterns.semantics;
  * @since 19 Feb 2020
  * @version 1.0
  */
+@FunctionalInterface
 public interface Resettable
 {
 	/**
