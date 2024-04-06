@@ -6,6 +6,7 @@ import java.util.List;
 
 import waffles.utils.tools.Randomizer;
 import waffles.utils.tools.collections.iterators.ArrayIterator;
+import waffles.utils.tools.collections.iterators.CastIterator;
 import waffles.utils.tools.collections.iterators.CombineIterator;
 import waffles.utils.tools.collections.iterators.EmptyIterator;
 import waffles.utils.tools.collections.iterators.Interleaverator;
@@ -104,7 +105,7 @@ public final class Iterables
 	{
 		return () -> new ArrayIterator<>(array);
 	}
-	
+		
 	/**
 	 * Returns the object count in a set of {@code Iterables}.
 	 * 
@@ -128,6 +129,21 @@ public final class Iterables
 		}
 		
 		return count;
+	}
+	
+	/**
+	 * Returns an iterable which casts a set of {@code Iterables}.
+	 * 
+	 * @param <O>  an object type
+	 * @param iterables  a set of iterables
+	 * @return  an object iterable
+	 * 
+	 * 
+	 * @see Iterable
+	 */
+	public static <O> Iterable<O> cast(Iterable<?>... iterables)
+	{
+		return () -> new CastIterator<>(iterables);
 	}
 	
 	/**
