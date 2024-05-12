@@ -20,6 +20,13 @@ public interface Dimensional extends Ordered
 	public abstract int[] Dimensions();
 	
 	
+	/**
+	 * Returns the order of the {@code Dimensional}.
+	 * The order represents how many indices are needed
+	 * to define a single value in its dimensions.
+	 * 
+	 * @return  a dimension order
+	 */
 	@Override
 	public default int Order()
 	{
