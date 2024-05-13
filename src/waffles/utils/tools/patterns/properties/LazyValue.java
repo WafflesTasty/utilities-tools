@@ -83,7 +83,7 @@ public class LazyValue<I,O> implements Computable<I,O>
 		hasChanged = true;
 	}
 
-	
+		
 	@Override
 	public O compute(I input)
 	{
@@ -93,5 +93,15 @@ public class LazyValue<I,O> implements Computable<I,O>
 		}
 		
 		return null;
+	}
+
+	protected O LastOutput()
+	{
+		return output;
+	}
+	
+	protected I LastInput()
+	{
+		return input;
 	}
 }
