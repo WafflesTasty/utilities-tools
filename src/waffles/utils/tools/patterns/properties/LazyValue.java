@@ -49,18 +49,7 @@ public class LazyValue<I,O> implements Computable<I,O>
 		this(null);
 	}
 	
-	
-	@Override
-	public O compute(I input)
-	{
-		if(cmp != null)
-		{
-			return cmp.compute(input);
-		}
 		
-		return null;
-	}
-	
 	/**
 	 * Outputs a value according to a give input.
 	 * If the {@code LazyValue} has not been flagged
@@ -69,7 +58,7 @@ public class LazyValue<I,O> implements Computable<I,O>
 	 * @param input  an input parameter
 	 * @return  an output value
 	 */
-	public final O Value(I input)
+	public O Value(I input)
 	{
 		if(this.input != input)
 		{
@@ -92,5 +81,17 @@ public class LazyValue<I,O> implements Computable<I,O>
 	public void setChanged()
 	{
 		hasChanged = true;
+	}
+
+	
+	@Override
+	public O compute(I input)
+	{
+		if(cmp != null)
+		{
+			return cmp.compute(input);
+		}
+		
+		return null;
 	}
 }
