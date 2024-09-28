@@ -16,7 +16,7 @@ import waffles.utils.tools.patterns.semantics.Valuable;
  */
 public class ValueIterator<V> implements Iterator<V>
 {
-	private Iterator<Valuable<V>> source;
+	private Iterator<? extends Valuable<V>> source;
 	
 	/**
 	 * Creates a new {@code ValueIterator}.
@@ -27,7 +27,7 @@ public class ValueIterator<V> implements Iterator<V>
 	 * @see Iterable
 	 * @see Valuable
 	 */
-	public ValueIterator(Iterable<Valuable<V>> src)
+	public ValueIterator(Iterable<? extends Valuable<V>> src)
 	{
 		source = src.iterator();
 	}
