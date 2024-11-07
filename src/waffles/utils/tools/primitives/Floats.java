@@ -677,6 +677,23 @@ public final class Floats
 	{
 		return (float) Math.cos(theta);
 	}
+
+	/**
+	 * Returns the trigonometric cotangent of an angle.
+	 * 
+	 * </br> Special cases:
+	 * <ul>
+	 * 		<li> If the argument is NaN or an infinity, then the result is NaN. </li>
+	 * 		<li> If the argument is zero, then the result is infinity with the same sign as the argument.</li>
+	 * </ul>
+	 * 
+	 * @param theta  an angle, in radians
+	 * @return  the angle's cotangent
+	 */
+	public static float cot(float theta)
+	{
+		return (float) 1f / tan(theta);
+	}
 	
 	/**
 	 * Returns the trigonometric tangent of an angle.
