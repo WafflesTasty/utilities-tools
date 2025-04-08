@@ -1,6 +1,7 @@
 package waffles.utils.tools.patterns.properties;
 
 import waffles.utils.tools.patterns.semantics.Computable;
+import waffles.utils.tools.primitives.Array;
 
 /**
  * A {@code LazyValue} keeps track of a value, which can change according to some input.
@@ -25,6 +26,7 @@ public class LazyValue<I,O> implements Computable<I,O>
 	private O output;
 	
 	private boolean hasChanged;
+	private LazyValue<?,?>[] handlers;
 	private Computable<I,O> cmp;
 	
 	/**
@@ -37,6 +39,7 @@ public class LazyValue<I,O> implements Computable<I,O>
 	 */
 	public LazyValue(Computable<I,O> c)
 	{
+		handlers = new LazyValue<?,?>[0];
 		hasChanged = true;
 		cmp = c;
 	}
@@ -76,11 +79,27 @@ public class LazyValue<I,O> implements Computable<I,O>
 	}
 	
 	/**
+	 * Adds a handler to the {@code LazyValue}.
+	 * Handlers are always updated along
+	 * with the main value.
+	 * 
+	 * @param v  a lazy value
+	 */
+	public void add(LazyValue<?,?> v)
+	{
+		handlers = Array.add.to(handlers, v);
+	}
+	
+	/**
 	 * Forces the {@code LazyValue} to recompute.
 	 */
 	public void setChanged()
 	{
 		hasChanged = true;
+		for(LazyValue<?,?> v : handlers)
+		{
+			v.setChanged();
+		}
 	}
 
 		
