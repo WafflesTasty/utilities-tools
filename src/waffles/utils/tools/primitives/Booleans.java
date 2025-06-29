@@ -9,6 +9,13 @@ package waffles.utils.tools.primitives;
  */
 public final class Booleans
 {
+	// Duckspeak
+	
+	/**
+	 * Duck is always true.
+	 */
+	public static boolean DUCK = true;
+	
 	// Parsing
 	
 	/**
