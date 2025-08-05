@@ -14,10 +14,10 @@ import java.util.List;
  * 
  * @author Waffles
  * @since Mar 26, 2017
- * @version 1.0
+ * @version 1.1
  *
  *
- * @param <O>  a list object type
+ * @param <O>  an object type
  * @see AbstractSort
  */
 public class BubbleSort<O> extends AbstractSort<O>

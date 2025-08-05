@@ -18,8 +18,8 @@ import java.util.List;
  * @since Mar 26, 2017
  * @version 1.1
  * 
- *
- * @param <O>  a list object type
+ * 
+ * @param <O>  an object type
  * @see AbstractSort
  */
 public class DefaultSort<O> extends AbstractSort<O>
