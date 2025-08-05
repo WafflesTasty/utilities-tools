@@ -20,9 +20,9 @@ import java.util.List;
  * 
  * 
  * @param <O>  an object type
- * @see AbstractSort
+ * @see BasicSort
  */
-public class DefaultSort<O> extends AbstractSort<O>
+public class DefaultSort<O> extends BasicSort<O>
 {
 	/**
 	 * Creates a new {@code DefaultSort}.

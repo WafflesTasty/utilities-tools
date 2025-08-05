@@ -18,9 +18,9 @@ import java.util.List;
  *
  *
  * @param <O>  an object type
- * @see AbstractSort
+ * @see BasicSort
  */
-public class BubbleSort<O> extends AbstractSort<O>
+public class BubbleSort<O> extends BasicSort<O>
 {
 	/**
 	 * Creates a new {@code BubbleSort}.

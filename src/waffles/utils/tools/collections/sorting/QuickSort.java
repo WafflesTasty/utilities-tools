@@ -19,9 +19,9 @@ import java.util.List;
  * 
  * 
  * @param <O>  an object type
- * @see AbstractSort
+ * @see BasicSort
  */
-public class QuickSort<O> extends AbstractSort<O>
+public class QuickSort<O> extends BasicSort<O>
 {
 	/**
 	 * Creates a new {@code QuickSort}.

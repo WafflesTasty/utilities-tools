@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * The {@code AbstractSort} class defines the base for a list sorting algorithm.
+ * An {@code BasicSort} defines an abstract sorting algorithm.
  * 
  * @author Waffles
  * @since Mar 26, 2017
@@ -14,7 +14,7 @@ import java.util.List;
  * @param <O>  an object type
  * @see Comparator
  */
-public abstract class AbstractSort<O> implements Comparator<O>
+public abstract class BasicSort<O> implements Comparator<O>
 {	
 	private Comparator<O> comparator;
 	
@@ -24,7 +24,7 @@ public abstract class AbstractSort<O> implements Comparator<O>
 	 * @param c  a comparator to use
 	 * @see Comparator
 	 */
-	public AbstractSort(Comparator<O> c)
+	public BasicSort(Comparator<O> c)
 	{
 		comparator = c;
 	}
@@ -34,7 +34,7 @@ public abstract class AbstractSort<O> implements Comparator<O>
 	 * Without a comparator, this sort
 	 * depends on natural ordering.
 	 */
-	public AbstractSort()
+	public BasicSort()
 	{
 		this(null);
 	}
