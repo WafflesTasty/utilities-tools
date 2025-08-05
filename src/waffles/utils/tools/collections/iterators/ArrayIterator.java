@@ -7,7 +7,7 @@ import java.util.Iterator;
  *
  * @author Waffles
  * @since Apr 30, 2016
- * @version 1.0
+ * @version 1.1
  * 
  * 
  * @param <O>  an object type
@@ -16,49 +16,49 @@ import java.util.Iterator;
 public class ArrayIterator<O> implements Iterator<O>
 {
 	private int next;
-	private Object[] objects;
+	private Object[] data;
 	private boolean skipNulls;
 	
 	/**
 	 * Creates a new {@code ArrayIterator}.
 	 * 
-	 * @param objects  an array to use
-	 * @param skipNulls  a null state handler
+	 * @param array  an array to use
+	 * @param skip  a null skip state
 	 */
-	public ArrayIterator(Object[] objects, boolean skipNulls)
+	public ArrayIterator(Object[] array, boolean skip)
 	{
-		this.skipNulls = skipNulls;
-		this.objects = objects;
-		this.next = -1;
+		next = -1;
+		data = array;
+		skipNulls = skip;
 		findNext();
 	}
 	
 	/**
 	 * Creates a new {@code ArrayIterator}.
 	 * 
-	 * @param objects  an array to use
+	 * @param array  an array to use
 	 */
-	public ArrayIterator(Object[] objects)
+	public ArrayIterator(Object[] array)
 	{
-		this(objects, false);
+		this(array, false);
 	}
 	
 	
 	private void findNext()
 	{
-		if(objects == null)
+		if(data == null)
 		{
 			return;
 		}
 		
 		next++;
-		if(next == objects.length)
+		if(next == data.length)
 		{
 			next = -1;
 			return;
 		}
 		
-		if(skipNulls && objects[next] == null)
+		if(skipNulls && data[next] == null)
 		{
 			findNext();
 		}
@@ -73,7 +73,7 @@ public class ArrayIterator<O> implements Iterator<O>
 	@Override
 	public O next()
 	{
-		O oNext = (O) objects[next];
+		O oNext = (O) data[next];
 		findNext(); return oNext;
 	}
 }

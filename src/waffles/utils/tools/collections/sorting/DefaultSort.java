@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * The {@code JavaSort} class defines a wrapper for Java's default sorting method.
+ * The {@code DefaultSort} class defines a wrapper for Java's default sorting method.
  * 
  * <ul>
  * 	<li> This algorithm has a worst-case complexity of O(n log n).
@@ -16,33 +16,33 @@ import java.util.List;
  * 
  * @author Waffles
  * @since Mar 26, 2017
- * @version 1.0
+ * @version 1.1
  * 
  *
  * @param <O>  a list object type
  * @see AbstractSort
  */
-public class JavaSort<O> extends AbstractSort<O>
+public class DefaultSort<O> extends AbstractSort<O>
 {
 	/**
-	 * Creates a new {@code JavaSort}.
+	 * Creates a new {@code DefaultSort}.
 	 * </br> Without a comparator, this
 	 * sort depends on natural ordering.
 	 */
-	public JavaSort()
+	public DefaultSort()
 	{
 		super();
 	}
 	
 	/**
-	 * Creates a new {@code JavaSort}.
+	 * Creates a new {@code DefaultSort}.
 	 * 
 	 * @param c  a comparator to use
 	 * 
 	 * 
 	 * @see Comparator
 	 */
-	public JavaSort(Comparator<O> c)
+	public DefaultSort(Comparator<O> c)
 	{
 		super(c);
 	}

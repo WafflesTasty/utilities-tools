@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import waffles.utils.tools.collections.sorting.BubbleSort;
-import waffles.utils.tools.collections.sorting.JavaSort;
+import waffles.utils.tools.collections.sorting.DefaultSort;
 import waffles.utils.tools.collections.sorting.QuickSort;
 
 /**
@@ -12,7 +12,7 @@ import waffles.utils.tools.collections.sorting.QuickSort;
  *
  * @author Waffles
  * @since Feb 03, 2020
- * @version 1.0
+ * @version 1.1
  */
 public final class Sorting
 {
@@ -88,7 +88,7 @@ public final class Sorting
 	 */
 	public static <O> void javaSort(List<O> list, Comparator<O> c)
 	{
-		new JavaSort<>(c).sort(list);
+		new DefaultSort<>(c).sort(list);
 	}
 	
 	/**
@@ -103,7 +103,7 @@ public final class Sorting
 	 */
 	public static <O> void javaSort(O[] list, Comparator<O> c)
 	{
-		new JavaSort<>(c).sort(list);
+		new DefaultSort<>(c).sort(list);
 	}
 	
 	/**

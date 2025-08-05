@@ -7,7 +7,7 @@ import java.util.List;
 import waffles.utils.tools.Randomizer;
 import waffles.utils.tools.collections.iterators.ArrayIterator;
 import waffles.utils.tools.collections.iterators.CastIterator;
-import waffles.utils.tools.collections.iterators.CombineIterator;
+import waffles.utils.tools.collections.iterators.MergeIterator;
 import waffles.utils.tools.collections.iterators.EmptyIterator;
 import waffles.utils.tools.collections.iterators.Interleaverator;
 import waffles.utils.tools.collections.iterators.RandomIterator;
@@ -21,7 +21,7 @@ import waffles.utils.tools.collections.iterators.SingleIterator;
  * 
  * @author Waffles
  * @since Aug 15, 2015
- * @version 1.0
+ * @version 1.1
  */
 public final class Iterables
 {			
@@ -158,7 +158,7 @@ public final class Iterables
 	 */
 	public static <O> Iterable<O> compose(Iterable<O>... iterables)
 	{
-		return () -> new CombineIterator<>(iterables);
+		return () -> new MergeIterator<>(iterables);
 	}
 	
 	/**

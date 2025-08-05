@@ -6,8 +6,9 @@ package waffles.utils.tools.patterns.semantics;
  * 
  * @author Waffles
  * @since Nov 27, 2014
- * @version 1.0
+ * @version 1.1
  */
+@FunctionalInterface
 public interface Decorator
 {
 	/**

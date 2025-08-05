@@ -7,30 +7,30 @@ import java.util.Queue;
 import waffles.utils.tools.collections.Iterables;
 
 /**
- * The {@code CombineIterator} combines multiple iterables into one {@code Iterator}.
+ * The {@code MergeIterator} combines multiple iterables into one {@code Iterator}.
  *
  * @author Waffles
  * @since 28 Feb 2020
- * @version 1.0
+ * @version 1.1
  *
  *
  * @param <O>  an object type
  * @see Iterator
  */
-public class CombineIterator<O> implements Iterator<O>
+public class MergeIterator<O> implements Iterator<O>
 {
 	private Iterator<O> current;
 	private Queue<Iterable<O>> queue;
 	
 	/**
-	 * Creates a new {@code CombineIterator}.
+	 * Creates a new {@code MergeIterator}.
 	 * 
 	 * @param set  a set of iterables
 	 * 
 	 * 
 	 * @see Iterable
 	 */
-	public CombineIterator(Iterable<O>... set)
+	public MergeIterator(Iterable<O>... set)
 	{
 		queue = new ArrayDeque<>();
 		for(Iterable<O> iter : Iterables.sansNulls(set))
