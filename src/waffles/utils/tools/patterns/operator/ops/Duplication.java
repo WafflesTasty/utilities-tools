@@ -1,7 +1,7 @@
 package waffles.utils.tools.patterns.operator.ops;
 
 import waffles.utils.tools.patterns.operator.Operation;
-import waffles.utils.tools.patterns.semantics.Copyable;
+import waffles.utils.tools.patterns.properties.values.Copyable;
 import waffles.utils.tools.primitives.Integers;
 
 /**

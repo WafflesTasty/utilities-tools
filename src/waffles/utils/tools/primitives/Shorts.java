@@ -35,23 +35,6 @@ public final class Shorts
 	// Parsing
 
 	/**
-	 * Parses a string into an short value.
-	 * <br> This methods can return shorts
-	 * in any base radix.
-	 * 
-	 * @param text  a string to parse
-	 * @param rad  a base radix
-	 * @return  a parsed short
-	 * 
-	 * 
-	 * @see String
-	 */
-	public static short parse(String text, int rad)
-	{
-		return Short.parseShort(text, rad);
-	}
-	
-	/**
 	 * Parses a string into a short value.
 	 * 
 	 * @param text  a string to parse
@@ -65,6 +48,23 @@ public final class Shorts
 		return Short.parseShort(text);
 	}
 	
+	/**
+	 * Parses a string into an short value.
+	 * </br> This methods can return shorts
+	 * in any base radix.
+	 * 
+	 * @param text  a string to parse
+	 * @param r  a short base radix
+	 * @return  a parsed short
+	 * 
+	 * 
+	 * @see String
+	 */
+	public static short parse(String text, int r)
+	{
+		return Short.parseShort(text, r);
+	}
+		
 	/**
 	 * Returns a hash code of a short.
 	 * 

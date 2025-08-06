@@ -1,5 +1,7 @@
 package waffles.utils.tools.patterns.operator;
 
+import waffles.utils.tools.patterns.properties.counters.Accountable;
+
 /**
  * The {@code Operation} interface defines an abstract resource-intensive operation.
  * As part of the {@link Operable}-{@link Operator} design pattern, different implementations
@@ -13,8 +15,9 @@ package waffles.utils.tools.patterns.operator;
  * 
  * 
  * @param <O>  a result type
+ * @see Accountable
  */
-public interface Operation<O>
+public interface Operation<O> extends Accountable
 {		
 	/**
 	 * Returns the result of the {@code Operation}.
@@ -22,11 +25,4 @@ public interface Operation<O>
 	 * @return  an operation result
 	 */
 	public abstract O result();
-
-	/**
-	 * Returns the cost of the {@code Operation}.
-	 * 
-	 * @return  an operation cost
-	 */
-	public abstract int cost();
 }

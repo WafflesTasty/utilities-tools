@@ -2,7 +2,7 @@ package waffles.utils.tools.collections.iterators;
 
 import java.util.Iterator;
 
-import waffles.utils.tools.patterns.semantics.Valuable;
+import waffles.utils.tools.patterns.properties.values.Valuable;
 
 /**
  * A {@code ValueIterator} iterates over the values of a set of {@code Valuables}.

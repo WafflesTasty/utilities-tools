@@ -15,6 +15,7 @@ package waffles.utils.tools.patterns.operator;
  *
  * @param <O>  an operable subtype
  */
+@FunctionalInterface
 public interface Operable<O extends Operable<O>>
 {
 	/**
