@@ -1,10 +1,7 @@
 package waffles.utils.tools.patterns.properties;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
- * The {@code Properties} interface defines a set of values tied to class keys.
+ * The {@code Properties} interface defines a class-object mapping.
  *
  * @author Waffles
  * @since 14 May 2022
@@ -13,68 +10,47 @@ import java.util.Map;
 public interface Properties
 {
 	/**
-	 * The {@code Properties.Mapper} class stores its fields in a hashmap.
+	 * A {@code Properties.Owner} defines a set of properties.
 	 *
 	 * @author Waffles
-	 * @since 25 Jul 2023
-	 * @version 1.0
-	 * 
-	 * 
-	 * @see Properties
+	 * @since 15 Aug 2025
+	 * @version 1.1
 	 */
-	public static class Mapper implements Properties
+	@FunctionalInterface
+	public static interface Owner
 	{
-		private Map<String, Object> props;
-		
 		/**
-		 * Creates a new {@code Mapper}.
+		 * Returns the properties of the {@code Owner}.
+		 * 
+		 * @return  a properties object
+		 * 
+		 * 
+		 * @see Properties
 		 */
-		public Mapper()
-		{
-			props = new HashMap<>();
-		}
-		
-		
-		@Override
-		public <O, P> void setProperty(Class<O> type, P prop)
-		{
-			if(prop != null)
-				props.put(type.getName(), prop);
-			else
-				props.remove(type.getName());
-		}
-		
-		@Override
-		public <O, P> P getProperty(Class<O> type)
-		{
-			return (P) props.get(type.getName());
-		}
+		public abstract Properties Properties();
 	}
 	
 	
 	/**
 	 * Changes a value in the {@code Properties}.
 	 * 
-	 * @param <O>  a key type class
-	 * @param <P>  a property class
-	 * @param type  a property type
-	 * @param prop  an entity property
+	 * @param t  a property type
+	 * @param v  a property value
 	 * 
 	 * 
 	 * @see Class
 	 */
-	public abstract <O, P> void setProperty(Class<O> type, P prop);
+	public abstract void set(Class<?> t, Object v);
 
 	/**
 	 * Returns a value in the {@code Properties}.
 	 * 
-	 * @param <O>  a key type class
-	 * @param <P>  a property class
-	 * @param type  a property type
-	 * @return  an entity property
+	 * @param <V>  a value type
+	 * @param t  a property type
+	 * @return  a property value
 	 * 
 	 * 
 	 * @see Class
 	 */
-	public abstract <O, P> P getProperty(Class<O> type);
+	public abstract <V> V get(Class<?> t);
 }
