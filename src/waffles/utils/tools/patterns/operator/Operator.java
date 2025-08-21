@@ -23,17 +23,14 @@ public interface Operator<O extends Operable<O>>
 	 * </br> The result of this method can be passed to an
 	 * {@code Operable} object to verify compatibility.
 	 * 
-	 * @return  an abstract type operator
+	 * @return  a type operator
 	 * 
 	 * 
 	 * @see Operable
 	 */
 	public static <O extends Operable<O>> Operator<O> Type()
 	{
-		return () ->
-		{
-			return null;
-		};
+		return () -> null;
 	}
 	
 	
@@ -47,7 +44,7 @@ public interface Operator<O extends Operable<O>>
 	 */
 	public default boolean matches(O obj)
 	{
-		return true;
+		return obj.Operator() instanceof Operator;
 	}
 
 	/**
@@ -58,10 +55,7 @@ public interface Operator<O extends Operable<O>>
 	 */
 	public default Operator<O> instance(O obj)
 	{
-		return () ->
-		{
-			return obj;
-		};
+		return () -> obj;
 	}
 	
 	/**
