@@ -297,7 +297,7 @@ public final class Longs
 	 */
 	public static long parse(String text)
 	{
-		return Long.parseLong(text);
+		return Long.decode(text);
 	}
 	
 	/**

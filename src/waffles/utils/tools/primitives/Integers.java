@@ -297,7 +297,7 @@ public final class Integers
 	 */
 	public static int parse(String text)
 	{
-		return Integer.parseInt(text);
+		return Integer.decode(text);
 	}
 	
 	/**
