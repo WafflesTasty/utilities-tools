@@ -11,7 +11,7 @@ package waffles.utils.tools.patterns;
 public interface Constructible
 {
 	/**
-	 * A {@code Factory} creates {@code Constructible} objects.
+	 * A {@code Workshop} creates {@code Constructible} objects.
 	 *
 	 * @author Waffles
 	 * @since 21 Jan 2026
@@ -21,18 +21,18 @@ public interface Constructible
 	 * @param <P>  a parameter type
 	 */
 	@FunctionalInterface
-	public static interface Factory<P>
+	public static interface Workshop<P>
 	{
 		/**
 		 * Creates a new {@code Constructible}.
 		 * 
-		 * @param par  a factory parameter
-		 * @return  a constructed object
+		 * @param p  a factory parameter
+		 * @return   a constructed object
 		 * 
 		 * 
 		 * @see Constructible
 		 */
-		public abstract Constructible create(P par);
+		public abstract Constructible create(P p);
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public interface Constructible
 	 * @return  a constructible factory
 	 * 
 	 * 
-	 * @see Factory
+	 * @see Workshop
 	 */
-	public abstract Factory<?> Factory();
+	public abstract Workshop<?> Factory();
 }
