@@ -24,15 +24,12 @@ public interface Constructible
 	public static interface Workshop<P>
 	{
 		/**
-		 * Creates a new {@code Constructible}.
+		 * Constructs an object in the {@code Workshop}.
 		 * 
-		 * @param p  a factory parameter
+		 * @param data  construction data
 		 * @return   a constructed object
-		 * 
-		 * 
-		 * @see Constructible
 		 */
-		public abstract Constructible create(P p);
+		public abstract Object create(P... data);
 	}
 	
 	/**
