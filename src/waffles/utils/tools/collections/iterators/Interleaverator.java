@@ -19,7 +19,7 @@ import java.util.List;
 public class Interleaverator<O> implements Iterator<O>
 {
 	private int curr;
-	private List<Iterator<O>> iters;
+	private List<Iterator<O>> list;
 	
 	/**
 	 * Creates a new {@code Interleavable}.
@@ -31,13 +31,33 @@ public class Interleaverator<O> implements Iterator<O>
 	 */
 	public Interleaverator(Iterable<O>... leaves)
 	{
-		iters = new ArrayList<>();
-		for(Iterable<O> leaf : leaves)
+		list = new ArrayList<>();
+		for(Iterable<O> l : leaves)
 		{
-			Iterator<O> iter = leaf.iterator();
-			if(iter.hasNext())
+			Iterator<O> i = l.iterator();
+			if(i.hasNext())
 			{
-				iters.add(iter);
+				list.add(i);
+			}
+		}
+	}
+	
+	/**
+	 * Creates a new {@code Interleavable}.
+	 * 
+	 * @param leaves  a set of leaves
+	 * 
+	 * 
+	 * @see Iterator
+	 */
+	public Interleaverator(Iterator<O>... leaves)
+	{
+		list = new ArrayList<>();
+		for(Iterator<O> i : leaves)
+		{
+			if(i.hasNext())
+			{
+				list.add(i);
 			}
 		}
 	}
@@ -46,21 +66,21 @@ public class Interleaverator<O> implements Iterator<O>
 	@Override
 	public boolean hasNext()
 	{
-		return !iters.isEmpty();
+		return !list.isEmpty();
 	}
 
 	@Override
 	public O next()
 	{
-		Iterator<O> iter = iters.get(curr);
+		Iterator<O> iter = list.get(curr);
 
 		O next = iter.next();
 		if(!iter.hasNext())
-			iters.remove(curr);
+			list.remove(curr);
 		else
 			curr++;
 		
-		if(curr == iters.size())
+		if(curr == list.size())
 		{
 			curr = 0;
 		}	
