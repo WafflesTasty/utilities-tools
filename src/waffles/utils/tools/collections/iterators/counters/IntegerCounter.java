@@ -17,16 +17,16 @@ import waffles.utils.tools.primitives.Integers;
  */
 public class IntegerCounter implements Iterator<Integer>
 {
-	private int next, maximum;
+	private int next, max;
 	
 	/**
 	 * Creates a new {@code IntegerCounter}.
 	 * 
-	 * @param max  a maximum count
+	 * @param m  a maximum count
 	 */
-	public IntegerCounter(int max)
+	public IntegerCounter(int m)
 	{
-		maximum = max; next = 0;
+		max = m; next = 0;
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public class IntegerCounter implements Iterator<Integer>
 	@Override
 	public boolean hasNext()
 	{
-		return next != maximum;
+		return next <= max;
 	}
 
 	@Override

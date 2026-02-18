@@ -15,16 +15,16 @@ import java.util.Iterator;
  */
 public class LongCounter implements Iterator<Long>
 {
-	private long next, maximum;
+	private long next, max;
 	
 	/**
 	 * Creates a new {@code LongCounter}.
 	 * 
-	 * @param max  a maximum count
+	 * @param m  a maximum count
 	 */
-	public LongCounter(long max)
+	public LongCounter(long m)
 	{
-		maximum = max; next = 0;
+		max = m; next = 0;
 	}
 	
 	/**
@@ -39,7 +39,7 @@ public class LongCounter implements Iterator<Long>
 	@Override
 	public boolean hasNext()
 	{
-		return next != maximum;
+		return next <= max;
 	}
 
 	@Override
