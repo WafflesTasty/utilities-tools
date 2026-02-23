@@ -5,7 +5,7 @@ import java.util.Iterator;
 import waffles.utils.tools.primitives.Longs;
 
 /**
- * The {@code GUIDCounter} iterates indefinitely over prefixed long values.
+ * A {@code GUIDCounter} iterates over prefixed long values.
  *
  * @author Waffles
  * @since May 5, 2016

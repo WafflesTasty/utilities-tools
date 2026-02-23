@@ -5,7 +5,7 @@ import java.util.Iterator;
 import waffles.utils.tools.primitives.Integers;
 
 /**
- * The {@code IntegerCounter} iterates indefinitely over positive integer values.
+ * An {@code IntegerCounter} iterates over positive integer values.
  *
  * @author Waffles
  * @since May 5, 2016

@@ -3,7 +3,7 @@ package waffles.utils.tools.collections.iterators.counters;
 import java.util.Iterator;
 
 /**
- * The {@code LongCounter} iterates indefinitely over positive long values.
+ * A {@code LongCounter} iterates over positive long values.
  *
  * @author Waffles
  * @since May 5, 2016
