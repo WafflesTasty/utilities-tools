@@ -38,8 +38,22 @@ public class ModCounter implements Iterator<Integer>
 	 */
 	public ModCounter(int max, int mod)
 	{
+		this(0, max, mod);
+	}
+	
+	/**
+	 * Creates a new {@code ModCounter}.
+	 * 
+	 * @param min  a minimum count
+	 * @param max  a maximum count
+	 * @param mod  a modulus
+	 */
+	public ModCounter(int min, int max, int mod)
+	{
 		this.max = max;
 		this.mod = mod;
+		
+		next = min;
 	}
 		
 	
