@@ -14,6 +14,7 @@ import java.util.Iterator;
  * @param <O>  an object type
  * @see Iterable
  */
+@FunctionalInterface
 public interface Queryable<O> extends Iterable<O>
 {
 	/**
@@ -26,6 +27,7 @@ public interface Queryable<O> extends Iterable<O>
 	 *
 	 * @param <O>  an object type
 	 */
+	@FunctionalInterface
 	public static interface Query<O>
 	{
 		/**
