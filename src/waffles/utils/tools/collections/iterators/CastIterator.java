@@ -20,7 +20,7 @@ public class CastIterator<O> implements Iterator<O>
 	private Iterator<?>[] objects;
 		
 	/**
-	 * Creates a new {@code ReverseIterator}.
+	 * Creates a new {@code CastIterator}.
 	 * 
 	 * @param set  a set to iterate
 	 * 
@@ -33,6 +33,25 @@ public class CastIterator<O> implements Iterator<O>
 		for(int i = 0; i < set.length; i++)
 		{
 			objects[i] = set[i].iterator();
+		}
+		
+		next = findNext();
+	}
+	
+	/**
+	 * Creates a new {@code CastIterator}.
+	 * 
+	 * @param set  a set to iterate
+	 * 
+	 * 
+	 * @see Iterator
+	 */
+	public CastIterator(Iterator<?>... set)
+	{
+		objects = new Iterator[set.length];
+		for(int i = 0; i < set.length; i++)
+		{
+			objects[i] = set[i];
 		}
 		
 		next = findNext();
