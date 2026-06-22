@@ -1,4 +1,4 @@
-package waffles.utils.tools.patterns.properties.counters;
+package waffles.utils.tools.patterns.properties;
 
 /**
  * The {@code Discernible} interface defines an object with a unique integer identifier.

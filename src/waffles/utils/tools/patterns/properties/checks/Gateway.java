@@ -1,4 +1,4 @@
-package waffles.utils.tools.patterns.properties;
+package waffles.utils.tools.patterns.properties.checks;
 
 /**
  * A {@code Gateway} decides whether objects of a type are allowed somewhere.

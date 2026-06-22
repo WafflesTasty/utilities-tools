@@ -1,17 +1,17 @@
 package waffles.utils.tools.patterns.properties.counters;
 
 /**
- * The {@code Accountable} interface defines an object with a cost.
+ * The {@code Taxed} interface defines an object with a cost.
  *
  * @author Waffles
  * @since Jul 23, 2015
  * @version 1.0
  */
 @FunctionalInterface
-public interface Accountable
+public interface Taxed
 {
 	/**
-	 * Returns the cost of the {@code Accountable}.
+	 * Returns the cost of the {@code Taxed}.
 	 * 
 	 * @return  a cost value
 	 */

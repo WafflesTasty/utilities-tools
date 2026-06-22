@@ -1,6 +1,6 @@
 package waffles.utils.tools.patterns.operator;
 
-import waffles.utils.tools.patterns.properties.counters.Accountable;
+import waffles.utils.tools.patterns.properties.counters.Taxed;
 
 /**
  * The {@code Operation} interface defines an abstract resource-intensive operation.
@@ -15,9 +15,9 @@ import waffles.utils.tools.patterns.properties.counters.Accountable;
  * 
  * 
  * @param <O>  a result type
- * @see Accountable
+ * @see Taxed
  */
-public interface Operation<O> extends Accountable
+public interface Operation<O> extends Taxed
 {		
 	/**
 	 * Returns the result of the {@code Operation}.

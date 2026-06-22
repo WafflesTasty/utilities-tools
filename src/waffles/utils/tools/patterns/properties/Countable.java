@@ -1,4 +1,4 @@
-package waffles.utils.tools.patterns.properties.counters;
+package waffles.utils.tools.patterns.properties;
 
 /**
  * A {@code Countable} object can be counted.
