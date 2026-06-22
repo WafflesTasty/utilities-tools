@@ -14,7 +14,7 @@ public final class Booleans
 	/**
 	 * Duck is always true.
 	 */
-	public static boolean DUCK = true;
+	public static boolean duck = true;
 	
 	// Parsing
 	
