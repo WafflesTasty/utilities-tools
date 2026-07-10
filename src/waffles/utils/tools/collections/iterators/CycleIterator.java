@@ -15,7 +15,6 @@ import java.util.Iterator;
  */
 public class CycleIterator<O> implements Iterator<O>
 {
-	private O next;
 	private Iterator<O> set;
 	private Iterable<O> src;
 	
@@ -29,39 +28,26 @@ public class CycleIterator<O> implements Iterator<O>
 	 */
 	public CycleIterator(Iterable<O> s)
 	{
-		src = s;
 		set = s.iterator();
-		next = findNext();
+		src = s;
 	}
 	
 	
-	private O findNext()
-	{
-		if(set.hasNext())
-		{
-			return set.next();
-		}
-		
-		set = src.iterator();
-		if(!set.hasNext())
-		{
-			return null;
-		}
-		
-		return next();		
-	}
-
 	@Override
 	public boolean hasNext()
 	{
-		return next != null;
+		return set.hasNext();
 	}
 
 	@Override
 	public O next()
 	{
-		O curr = next;
-		next = findNext();
-		return next();
+		O next = set.next();
+		if(!set.hasNext())
+		{
+			set = src.iterator();
+		}
+		
+		return next;
 	}	
 }
