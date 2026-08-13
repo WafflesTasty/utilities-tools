@@ -1,4 +1,4 @@
-package waffles.utils.tools.patterns;
+package waffles.utils.tools;
 
 /**
  * The {@code Deprecated} interface is a marker interface for temporary issues.

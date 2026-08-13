@@ -1,8 +1,9 @@
 package waffles.utils.tools.patterns.properties.counters;
 
 /**
- * The {@code Handler} interface defines an object with a pointer.
- * </br> This pointer is usually a long value which references a memory address.
+ * A {@code Handler} defines an object with a pointer.
+ * This pointer is usually a long value which
+ * references a memory address.
  *
  * @author Waffles
  * @since 17 Jul 2020
@@ -12,9 +13,9 @@ package waffles.utils.tools.patterns.properties.counters;
 public interface Handler
 {
 	/**
-	 * Returns the pointer of the {@code Handler}.
+	 * Returns a pointer for the {@code Handler}.
 	 * 
 	 * @return  a long pointer
 	 */
-	public abstract long Pointer();
+	public abstract long Handle();
 }
