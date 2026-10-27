@@ -30,7 +30,7 @@ public class ArrayIterator<O> implements Iterator<O>
 		next = -1;
 		data = array;
 		skipNulls = skip;
-		findNext();
+		next = findNext();
 	}
 	
 	/**
@@ -44,24 +44,25 @@ public class ArrayIterator<O> implements Iterator<O>
 	}
 	
 	
-	private void findNext()
+	private int findNext()
 	{
 		if(data == null)
 		{
-			return;
+			return -1;
 		}
 		
 		next++;
-		if(next == data.length)
+		if(data.length <= next)
 		{
-			next = -1;
-			return;
+			return -1;
 		}
 		
-		if(skipNulls && data[next] == null)
+		if(data[next] == null && skipNulls)
 		{
-			findNext();
+			return findNext();
 		}
+
+		return next;
 	}
 	
 	@Override
@@ -73,7 +74,8 @@ public class ArrayIterator<O> implements Iterator<O>
 	@Override
 	public O next()
 	{
-		O oNext = (O) data[next];
-		findNext(); return oNext;
+		O curr = (O) data[next];
+		next = findNext();
+		return curr;
 	}
 }

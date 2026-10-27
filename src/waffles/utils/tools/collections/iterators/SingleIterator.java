@@ -3,59 +3,59 @@ package waffles.utils.tools.collections.iterators;
 import java.util.Iterator;
 
 /**
- * The {@code SingleIterator} class terminates after iterating one object.
+ * A {@code SingleIterator} terminates after iterating one next.
  *  
  * @author Waffles
  * @since Nov 20, 2014
- * @version 1.0
+ * @version 1.1
  * 
  * 
- * @param <O>  an object type
+ * @param <O>  an next type
  * @see Iterator
  */
 public class SingleIterator<O> implements Iterator<O>
 {
-	private O object;
+	private O next;
 	
 	/**
 	 * Creates a new {@code SingleIterator}.
 	 * 
-	 * @param source  an iterable source
+	 * @param src  a source iterable
 	 * 
 	 * 
 	 * @see Iterable
 	 */
-	public SingleIterator(Iterable<O> source)
+	public SingleIterator(Iterable<O> src)
 	{
-		Iterator<O> iter = source.iterator();
+		Iterator<O> iter = src.iterator();
 		if(iter.hasNext())
 		{
-			object = iter.next();
+			next = iter.next();
 		}
 	}
 	
 	/**
 	 * Creates a new {@code SingleIterator}.
 	 * 
-	 * @param object  a target object
+	 * @param obj  an object
 	 */
-	public SingleIterator(O object)
+	public SingleIterator(O obj)
 	{
-		this.object = object;
+		next = obj;
 	}
 	
 	
 	@Override
 	public boolean hasNext()
 	{
-		return object != null;
+		return next != null;
 	}
 
 	@Override
 	public O next()
 	{
-		O next = object;
-		object = null;
-		return next;
+		O curr = next;
+		next = null;
+		return curr;
 	}
 }
